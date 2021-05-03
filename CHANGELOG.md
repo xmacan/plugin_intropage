@@ -7,6 +7,7 @@
 * Properly keep panels that have plugin requirements from being selectable
 * Dont run the polling functions for the panel if the required plugins are not enabled
 * Trend function in panellib analyze requires thold but was not indicated
+* Add Busiest panels (DS stats)
 
 --- 3.0.3 ---
 
