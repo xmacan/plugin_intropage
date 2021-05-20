@@ -961,13 +961,16 @@ function intropage_prepare_graph($dispdata) {
 		// Start chart attributes
 		$chart = array(
 			'bindto' => "#line_$xid",
+			'zoom' => array(
+				'enabled'	=> 'true',
+				'type'		=> 'drag'
+			),
 			'size'   => array('height' => '180'),
 			'data'   => array(
 				'x'       => 'x',
 				'xFormat' => '%Y-%m-%d %H:%M:%S'
-			)
+			),
 		);
-
 		$columns   = array();
 		$axes      = array();
 		$axis      = array();
@@ -1035,10 +1038,9 @@ function intropage_prepare_graph($dispdata) {
 		$chart['axis']            = $axis;
 
 		$chart_data = json_encode($chart);
-
 		$content .= '<div class="chart_wrapper center" id="line_' . $xid. '"></div>';
 		$content .= '<script type="text/javascript">';
-		$content .= 'panels.line_' . $xid . ' = bb.generate(' . $chart_data . ')';
+		$content .= 'panels.line_' . $xid . ' = bb.generate(' . $chart_data . ');';
 		$content .= '</script>';
 	} // line graph end
 
