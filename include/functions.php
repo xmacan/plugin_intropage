@@ -1069,13 +1069,12 @@ function intropage_prepare_graph($dispdata) {
 
 		$content .= "  pie: {";
 		$content .= "    label: {";
-		$content .= "      format: function (value, radio, id) {";
+		$content .= "      format: function (value, ratio, id) {";
 		$content .= "        return (value);";
 		$content .= "      }";
 		$content .= "    }";
 		$content .= "  },";
 
-		$content .= "tooltip: { format: { value: function (value, ratio, id) { return (value); } } },";
 		$content .= "legend: { position: 'right' },";
 
 		$content .= "});";
