@@ -1,5 +1,9 @@
 # Changelog
 
+--- 3.0.4 ---
+
+* issue#179: Fix autorefresh
+
 --- 3.0.3 ---
 
 * Add user selectable timespan for timeseries charts
@@ -26,6 +30,7 @@
 * Fix division by 0 in bussiest panels
 
 --- 3.0.2 ---
+
 * Reduce the width of some titles to conserve space
 * Reduce the length of hostnames to conserve space
 * Make switching between tab and console view instantaneous
