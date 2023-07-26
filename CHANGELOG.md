@@ -9,6 +9,8 @@
 
 * issue#272: Improve Intropage logging in two places to increase the ability to diagnose issues
 
+* issue#278: After Intropage install and run, php error could occurs
+
 * feature: Limit database check to size 1GB
 
 * New event highlighting system
