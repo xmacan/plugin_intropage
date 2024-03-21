@@ -225,9 +225,21 @@ function maint($panel, $user_id) {
 
 						break;
 					case 2:
-						while ($sc['etime'] < $t) {
-							$sc['etime'] += $sc['minterval'];
-							$sc['stime'] += $sc['minterval'];
+						/* past, calculate next */
+						if ($sc['etime'] < $t) {
+							/* convert start and end to local so that hour stays same for add days across daylight saving time change */
+							$starttimelocal = (new DateTime('@' . strval($sc['stime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+							$endtimelocal   = (new DateTime('@' . strval($sc['etime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+							$nowtime        = new DateTime();
+							/* add interval days */
+							$addday = new DateInterval( 'P' . strval($sc['minterval'] / 86400) . 'D');
+							while ($endtimelocal < $nowtime) {
+								$starttimelocal = $starttimelocal->add( $addday );
+								$endtimelocal   = $endtimelocal->add( $addday );
+							}
+
+							$sc['stime'] = $starttimelocal->getTimestamp();
+							$sc['etime'] = $endtimelocal->getTimestamp();
 						}
 
 						if ($t > ($sc['stime'] - $maint_days_before) && $t < $sc['etime']) {
