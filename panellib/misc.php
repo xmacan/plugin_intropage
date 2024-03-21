@@ -288,7 +288,8 @@ function webseer($panel, $user_id) {
 			$panel['alarm'] = 'red';
 		}
 
-		$panel['data']  = __('Number of checks (all/disabled): ', 'intropage') . $all . ' / ' . $disa . '<br/>';
+		$panel['data']  = '<b>' . __('Webseer plugin no longer supported, use plugin servcheck instead', 'intropage') . '</b><br/>';
+		$panel['data'] .= __('Number of checks (all/disabled): ', 'intropage') . $all . ' / ' . $disa . '<br/>';
 		$panel['data'] .= __('Status (up/down): ', 'intropage') . $ok . ' / ' . $ko . '<br/><br/>';
 
 		$logs = db_fetch_assoc ('SELECT pwul.lastcheck, pwul.result, pwul.http_code, pwul.error, pwu.url,
