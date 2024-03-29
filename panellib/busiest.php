@@ -171,6 +171,7 @@ function busiest_cpu($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -290,6 +291,7 @@ function busiest_load($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -400,6 +402,7 @@ function busiest_hdd($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -619,6 +622,7 @@ function busiest_traffic($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -753,6 +757,7 @@ function busiest_interface_error($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -872,6 +877,7 @@ function busiest_interface_util($panel, $user_id) {
 		}
 
 		save_panel_result($panel, $user_id);
+		return true;
 	}
 
 	$simple_perms = get_simple_device_perms($user_id);
@@ -1000,7 +1006,7 @@ function busiest_cpu_detail() {
 			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
 		}
 
-		save_panel_result($panel, $_SESSION['sess_user_id']);
+		return ($panel);
 	}
 
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
@@ -1116,7 +1122,7 @@ function busiest_load_detail() {
 			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
 		}
 
-		save_panel_result($panel, $_SESSION['sess_user_id']);
+		return ($panel);
 	}
 
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
@@ -1128,7 +1134,6 @@ function busiest_load_detail() {
 		$allowed_devices = false;
 		$q_host_cond = '';
 	}
-
 
 	$ds = db_fetch_row("SELECT id,name
 		FROM data_template
@@ -1234,7 +1239,7 @@ function busiest_hdd_detail() {
 			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
 		}
 
-		save_panel_result($panel, $_SESSION['sess_user_id']);
+		return ($panel);
 	}
 
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
@@ -1438,6 +1443,19 @@ function busiest_traffic_detail() {
 	);
 
 	$console_access = get_console_access($_SESSION['sess_user_id']);
+
+	if (read_config_option('dsstats_enable') != 'on') {
+		$panel['detail'] = __('Panel needs DS stats enabled.', 'intropage') . '<br/>';
+
+		if ($console_access) {
+			$panel['detail'] .=  '<a class="pic" href="' . $config['url_path'] .'settings.php?tab=data">' . __('Please enable and configure DS stats', 'intropage') . '</a>';
+		} else {
+			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
+		}
+
+		return ($panel);
+	}
+
 	$intropage_mb = read_user_setting('intropage_mb', read_config_option('intropage_mb'), $_SESSION['sess_user_id']);
 
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
@@ -1568,6 +1586,18 @@ function busiest_interface_error_detail() {
 
 	$console_access = get_console_access($_SESSION['sess_user_id']);
 
+	if (read_config_option('dsstats_enable') != 'on') {
+		$panel['detail'] = __('Panel needs DS stats enabled.', 'intropage') . '<br/>';
+
+		if ($console_access) {
+			$panel['detail'] .=  '<a class="pic" href="' . $config['url_path'] .'settings.php?tab=data">' . __('Please enable and configure DS stats', 'intropage') . '</a>';
+		} else {
+			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
+		}
+
+		return ($panel);
+	}
+
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
 
 	if (!$simple_perms) {
@@ -1678,6 +1708,18 @@ function busiest_interface_util_detail() {
 	include_once($config['base_path'] . '/lib/api_data_source.php');
 
 	$console_access = get_console_access($_SESSION['sess_user_id']);
+
+	if (read_config_option('dsstats_enable') != 'on') {
+		$panel['detail'] = __('Panel needs DS stats enabled.', 'intropage') . '<br/>';
+
+		if ($console_access) {
+			$panel['detail'] .=  '<a class="pic" href="' . $config['url_path'] .'settings.php?tab=data">' . __('Please enable and configure DS stats', 'intropage') . '</a>';
+		} else {
+			$panel['detail'] .=  __('Ask admin to enable DS stats', 'intropage') . '</a>';
+		}
+
+		return ($panel);
+	}
 
 	$simple_perms = get_simple_device_perms($_SESSION['sess_user_id']);
 
