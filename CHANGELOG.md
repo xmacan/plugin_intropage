@@ -35,6 +35,8 @@
 
 * issue294: Fix maint - summer time
 
+* feature: Add plugin servcheck panel
+
 
 --- 4.0.3 ---
 
