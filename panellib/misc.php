@@ -81,6 +81,22 @@ function register_misc() {
 			'details_func' => 'webseer_detail',
 			'trends_func'  => false
 		),
+		'servcheck' => array(
+			'name'         => __('Servcheck plugin Details', 'intropage'),
+			'description'  => __('Plugin ServCheck Details', 'intropage'),
+			'class'        => 'misc',
+			'level'        => PANEL_SYSTEM,
+			'refresh'      => 60,
+			'trefresh'     => false,
+			'force'        => true,
+			'width'        => 'quarter-panel',
+			'priority'     => 36,
+			'alarm'        => 'green',
+			'requires'     => 'servcheck',
+			'update_func'  => 'servcheck',
+			'details_func' => 'servcheck_detail',
+			'trends_func'  => false
+		),
 	);
 
 	return $panels;
@@ -306,13 +322,12 @@ function webseer($panel, $user_id) {
 
 		$logs = db_fetch_assoc ('SELECT pwul.lastcheck, pwul.result, pwul.http_code, pwul.error, pwu.url,
 			UNIX_TIMESTAMP(pwul.lastcheck) AS secs
-	                FROM plugin_webseer_urls_log AS pwul
-        	        INNER JOIN plugin_webseer_urls AS pwu
-		       	ON pwul.url_id = pwu.id
-                	WHERE pwu.id = 1
-	                ORDER BY pwul.lastcheck DESC
-
-        	        LIMIT ' . ($lines - 4));
+			FROM plugin_webseer_urls_log AS pwul
+			INNER JOIN plugin_webseer_urls AS pwu
+			ON pwul.url_id = pwu.id
+			WHERE pwu.id = 1
+			ORDER BY pwul.lastcheck DESC
+			LIMIT ' . ($lines - 4));
 
 		if (cacti_sizeof($logs) > 0) {
 
@@ -323,33 +338,32 @@ function webseer($panel, $user_id) {
 				'<td class="rpad">' . __('HTTP code', 'intropage') . '</td></tr>';
 
 			foreach ($logs as $row) {
-                                $color = 'grey';
-                                $text = '';
+				$color = 'grey';
+				$text = '';
 
-                                if ($row['http_code'] == 200) {
-	                                if ($row['secs'] > (time()-($important_period))) {
-                                                $color = 'green';
+				if ($row['http_code'] == 200) {
+					if ($row['secs'] > (time()-($important_period))) {
+						$color = 'green';
 					}
-                                        $text = __('OK');
-
-                                } else {
-	                               if ($row['secs'] > (time()-($important_period))) {
-                                                $color = 'red';
+					$text = __('OK');
+				} else {
+					if ($row['secs'] > (time()-($important_period))) {
+						$color = 'red';
 					}
-                                        $text = __('Failed');
+					$text = __('Failed');
 				}
 
-                                if ($panel['alarm'] == 'grey' && $color == 'green') {
-                                        $panel['alarm'] = 'green';
-                                }
+				if ($panel['alarm'] == 'grey' && $color == 'green') {
+					$panel['alarm'] = 'green';
+				}
 
-                                if ($panel['alarm'] == 'green' && $color == 'yellow') {
-                                        $panel['alarm'] = 'yellow';
-                                }
+				if ($panel['alarm'] == 'green' && $color == 'yellow') {
+					$panel['alarm'] = 'yellow';
+				}
 
-                                if ($panel['alarm'] == 'yellow' && $color == 'red') {
-                                        $panel['alarm'] = 'red';
-                                }
+				if ($panel['alarm'] == 'yellow' && $color == 'red') {
+					$panel['alarm'] = 'red';
+				}
 
 				$panel['data'] .= '<td class="rpad">' . $row['lastcheck'] . '</td>' .
 					'<td class="rpad">' . $row['url'] . '</td>' .
@@ -405,19 +419,184 @@ function webseer_detail() {
 		$panel['detail'] .= '<td class="left">' . $log['url'] . '</td>';
 
 		if ($log['result'] == 1) {
-			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('OK') . '</td>';
-
-                        if ($log['secs'] > (time()-($important_period))) {
+			if ($log['secs'] > (time()-($important_period))) {
 				$color = 'green';
 			}
+			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('OK') . '</td>';
 		} else {
-			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('Failed') . '</td>';
-
-                        if ($log['secs'] > (time()-($important_period))) {
+			if ($log['secs'] > (time()-($important_period))) {
 				$color = 'red';
 			}
+			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('Failed') . '</td>';
 		}
+
 		$panel['detail'] .= '<td class="right">' . $log['http_code'] . '</td>';
+		$panel['detail'] .= '<td class="right">' . $log['error'] . '</td></tr>';
+
+		if ($color == 'red')	{
+			$panel['alarm'] = 'red';
+		}
+	}
+
+	$panel['detail'] .= '</table>';
+
+	return $panel;
+}
+
+
+// -------------------------------------plugin servcheck-------------------------------------------
+function servcheck($panel, $user_id) {
+	global $config;
+
+	$panel['alarm'] = 'green';
+
+	$lines = read_user_setting('intropage_number_of_lines', read_config_option('intropage_number_of_lines'), false, $user_id);
+	$important_period = read_user_setting('intropage_important_period', read_config_option('intropage_important_period'), false, $user_id);
+	if ($important_period == -1) {
+		$important_period = time();
+	}
+
+	if (!api_plugin_is_enabled('servcheck')) {
+		$panel['alarm']  = 'yellow';
+		$panel['data']   = __('Plugin Servcheck isn\'t installed or started', 'intropage');
+		$panel['detail'] = FALSE;
+	} else {
+		$ok = 0; $ko = 0;
+		$all  = db_fetch_cell('SELECT COUNT(*) FROM plugin_servcheck_test');
+		$disa = db_fetch_cell("SELECT COUNT(*) FROM plugin_servcheck_test WHERE enabled != 'on'");
+
+		$tests = db_fetch_assoc('SELECT display_name, type, id, lastcheck FROM plugin_servcheck_test');
+			
+		foreach ($tests as $test) {
+			$state = db_fetch_cell_prepared('SELECT result FROM plugin_servcheck_log
+				WHERE test_id = ? ORDER BY lastcheck DESC LIMIT 1',
+				array($test['id']));
+				
+			if ($state == 'ok') {
+				$ok++;
+			} else {
+				$ko++;
+			}
+		}
+
+		if ($ko > '0') {
+			$panel['alarm'] = 'red';
+		}
+
+		$panel['data'] .= __('Number of checks (all/disabled): ', 'intropage') . $all . ' / ' . $disa . '<br/>';
+		$panel['data'] .= __('Status (ok/error): ', 'intropage') . $ok . ' / ' . $ko . '<br/><br/>';
+		$logs = db_fetch_assoc ('SELECT psl.lastcheck as `lastcheck`, result, error, display_name, type,
+			UNIX_TIMESTAMP(psl.lastcheck) AS secs
+			FROM plugin_servcheck_log AS psl
+			LEFT JOIN plugin_servcheck_test AS pst
+			ON psl.test_id = pst.id 
+			LIMIT ' . ($lines - 4));
+
+		if (cacti_sizeof($logs) > 0) {
+
+			$panel['data'] .= '<table class="cactiTable">';
+			$panel['data'] .= '<tr><td colspan="4"><strong>' . __('Last log records', 'intropage') . '</strong></td></tr>';
+			$panel['data'] .= '<tr><td class="rpad">' . __('Date', 'intropage') . '</td>' .
+				'<td class="rpad">' . __('Test', 'intropage') . '</td>' .
+				'<td class="rpad">' . __('Type', 'intropage') . '</td>' .
+				'<td class="rpad">' . __('Result', 'intropage') . '</td></tr>';
+
+			foreach ($logs as $row) {
+				$color = 'grey';
+				$text = '';
+
+				if ($row['result'] == 'ok') {
+					if ($row['secs'] > (time()-($important_period))) {
+						$color = 'green';
+					}
+					$text = __('OK');
+				} else {
+					if ($row['secs'] > (time()-($important_period))) {
+						$color = 'red';
+					}
+					$text = __('Failed');
+				}
+
+				if ($panel['alarm'] == 'grey' && $color == 'green') {
+					$panel['alarm'] = 'green';
+				}
+
+				if ($panel['alarm'] == 'green' && $color == 'yellow') {
+					$panel['alarm'] = 'yellow';
+				}
+
+				if ($panel['alarm'] == 'yellow' && $color == 'red') {
+					$panel['alarm'] = 'red';
+				}
+
+				$panel['data'] .= '<td class="rpad">' . $row['lastcheck'] . '</td>' .
+					'<td class="rpad">' . $row['display_name'] . '</td>' .
+					'<td class="rpad">' . $row['type'] . '</td>' .
+					'<td class="rpad"><span class="inpa_sq color_' . $color . '"></span>' . $row['result'] .'</td></tr>';
+			}
+
+			$panel['data'] .= '</table>';
+		}
+	}
+
+	save_panel_result($panel, $user_id);
+}
+
+//------------------------------------ servcheck_plugin_detail-------------------------------------------------
+function servcheck_detail() {
+	global $config, $log;
+
+        $important_period = read_user_setting('intropage_important_period', read_config_option('intropage_important_period'), false, $_SESSION['sess_user_id']);
+        if ($important_period == -1) {
+                $important_period = time();
+        }
+
+	$panel = array(
+		'name'   => __('Servcheck Plugin - Details', 'intropage'),
+		'alarm'  => 'grey',
+		'detail' => '',
+	);
+
+	$logs = db_fetch_assoc ('SELECT psl.lastcheck as `lastcheck`, result, error, display_name, type,
+		UNIX_TIMESTAMP(psl.lastcheck) AS secs
+		FROM plugin_servcheck_log AS psl
+		LEFT JOIN plugin_servcheck_test AS pst
+		ON psl.test_id = pst.id
+		ORDER BY psl.lastcheck DESC
+		LIMIT 40');
+
+	$panel['detail'] = '<table class="cactiTable"><tr class="tableHeader">';
+
+	$panel['detail'] .=
+		'<th class="left">'  . __('Date', 'intropage') . '</th>' .
+		'<th class="left">'  . __('Test', 'intropage') . '</th>' .
+		'<th class="left">'  . __('Type', 'intropage') . '</th>' .
+		'<th class="right">' . __('Result', 'intropage') . '</th>' .
+		'<th class="right">' . __('Error', 'intropage') . '</th>' .
+	'</tr>';
+
+	foreach ($logs as $log)	{
+		$color = 'grey';
+
+		$panel['detail'] .= '<tr>';
+		$panel['detail'] .= '<td class="left">' . $log['lastcheck'] . '</td>';
+		$panel['detail'] .= '<td class="left">' . $log['display_name'] . '</td>';
+		$panel['detail'] .= '<td class="left">' . $log['type'] . '</td>';
+
+		if ($log['result'] == 'ok') {
+			if ($log['secs'] > (time()-($important_period))) {
+				$color = 'green';
+			}
+
+			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('OK') . '</td>';
+		} else {
+			if ($log['secs'] > (time()-($important_period))) {
+				$color = 'red';
+			}
+			$panel['detail'] .= '<td class="left"><span class="inpa_sq color_' . $color . '"></span>' . __('Failed') . '</td>';
+		}
+
+		$panel['detail'] .= '<td class="right">' . $log['result'] . '</td>';
 		$panel['detail'] .= '<td class="right">' . $log['error'] . '</td></tr>';
 
 		if ($color == 'red')	{
