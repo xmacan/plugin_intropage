@@ -33,7 +33,9 @@
 
 * feature: Unification of the colour scheme in graphs
 
-* issue294: Fix maint - summer time
+* issue#294: Fix maint - summer time
+
+* issue#302: Incorrect message when DSStats are disabled
 
 * feature: Add plugin servcheck panel
 
