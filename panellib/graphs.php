@@ -269,8 +269,6 @@ function graph_host($panel, $user_id, $timespan = 0) {
                        ),
 		);
 
-		$first = true;
-
 		if ($timespan == 0) {
                 	if (isset($_SESSION['sess_user_id'])) {
 				$timespan = read_user_setting('intropage_timespan', read_config_option('intropage_timespan'), $_SESSION['sess_user_id']);
@@ -296,24 +294,21 @@ function graph_host($panel, $user_id, $timespan = 0) {
 			ORDER BY cur_timestamp ASC",
 			array($timespan));
 
-                if (cacti_sizeof($rows)) {
+		if (cacti_sizeof($rows)) {
 
-                        $graph['line']['title1'] = __('Down', 'intropage');
-                        $graph['line']['unit1']['title'] = 'Down';
+			$graph['line']['title1'] = __('Down', 'intropage');
+			$graph['line']['unit1']['title'] = 'Down';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0) {
-						$panel['alarm'] = 'red';
-					}
-					$first = false;
-				}
 
 				$graph['line']['label1'][] = $row['date'];
 				$graph['line']['data1'][]  = $row['value'];
-                        }
+				$last = $row['value'];
+			}
 
-			$first = true;
+			if ($last > 0) {
+				$panel['alarm'] = 'red';
+			}
 
 		} else {
                         unset($graph['line']['label1']);
@@ -334,16 +329,15 @@ function graph_host($panel, $user_id, $timespan = 0) {
 			$graph['line']['unit2']['title'] = 'Recovering';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0 && $panel['alarm'] == 'green') {
-						$panel['alarm'] = 'yellow';
-					}
-					$first = false;
-				}
-
 				$graph['line']['label2'][] = $row['date'];
 				$graph['line']['data2'][]  = $row['value'];
+				$last = $row['value'];
 			}
+
+			if ($last > 0 && $panel['alarm'] == 'green') {
+				$panel['alarm'] = 'yellow';
+			}
+
 		} else {
 			unset($graph['line']['label2']);
 			unset($graph['line']['data2']);
