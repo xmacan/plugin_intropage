@@ -591,16 +591,13 @@ function analyse_tree_host_graph($panel, $user_id) {
 		}
 		
 		// need only devices with any snmp data
-		$count = db_fetch_cell("SELECT count(host.id)
+		$count = db_fetch_cell("SELECT count(id)
 			FROM host
-			LEFT OUTER JOIN data_local
-			ON host.id = data_local.host_id
 			WHERE disabled != 'on'
 			$q_host_cond
 			AND availability_method > 0
 			AND snmp_version != 0
-			AND bulk_walk_size < 1
-			AND data_local.host_id IS NOT NULL");
+			AND bulk_walk_size < 1");
 
 		$color = read_config_option('intropage_bulk_walk_size');
 
@@ -1418,14 +1415,11 @@ function analyse_tree_host_graph_detail() {
 
 		$data = db_fetch_assoc("SELECT host.id as `id`, description, bulk_walk_size
 			FROM host
-			LEFT OUTER JOIN data_local
-			ON host.id = data_local.host_id
 			WHERE disabled != 'on'
 			$q_host_cond
 			AND availability_method > 0
 			AND snmp_version != 0
-			AND bulk_walk_size < 1
-			AND data_local.host_id IS NOT NULL");
+			AND bulk_walk_size < 1");
 
 		$sql_count  = ($data === false) ? __('N/A', 'intropage') : cacti_count($data);
 
@@ -1463,25 +1457,32 @@ function analyse_tree_host_graph_detail() {
 	);
 
 	$date_fmt = date_time_format();
+	$tmp_data = '';
+	$color = 'green';
+
 
 	foreach ($last_runs as $key => $value) {
-		$color = 'green';
 
 		if (config_value_exists($key)) {
 			$last = read_config_option($key);
 
 			if ($last < (time() - 86400*7)) {
-				$color = 'yellow';
-				$panel['detail'] .= '<span class="inpa_sq color_' . $color . '"></span>' . __('%s: %s', $value, date($date_fmt, $last), 'intropage');
-				$panel['detail'] .= display_tooltip(__('It is recommended to run this tool at least occasionally', 'intropage')) . '<br/>';
+				if ($color == 'green') {
+					$color = 'yellow';
+				}
+				$tmp_data .= __('%s: %s', $value, date($date_fmt, $last), 'intropage') . '<span class="inpa_sq color_' . $color . '"></span>';
+				$tmp_data .= display_tooltip(__('It is recommended to run this tool at least occasionally', 'intropage')) . '<br/>';
 				unset($last);
 			}
 		} else {
 			$color = 'red';
-			$panel['detail'] .= '<span class="inpa_sq color_' . $color . '"></span>' . __('%s: not run yet', $value, 'intropage');
-			$panel['detail'] .= display_tooltip(__('It is recommended to run this tool at least occasionally', 'intropage')) . '<br/>';
+			$tmp_data .= __('%s: not run yet', $value, 'intropage') . '<span class="inpa_sq color_' . $color . '"></span>';
+			$tmp_data .= display_tooltip(__('It is recommended to run this tool at least occasionally', 'intropage')) . '<br/>';
 		}
 	}
+
+	$panel['detail'] .= '<h4>' . __('Data maintenance', 'intropage') . '<span class="inpa_sq color_' . $color . '"></span></h4>';
+	$panel['detail'] .= $tmp_data;
 
 
 	if ($allowed_devices !== false || $simple_perms) {
