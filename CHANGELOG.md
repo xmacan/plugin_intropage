@@ -35,6 +35,8 @@
 
 * issue294: Fix maint - summer time
 
+* issue295: Incorrect count of tholds and bulk walk size devices
+
 
 --- 4.0.3 ---
 
