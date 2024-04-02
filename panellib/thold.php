@@ -208,8 +208,7 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 		$panel['data']  = __('Thold plugin not installed/running', 'intropage');
 	} elseif (api_plugin_user_realm_auth('thold_graph.php')) {
 
-		$first = true;
-       
+
 		if ($timespan == 0) {
                 	if (isset($_SESSION['sess_user_id'])) {
 				$timespan = read_user_setting('intropage_timespan', read_config_option('intropage_timespan'), $_SESSION['sess_user_id']);
@@ -240,16 +239,16 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 			$graph['line']['unit1']['title'] = 'Triggered';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0) {
-						$panel['alarm'] = 'red';
-					}
-					$first = false;
-				}
 
 				$graph['line']['label1'][] = $row['date'];
 				$graph['line']['data1'][]  = $row['value'];
-                        }
+				$last = $row['value'];
+			}
+
+			if ($last > 0) {
+				$panel['alarm'] = 'red';
+			}
+
 		} else {
 			unset($graph['line']['label1']);
 			unset($graph['line']['data1']);
@@ -268,16 +267,15 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 			$graph['line']['unit2']['title'] = 'Breached';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0) {
-						$panel['alarm'] = 'yellow';
-					}
-					$first = false;
-				}
-
 				$graph['line']['label2'][] = $row['date'];
 				$graph['line']['data2'][]  = $row['value'];
-                        }
+				$last = $row['value'];
+			}
+
+			if ($last > 0 && $panel['alarm'] == 'green') {
+				$panel['alarm'] = 'yellow';
+			}
+
 		} else {
 			unset($graph['line']['label2']);
 			unset($graph['line']['data2']);
