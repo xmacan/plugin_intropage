@@ -39,6 +39,11 @@
 
 * feature: Add plugin servcheck panel
 
+* issue295: Incorrect count of tholds and bulk walk size devices
+
+* issue304: Fix incorrect panel color 
+
+
 
 --- 4.0.3 ---
 

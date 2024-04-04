@@ -208,8 +208,7 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 		$panel['data']  = __('Thold plugin not installed/running', 'intropage');
 	} elseif (api_plugin_user_realm_auth('thold_graph.php')) {
 
-		$first = true;
-       
+
 		if ($timespan == 0) {
                 	if (isset($_SESSION['sess_user_id'])) {
 				$timespan = read_user_setting('intropage_timespan', read_config_option('intropage_timespan'), $_SESSION['sess_user_id']);
@@ -234,27 +233,27 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 			ORDER BY cur_timestamp ASC",
 			array($timespan));
 
-                if (cacti_sizeof($rows)) {
-                
-                        $graph['line']['title1'] = __('Trigerred', 'intropage');
-                        $graph['line']['unit1']['title'] = 'Triggered';
+		if (cacti_sizeof($rows)) {
+
+			$graph['line']['title1'] = __('Trigerred', 'intropage');
+			$graph['line']['unit1']['title'] = 'Triggered';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0) {
-						$panel['alarm'] = 'red';
-					}
-					$first = false;
-				}
 
 				$graph['line']['label1'][] = $row['date'];
 				$graph['line']['data1'][]  = $row['value'];
-                        }
+				$last = $row['value'];
+			}
+
+			if ($last > 0) {
+				$panel['alarm'] = 'red';
+			}
+
 		} else {
 			unset($graph['line']['label1']);
 			unset($graph['line']['data1']);
 		}
-		
+
 		$rows = db_fetch_assoc_prepared("SELECT cur_timestamp AS `date`, value
 			FROM plugin_intropage_trends
 			WHERE cur_timestamp > date_sub(NOW(), INTERVAL ? SECOND)
@@ -262,22 +261,21 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 			ORDER BY cur_timestamp ASC",
 			array($timespan));
 
-                if (cacti_sizeof($rows)) {
-                
-                        $graph['line']['title2'] = __('Breached', 'intropage');
-                        $graph['line']['unit2']['title'] = 'Breached';
+		if (cacti_sizeof($rows)) {
+
+			$graph['line']['title2'] = __('Breached', 'intropage');
+			$graph['line']['unit2']['title'] = 'Breached';
 
 			foreach ($rows as $row) {
-				if ($first) {
-					if ($row['value'] > 0) {
-						$panel['alarm'] = 'yellow';
-					}
-					$first = false;
-				}
-
 				$graph['line']['label2'][] = $row['date'];
 				$graph['line']['data2'][]  = $row['value'];
-                        }
+				$last = $row['value'];
+			}
+
+			if ($last > 0 && $panel['alarm'] == 'green') {
+				$panel['alarm'] = 'yellow';
+			}
+
 		} else {
 			unset($graph['line']['label2']);
 			unset($graph['line']['data2']);
@@ -290,10 +288,10 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 			ORDER BY cur_timestamp ASC",
 			array($timespan));
 
-                if (cacti_sizeof($rows)) {
-                
-                        $graph['line']['title3'] = __('Disabled', 'intropage');
-                        $graph['line']['unit3']['title'] = 'Disabled';
+		if (cacti_sizeof($rows)) {
+
+			$graph['line']['title3'] = __('Disabled', 'intropage');
+			$graph['line']['unit3']['title'] = 'Disabled';
 
 			foreach ($rows as $row) {
 				$graph['line']['label3'][] = $row['date'];
@@ -305,10 +303,10 @@ function graph_thold($panel, $user_id, $timespan = 0) {
 		}
 
 		if (isset($graph['line']['data1']) || isset($graph['line']['data2']) || isset($graph['line']['data3'])) {
-	                $panel['data'] = intropage_prepare_graph($graph, $user_id);
-                } else {
-                        unset($graph);
-                        $panel['data'] = __('Waiting for data', 'intropage');
+			$panel['data'] = intropage_prepare_graph($graph, $user_id);
+		} else {
+			unset($graph);
+			$panel['data'] = __('Waiting for data', 'intropage');
 		}
 	} else {
 		$panel['data'] = __('You don\'t have plugin permission', 'intropage');
@@ -342,14 +340,15 @@ function graph_thold_detail() {
 		$sql_where = '';
 		$x = get_allowed_thresholds($sql_where, 'null', 1, $t_all, $_SESSION['sess_user_id']);
 
-		$sql_where     = "td.thold_enabled = 'on' AND ((td.thold_alert != 0 OR td.bl_alert > 0))";
+		$sql_where = "( h.status = 3 AND ((td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') AND (td.thold_alert != 0 OR td.bl_alert > 0)))";
 		$t_brea_result = get_allowed_thresholds($sql_where, 'null', '', $t_brea, $_SESSION['sess_user_id']);
 
-		$sql_where = "td.thold_enabled = 'on' AND (((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger)
-			OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger)))";
+		$sql_where = " h.status = 3 AND (td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') 
+			AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
+			OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger))";
 		$t_trig_result = get_allowed_thresholds($sql_where, 'null', '', $t_trig, $_SESSION['sess_user_id']);
 
-		$sql_where = "td.thold_enabled = 'off'";
+		$sql_where = " h.status = 3 AND (td.thold_per_enabled = '' OR td.thold_enabled = 'off')";
 		$x = get_allowed_thresholds($sql_where, 'null', 1, $t_disa, $_SESSION['sess_user_id']);
 
 		$count = $t_all + $t_brea + $t_trig + $t_disa;
@@ -540,19 +539,17 @@ function thold_collect() {
 
 		if ($allowed_devices !== false || $simple_perms) {
 
-			$x      = '';
+			$x = '';
 			$sql_where = '';
-
-			$sql_where = "td.thold_enabled = 'on' AND ((td.thold_alert != 0 OR td.bl_alert > 0))";
+			$sql_where = "( h.status = 3 AND ((td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') AND (td.thold_alert != 0 OR td.bl_alert > 0)))";
 			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_brea, $user['id']);
 
-			$sql_where = "td.thold_enabled = 'off'";
+			$sql_where = " h.status = 3 AND (td.thold_per_enabled = '' OR td.thold_enabled = 'off')";
 			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_disa, $user['id']);
 
-			$sql_where = "td.thold_enabled = 'on'
-				AND (((td.thold_alert != 0
-				AND td.thold_fail_count >= td.thold_fail_trigger)
-				OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger)))";
+			$sql_where = " h.status = 3 AND (td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') 
+				AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
+				OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger))";
 
 			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_trig, $user['id']);
 

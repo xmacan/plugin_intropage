@@ -471,9 +471,9 @@ $('body').on('click','.bus_graph', function() {
 				icon: 'ui-icon-heart'
 			}
 		],
-		width: 600,
-		height: 300,
-		maxHeight: 650,
+		width: 750,
+		height: 550,
+		maxHeight: 850,
 		resizable: true,
 		title: 'Bussiest graph',
 	});
