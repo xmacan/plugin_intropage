@@ -442,7 +442,6 @@ function intropage_actions() {
 
 		break;
 	case 'useshared':
-
 		if (filter_var($value, FILTER_VALIDATE_INT) && filter_var($value_ext, FILTER_VALIDATE_INT)) {
 			$shared = db_fetch_cell_prepared('SELECT shared FROM plugin_intropage_dashboard
 				WHERE dashboard_id = ? AND user_id = ?',
@@ -472,19 +471,22 @@ function intropage_actions() {
 					array($value, $value_ext));
 
 				foreach ($ids_panels as $id_panel) {
-					db_execute_prepared('INSERT INTO plugin_intropage_panel_data
+
+					$result = db_execute_prepared('INSERT INTO plugin_intropage_panel_data
 						(panel_id,user_id,data,priority,refresh_interval,trend_interval,fav_graph_id,fav_graph_timespan)
 						SELECT panel_id, ? ,data,priority,refresh_interval,trend_interval,fav_graph_id,fav_graph_timespan
 						FROM plugin_intropage_panel_data
 						WHERE id = ?',
 						array ($_SESSION['sess_user_id'],$id_panel['panel_id']));
 
-					$last = db_fetch_insert_id();
+					if ($result) {
+						$last = db_fetch_insert_id();
 
-					db_execute_prepared('INSERT INTO plugin_intropage_panel_dashboard
-						(panel_id, user_id, dashboard_id)
-						VALUES (?, ?, ?)',
-						array($last, $_SESSION['sess_user_id'], $new_dashboard_id));
+						db_execute_prepared('INSERT INTO plugin_intropage_panel_dashboard
+							(panel_id, user_id, dashboard_id)
+							VALUES (?, ?, ?)',
+							array($last, $_SESSION['sess_user_id'], $new_dashboard_id));
+					}
 				}
 
 				raise_message('dashboard_added', __('Dashboard has been added, please wait few poller cycle for data', 'intropage'), MESSAGE_LEVEL_INFO);
