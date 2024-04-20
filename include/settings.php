@@ -93,8 +93,24 @@ function intropage_user_admin_tab() {
 	print 'href="' . html_escape($config['url_path'] . 'user_admin.php?action=user_edit&tab=intropage_settings_edit&id=' . get_request_var('id')) . '">' . __('Intropage', 'intropage') . '</a>';
 
 	print '</li>';
-
 }
+
+function intropage_user_group_admin_tab() {
+	global $config;
+
+	print '<li class="subTab">';
+
+	if (get_request_var_request('tab') == 'intropage_group_settings_edit') {
+		print '<a class="tab selected" ';
+	} else {
+		print '<a class="tab" ';
+	}
+
+	print 'href="' . html_escape($config['url_path'] . 'user_group_admin.php?action=edit&tab=intropage_group_settings_edit&id=' . get_request_var('id')) . '">' . __('Intropage', 'intropage') . '</a>';
+	print '</li>';
+}
+
+
 
 function intropage_user_admin_run_action($current_tab){
 	global $config, $registry;
@@ -228,6 +244,140 @@ function intropage_user_admin_run_action($current_tab){
 	return false;
 }
 
+function intropage_user_group_admin_run_action($current_tab){
+	global $config, $registry;
+
+	if ($current_tab != 'intropage_group_settings_edit') {
+		return $current_tab;
+	}
+
+	include_once($config['base_path'] . '/plugins/intropage/include/functions.php');
+
+	get_filter_request_var('id');
+
+	$panels = initialize_panel_library();
+
+	$fields_intropage_group_edit = array();
+
+	$exists = db_fetch_cell_prepared('SELECT COUNT(*)
+		FROM plugin_intropage_user_group_auth
+		WHERE user_group_id = ?',
+		array(get_request_var('id')));
+
+	if (!$exists) {
+		db_execute_prepared('INSERT INTO plugin_intropage_user_group_auth
+			(user_group_id)
+			VALUES (?)',
+			array(get_request_var('id')));
+	}
+
+	$group = db_fetch_row_prepared('SELECT *
+		FROM plugin_intropage_user_group_auth
+		WHERE user_group_id = ?',
+		array(get_request_var('id')));
+
+	if (isset($group['permissions'])) {
+		$permissions = json_decode($group['permissions'], true);
+
+		$permissions['user_group_id']    = $group['user_group_id'];
+		$permissions['login_opts'] = $group['login_opts'];
+
+		$group = $permissions;
+	}
+
+	$fields = db_fetch_assoc('SELECT panel_id, level, class, name, alarm, description
+		FROM plugin_intropage_panel_definition
+		UNION
+		SELECT "favourite_graph", 1, "graphs", "Favorite Graphs", "green", "Allow you to add your favorite graphs to the dashboard of your choice"
+		ORDER BY level, class, name');
+
+	$header_label = __('[edit: %s]', db_fetch_cell_prepared('SELECT name FROM user_auth_group WHERE id = ?', array(get_request_var('id'))));
+
+	$prev_level = -1;
+	$prev_class = -1;
+	$i          = 0;
+
+	foreach ($fields as $field) {
+		if ($prev_level != $field['level']) {
+			if ($field['level'] == 0) {
+				$level = __('System Level Panels', 'intropage');
+				$desc  = __('Panels that are appropriate for administrative or power users to access and not typically applicable for general users.  Panels are generally about overall system utilization.', 'intropage');
+				$name  = 'spacer_system';
+			} else {
+				$level = __('User Level Panels', 'intropage');
+				$desc  = __('Panels that are appropriate for general users to access.  Permissions are limited to what the current user can view.', 'intropage');
+				$name  = 'spacer_user';
+			}
+
+			$temp[$name . $i] = array(
+				'method'        => 'spacer',
+				'friendly_name' => $level,
+				'description'   => $desc,
+			);
+		}
+
+		$i++;
+
+		$prev_level = $field['level'];
+
+		if ($prev_class != $field['class']) {
+			$temp[$name . $i] = array(
+				'method'        => 'spacer',
+				'friendly_name' => $registry[$field['class']]['name'],
+				'description'   => $registry[$field['class']]['description'],
+			);
+		}
+
+		$prev_class = $field['class'];
+
+		if ($field['panel_id'] != 'admin_alert' && $field['panel_id'] != 'maint') {
+			$temp[$field['panel_id']] = array(
+				'value'         => '|arg1:' . $field['panel_id'] . '|',
+				'method'        => 'checkbox',
+				'friendly_name' => $field['name'],
+				'description'   => $field['description'],
+				'default'       => '1'
+			);
+
+			$fields_intropage_group_edit = $fields_intropage_group_edit + $temp;
+		}
+
+		$i++;
+	}
+
+	form_start('user_group_admin.php?action=edit&tab=intropage_group_settings_edit&id=' . get_request_var('id'));
+
+	print '<div>';
+	print "<div class='cactiTableTitle'><span style='padding:3px;'>" . __('You can Allow/Disallow Panels for Group','intropage') . ' ' . $header_label . '</span></div>';
+	print "<div class='cactiTableButton'><span style='padding:3px;'><input class='checkbox' type='checkbox' id='all' name='all' title='Select All' onClick='selectAllPerms(this.checked)'></a><label class='formCheckboxLabel' title='Select All' for='all'></label></span></div>";
+	print '</div>';
+
+	draw_edit_form(
+		array(
+			'config' => array('no_form_tag' => true),
+			'fields' => inject_form_variables($fields_intropage_group_edit, (isset($group) ? $group : array()))
+		)
+	);
+
+	?>
+	<script type='text/javascript'>
+	function selectAllPerms(checked) {
+		if (checked) {
+			$('input[type="checkbox"]').prop('checked', true);
+		} else {
+			$('input[type="checkbox"]').prop('checked', false);
+		}
+	}
+	</script>
+	<?php
+
+	form_save_button(html_escape($config['url_path'] . 'user_group_admin.php?action=edit&tab=general&id=' . get_request_var('id'), 'save'));
+
+	return false;
+}
+
+
+
 function intropage_user_admin_user_save($save){
 	global $config;
 
@@ -310,6 +460,92 @@ function intropage_user_admin_user_save($save){
 
 	return ($save);
 }
+
+
+function intropage_user_group_admin_save($save){
+	global $config;
+
+	if (get_nfilter_request_var('tab') == 'intropage_group_settings_edit') {
+		$panels   = db_fetch_assoc('SELECT * FROM plugin_intropage_panel_definition');
+
+		$group_id  = get_filter_request_var('id');
+
+		$permissions = array();
+
+		if (db_column_exists('plugin_intropage_user_group_auth', 'permissions')) {
+			$permmode = true;
+		} else {
+			$permmode = false;
+		}
+
+		foreach ($panels as $panel) {
+			if (!$permmode) {
+				if ($panel['panel_id'] != 'admin_alert' && $panel['panel_id'] != 'maint') {
+					db_execute_prepared('UPDATE plugin_intropage_user_group_auth
+						SET `' . $panel['panel_id'] . '` = ?
+						WHERE id = ?',
+						array(get_nfilter_request_var($panel['panel_id']), $group_id));
+				}
+			} else {
+				$permissions[$panel['panel_id']] = (isset_request_var($panel['panel_id']) ? 'on':'');
+			}
+		}
+
+		if (isset_request_var('favourite_graph')) {
+			$permissions['favourite_graph'] = 'on';
+		}
+
+		if ($permmode) {
+/*
+			foreach($permissions as $panel_id => $data) {
+				$exists = db_fetch_cell_prepared('SELECT id FROM plugin_intropage_panel_data
+					WHERE panel_id = ?
+					AND user_id in (0, ?)',
+					array($panel_id, $user_id));
+
+				if (!$exists) {
+					$panel = db_fetch_row_prepared('SELECT *
+						FROM plugin_intropage_panel_definition
+						WHERE panel_id = ?',
+						array($panel_id));
+
+					$save = array();
+
+					$save['id']               = 0;
+					$save['panel_id']         = $panel_id;
+
+					if (isset($panel['level']) && $panel['level'] == 0) {
+						$save['user_id'] = 0;
+					} else {
+						$save['user_id'] = $user_id;
+					}
+
+					$save['last_update']      = '0000-00-00';
+					$save['data']             = '';
+					$save['priority']         = (isset($panel['priority']) ? $panel['priority']:99);
+					$save['alarm']            = (isset($panel['alarm']) ? $panel['alarm']:'green');
+					$save['refresh_interval'] = (isset($panel['refresh']) ? $panel['refresh']:300);
+
+					$id = sql_save($save, 'plugin_intropage_panel_data');
+				}
+			}
+*/
+			db_execute_prepared('UPDATE plugin_intropage_user_group_auth
+				SET permissions = ?
+				WHERE id = ?',
+				array(json_encode($permissions), $group_id));
+		}
+
+		raise_message(1);
+
+		header('Location: ' . $config['url_path'] . 'user_group_admin.php?header=false&action=edit&tab=intropage_group_settings_edit&id=' . $group_id);
+
+		exit;
+	}
+
+	return ($save);
+}
+
 
 function intropage_new_user_permission ($user_id) {
 

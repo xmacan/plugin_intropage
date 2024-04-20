@@ -33,6 +33,7 @@ function intropage_drop_database() {
 	db_execute('DROP TABLE IF EXISTS plugin_intropage_trends');
 	db_execute('DROP TABLE IF EXISTS plugin_intropage_user_auth');
 	db_execute('DROP TABLE IF EXISTS plugin_intropage_dashboard');
+	db_execute('DROP TABLE IF EXISTS plugin_intropage_user_group_auth');
 }
 
 function intropage_initialize_database() {
@@ -137,6 +138,15 @@ function intropage_initialize_database() {
 	$data['comment']   = 'authorization';
 	api_plugin_db_table_create('intropage', 'plugin_intropage_user_auth', $data);
 
+	$data              = array();
+	$data['columns'][] = array('name' => 'user_group_id', 'type' => 'int(11)', 'NULL' => false);
+	$data['columns'][] = array('name' => 'login_opts', 'type' => 'tinyint(1)', 'NULL' => false, 'default' => '0');
+	$data['columns'][] = array('name' => 'permissions', 'type' => 'blob', 'NULL' => false, 'default' => '');
+	$data['type']      = 'InnoDB';
+	$data['primary']   = 'user_group_id';
+	$data['comment']   = 'authorization';
+	api_plugin_db_table_create('intropage', 'plugin_intropage_user_group_auth', $data);
+
 	$permissions = array();
 	foreach($panels as $panel_id => $panel) {
 		$permissions[$panel_id] = 'on';
@@ -164,6 +174,8 @@ function intropage_initialize_database() {
 
 function intropage_upgrade_database() {
 	global $config;
+
+	include_once($config['base_path'] . '/plugins/intropage/include/functions.php');
 
 	// If action need to be done for upgrade, add it.
 	$info = parse_ini_file($config['base_path'] . '/plugins/intropage/INFO', true);
@@ -285,6 +297,19 @@ function intropage_upgrade_database() {
 			db_execute("UPDATE plugin_intropage_trends SET name='thold_trig' WHERE name='thold'");
 			db_execute("DELETE FROM plugin_intropage_panel_definition WHERE panel_id = 'trend'");
 			db_execute("DELETE FROM plugin_intropage_panel_data WHERE panel_id = 'trend'");
+		}
+
+
+		if (cacti_version_compare($oldv, '4.0.4', '<=')) {
+
+			$data              = array();
+			$data['columns'][] = array('name' => 'user_group_id', 'type' => 'int(11)', 'NULL' => false);
+			$data['columns'][] = array('name' => 'login_opts', 'type' => 'tinyint(1)', 'NULL' => false, 'default' => '0');
+			$data['columns'][] = array('name' => 'permissions', 'type' => 'blob', 'NULL' => false, 'default' => '');
+			$data['type']      = 'InnoDB';
+			$data['primary']   = 'user_group_id';
+			$data['comment']   = 'authorization';
+			api_plugin_db_table_create('intropage', 'plugin_intropage_user_group_auth', $data);
 		}
 
 		// Set the new version
