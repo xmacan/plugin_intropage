@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2024-04-20 13:36-0400\n"
-"PO-Revision-Date: 2022-02-15 15:54-0500\n"
+"PO-Revision-Date: 2024-04-20 14:16-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: display.php:40
 #, fuzzy
@@ -25,7 +25,7 @@ msgstr "Intropage  - 許可が拒否されました"
 
 #: display.php:123
 msgid "One or more panels was removed due to insufficient permissions. Contact administrator."
-msgstr ""
+msgstr "権限が不十分なため、1 つ以上のパネルが削除されました。管理者に問い合わせてください。"
 
 #: display.php:179
 #, fuzzy
@@ -39,7 +39,7 @@ msgstr "デフォルト"
 
 #: display.php:242 display.php:588
 msgid "Hide red/yellow/green square notifications"
-msgstr ""
+msgstr "赤/黄/緑の四角い通知を隠す"
 
 #: display.php:245
 #, fuzzy
@@ -99,23 +99,23 @@ msgstr "1時間ごと"
 
 #: display.php:321 display.php:323
 msgid "Important period - disabled"
-msgstr ""
+msgstr "重要な期間 - 無効"
 
 #: display.php:327 display.php:329
 msgid "Important period - 15 minutes"
-msgstr ""
+msgstr "重要な期間 - 15分"
 
 #: display.php:333 display.php:335
 msgid "Important period - 1 hour"
-msgstr ""
+msgstr "重要な期間 - 1 時間"
 
 #: display.php:339 display.php:341
 msgid "Important period - 4 hours"
-msgstr ""
+msgstr "重要な期間 - 4時間"
 
 #: display.php:345 display.php:347
 msgid "Important period - 1 day"
-msgstr ""
+msgstr "重要な期間 - 1日"
 
 #: display.php:363 display.php:366
 #, fuzzy
@@ -154,7 +154,7 @@ msgstr "イントロページをデフォルトページとして設定"
 
 #: display.php:396 display.php:399
 msgid "Less panels on a line"
-msgstr ""
+msgstr "ライン上のパネル数の削減"
 
 #: display.php:397 display.php:400
 #, fuzzy
@@ -163,7 +163,7 @@ msgstr "許可パネルトップ5 ping"
 
 #: display.php:413
 msgid "Cancel sharing"
-msgstr ""
+msgstr "共有のキャンセル"
 
 #: display.php:416
 #, fuzzy
@@ -172,7 +172,7 @@ msgstr "ダッシュボードに追加する"
 
 #: display.php:418
 msgid "Share empty dashboard not allowed"
-msgstr ""
+msgstr "空のダッシュボードの共有は許可されていません"
 
 #: display.php:437
 #, fuzzy
@@ -181,7 +181,7 @@ msgstr "ダッシュボードから削除"
 
 #: display.php:439
 msgid "Cannot use shared dashboard - dashboard limit reached."
-msgstr ""
+msgstr "共有ダッシュボードを使用できません - ダッシュボードの制限に達しました。"
 
 #: display.php:443
 #, fuzzy
@@ -200,31 +200,31 @@ msgstr "ダッシュボードパネルは、次の2つの方法で追加でき�
 
 #: display.php:466
 msgid "Select prepared panels from the \"Panels menu\". Panel can be grayed out. It is due to permissions, ask administrator"
-msgstr ""
+msgstr "「パネルメニュー」から用意されたパネルを選択します。パネルはグレー表示できます。権限が原因ですので、管理者に問い合わせてください"
 
 #: display.php:467
 msgid "Add any Cacti Graph, use icon"
-msgstr ""
+msgstr "サボテングラフを追加し、アイコンを使用します"
 
 #: display.php:468
 msgid "You can create own panels. More info in file <cacti_install_dir>/plugins/intropage/panellib/README.md"
-msgstr ""
+msgstr "独自のパネルを作成できます。詳細は <cacti_install_dir>/plugins/intropage/panellib/README.md を参照してください。"
 
 #: display.php:473
 msgid "You can share dashboards to other users:"
-msgstr ""
+msgstr "ダッシュボードを他のユーザーと共有できます。"
 
 #: display.php:475
 msgid "use \"Share this dashboard\" option in Actions menu - Every user can use it as template."
-msgstr ""
+msgstr "アクションメニューの「このダッシュボードを共有」オプションを使用する - すべてのユーザーがテンプレートとして使用できます。"
 
 #: display.php:480
 msgid "You can use shared dashboard using the Actions menu:"
-msgstr ""
+msgstr "共有ダッシュボードは、「アクション」メニューを使用して使用できます。"
 
 #: display.php:482
 msgid "Use \"Use shared dashboard (user/dashboard name) -  It prepares the same dashboard like shared but with your permissions."
-msgstr ""
+msgstr "「共有ダッシュボード(ユーザー/ダッシュボード名)を使用する」を使用する - 共有と同じダッシュボードを準備しますが、権限があります。"
 
 #: display.php:487
 #, fuzzy
@@ -233,15 +233,15 @@ msgstr "CPU使用率"
 
 #: display.php:489
 msgid "You can create up to 9 dashboards. Every dashboard can be named, use icon"
-msgstr ""
+msgstr "ダッシュボードは最大 9 つまで作成できます。すべてのダッシュボードに名前を付けることができ、アイコンを使用します"
 
 #: display.php:490
 msgid "Intopage can be displayed in console or in separated tab. You can change it in Action menu"
-msgstr ""
+msgstr "イントページは、コンソールまたは別のタブに表示できます。アクションメニューで変更できます"
 
 #: display.php:491
 msgid "If you want to copy text from panel, you have to disable drag and drop function, use icon"
-msgstr ""
+msgstr "パネルからテキストをコピーする場合は、ドラッグアンドドロップ機能を無効にする必要があります。"
 
 #: display.php:585
 #, fuzzy
@@ -260,7 +260,7 @@ msgstr "パネル移動を有効にする/パネルからテキストをコピ�
 
 #: display.php:589
 msgid "Show red/yellow/green square notifications"
-msgstr ""
+msgstr "赤/黄/緑の四角い通知を表示する"
 
 #: display.php:591
 #, fuzzy
@@ -293,15 +293,15 @@ msgstr "ズームまたはカスタムのタイムスパングラフを追加で
 
 #: include/functions.php:419
 msgid "Intropage Panel Library Refreshed from Panel Library"
-msgstr ""
+msgstr "Intropage パネルライブラリがパネルライブラリから更新されました"
 
 #: include/functions.php:491
 msgid "Dashboard has been added, please wait few poller cycle for data"
-msgstr ""
+msgstr "ダッシュボードが追加されました。データをポーラー サイクルで数回お待ちください"
 
 #: include/functions.php:502
 msgid "Error - trying share non-shared dashboard"
-msgstr ""
+msgstr "エラー - 共有されていないダッシュボードを共有しようとしています"
 
 #: include/functions.php:617
 #, fuzzy
@@ -343,9 +343,9 @@ msgid "%s Sec"
 msgstr "%s 秒"
 
 #: include/functions.php:819
-#, fuzzy, php-format
+#, php-format
 msgid "%s Seconds"
-msgstr "%s秒"
+msgstr "%s 秒間"
 
 #: include/functions.php:826
 #, php-format
@@ -446,7 +446,7 @@ msgstr "ユーザーレベルのパネル"
 
 #: include/functions.php:1645
 msgid "System Panel Update Frequencies (All Authorized Users)"
-msgstr ""
+msgstr "システム・パネルの更新頻度 (すべての許可ユーザー)"
 
 #: include/functions.php:1694
 #, fuzzy
@@ -459,14 +459,13 @@ msgid "Intropage"
 msgstr "イントロパネルパネル"
 
 #: include/settings.php:37 setup.php:79
-#, fuzzy
 msgid "Normal User"
-msgstr "通常のユーザー"
+msgstr "一般ユーザー"
 
 #: include/settings.php:146
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[編集:%s]"
 
 #: include/settings.php:155
 #, fuzzy
@@ -529,7 +528,7 @@ msgstr "エラーと警告を表示する"
 
 #: include/variables.php:46
 msgid "For wide screen"
-msgstr ""
+msgstr "ワイドスクリーン用"
 
 #: include/variables.php:51
 #, fuzzy
@@ -577,11 +576,11 @@ msgstr "1時間ごと"
 
 #: include/variables.php:70
 msgid "Important period"
-msgstr ""
+msgstr "重要な期間"
 
 #: include/variables.php:71
 msgid "From now to past. Affects row coloring, older events will not be highlighted, only displayed"
-msgstr ""
+msgstr "今から過去へ。行の色付けに影響し、古いイベントは強調表示されず、表示されるだけです"
 
 #: include/variables.php:74 panellib/graphs.php:355 panellib/graphs.php:533
 #: panellib/mactrack.php:111 panellib/poller.php:143 panellib/poller.php:348
@@ -591,23 +590,20 @@ msgid "Disabled"
 msgstr "無効"
 
 #: include/variables.php:75
-#, fuzzy
 msgid "15 minutes"
-msgstr "%d 分ごと"
+msgstr "15分"
 
 #: include/variables.php:76
-#, fuzzy
 msgid "1 hour"
-msgstr "時間"
+msgstr "1時間"
 
 #: include/variables.php:77
-#, fuzzy
 msgid "4 hours"
-msgstr "時間"
+msgstr "4時間"
 
 #: include/variables.php:78
 msgid "1 day"
-msgstr ""
+msgstr "1日"
 
 #: include/variables.php:83
 #, fuzzy
@@ -616,12 +612,12 @@ msgstr "チェックの数："
 
 #: include/variables.php:84
 msgid "How many lines in panel"
-msgstr ""
+msgstr "パネル内の行数"
 
 #: include/variables.php:87 include/variables.php:88 include/variables.php:89
 #, php-format
 msgid "%d lines"
-msgstr ""
+msgstr "%dライン"
 
 #: include/variables.php:94
 #, fuzzy
@@ -630,7 +626,7 @@ msgstr "トレンド"
 
 #: include/variables.php:95
 msgid "For Trend charts, what should be the default timespan for those charts."
-msgstr ""
+msgstr "トレンドチャートの場合、それらのチャートのデフォルトの期間はどれくらいですか。"
 
 #: include/variables.php:101
 #, fuzzy
@@ -742,7 +738,7 @@ msgstr "NTPをチェックする頻度"
 
 #: include/variables.php:168
 msgid "DNS Check - Any DNS name"
-msgstr ""
+msgstr "DNS チェック - 任意の DNS 名"
 
 #: include/variables.php:169
 #, fuzzy
@@ -766,11 +762,11 @@ msgstr "空でなければ、パネルが一番上に表示されます。あな
 
 #: include/variables.php:195
 msgid "Upcoming Maint Schedule warning days"
-msgstr ""
+msgstr "今後のメンテナンススケジュールの警告日数"
 
 #: include/variables.php:196
 msgid "How many days before a scheduled maintenance schedule should a warning be displayed?"
-msgstr ""
+msgstr "定期メンテナンススケジュールの何日前に警告を表示する必要がありますか?"
 
 #: include/variables.php:199
 #, fuzzy
@@ -794,19 +790,19 @@ msgstr "％d日前"
 
 #: include/variables.php:208
 msgid "Network stats in"
-msgstr ""
+msgstr "ネットワーク統計"
 
 #: include/variables.php:209
 msgid "bytes or bits"
-msgstr ""
+msgstr "バイトまたはビット"
 
 #: include/variables.php:212
 msgid "Bytes"
-msgstr ""
+msgstr "バイト"
 
 #: include/variables.php:213
 msgid "Bits"
-msgstr ""
+msgstr "ビット"
 
 #: include/variables.php:218
 #, fuzzy
@@ -826,7 +822,7 @@ msgstr "アラームDBチェックがクライアントを中止しました"
 #: include/variables.php:293 include/variables.php:300
 #: include/variables.php:307
 msgid "If this event has occurred, trigger the selected Normal, Warning, or Alert status color."
-msgstr ""
+msgstr "このイベントが発生した場合は、選択した [正常]、[警告]、または [アラート] の状態の色をトリガーします。"
 
 #: include/variables.php:229
 #, fuzzy
@@ -855,7 +851,7 @@ msgstr "アラームサーホールドログオンアクション"
 
 #: include/variables.php:264
 msgid "Alarm when device bulk_walk_size is not optimized"
-msgstr ""
+msgstr "デバイスのbulk_walk_sizeが最適化されていない場合のアラーム"
 
 #: include/variables.php:271
 #, fuzzy
@@ -894,11 +890,11 @@ msgstr "パネルトップ5の最悪のポーリング時間を許可する"
 
 #: include/variables.php:314
 msgid "Polling times above these thresholds will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "ポーリング時間がこれらのしきい値を超えると、警告またはアラートのステータスの色がトリガーされます。"
 
 #: include/variables.php:318
 msgid "5s  / 10s Yellow / Red"
-msgstr ""
+msgstr "5秒 / 10秒 イエロー / レッド"
 
 #: include/variables.php:319
 #, fuzzy
@@ -917,7 +913,7 @@ msgstr "アラームの赤/黄の失敗/すべての比率"
 
 #: include/variables.php:325
 msgid "The ratio of failed availability checks to successful checks to trigger as Warning or Alert status color."
-msgstr ""
+msgstr "失敗した可用性チェックと成功したチェックの比率は、警告またはアラートのステータスの色としてトリガーされます。"
 
 #: include/variables.php:329
 #, fuzzy
@@ -926,11 +922,11 @@ msgstr "0.1 /0.2赤/黄"
 
 #: include/variables.php:330
 msgid "0.2 / 0.4 Yellow / Red"
-msgstr ""
+msgstr "0.2 / 0.4 イエロー / レッド"
 
 #: include/variables.php:331
 msgid "0.5 / 0.5++ Yellow / Red"
-msgstr ""
+msgstr "0.5 / 0.5++ イエロー / レッド"
 
 #: include/variables.php:335
 #, fuzzy
@@ -939,15 +935,15 @@ msgstr "アラームの赤/黄色のping"
 
 #: include/variables.php:336
 msgid "Ping latency above these levels will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "これらのレベルを超える ping 遅延は、警告またはアラートの状態の色をトリガーします。"
 
 #: include/variables.php:340
 msgid "10ms  / 20ms Yellow / Red"
-msgstr ""
+msgstr "10ms / 20ms 黄 / 赤"
 
 #: include/variables.php:341
 msgid "20ms  / 50ms Yellow / Red"
-msgstr ""
+msgstr "20ms / 50ms 黄 / 赤"
 
 #: include/variables.php:342
 #, fuzzy
@@ -961,12 +957,12 @@ msgstr "トップ5最悪の可用性"
 
 #: include/variables.php:347
 msgid "Availability below these levels will trigger either a Yellow or a Red status color."
-msgstr ""
+msgstr "これらのレベルを下回る可用性は、黄色または赤のステータス色をトリガーします。"
 
 #: include/variables.php:351 include/variables.php:352
 #: include/variables.php:353
 msgid "Yellow / Red"
-msgstr ""
+msgstr "イエロー / レッド"
 
 #: panellib/alert.php:31 panellib/syslog.php:172
 msgid "Alerts"
@@ -974,7 +970,7 @@ msgstr "アラート"
 
 #: panellib/alert.php:32
 msgid "Panels that provide alerting."
-msgstr ""
+msgstr "アラートを提供するパネル。"
 
 #: panellib/alert.php:37 panellib/alert.php:205
 #, fuzzy
@@ -983,7 +979,7 @@ msgstr "ホスト名"
 
 #: panellib/alert.php:38
 msgid "Host alerts (up/down/recovering) in last 30 minutes"
-msgstr ""
+msgstr "過去 30 分間のホスト アラート (アップ/ダウン/リカバリ)"
 
 #: panellib/alert.php:119 panellib/alert.php:264 panellib/analyze.php:154
 #: panellib/analyze.php:1270 panellib/misc.php:336 panellib/misc.php:407
@@ -1005,7 +1001,7 @@ msgstr "都道府県"
 
 #: panellib/alert.php:178 panellib/alert.php:319
 msgid "More records, use detail window"
-msgstr ""
+msgstr "より多くのレコード、詳細ウィンドウの使用"
 
 #: panellib/alert.php:185 panellib/alert.php:326 panellib/analyze.php:1048
 #: panellib/graphs.php:371 panellib/poller.php:283 panellib/poller.php:452
@@ -1120,7 +1116,7 @@ msgstr "失敗したログイン"
 
 #: panellib/analyze.php:224
 msgid "None"
-msgstr ""
+msgstr "なし"
 
 #: panellib/analyze.php:227
 #, fuzzy
@@ -1174,7 +1170,7 @@ msgstr "最後の10ログイン"
 
 #: panellib/analyze.php:423
 msgid "Skipping DB tables checks. Database too large"
-msgstr ""
+msgstr "DB テーブルのチェックをスキップします。データベースが大きすぎます"
 
 #: panellib/analyze.php:437
 #, fuzzy, php-format
@@ -1188,16 +1184,16 @@ msgstr "DBの問題"
 
 #: panellib/analyze.php:453
 msgid "DB: OK"
-msgstr ""
+msgstr "DB:わかりました"
 
 #: panellib/analyze.php:477
 #, php-format
 msgid "Max connection reached: %s / %s"
-msgstr ""
+msgstr "最大接続数:%s / %s"
 
 #: panellib/analyze.php:478
 msgid "You can increase Max connection via command line tools or permanently in config file"
-msgstr ""
+msgstr "最大接続数は、コマンドラインツールを介して、または設定ファイルで永続的に増やすことができます"
 
 #: panellib/analyze.php:499
 #, fuzzy, php-format
@@ -1211,7 +1207,7 @@ msgstr "中止されたクライアント/接続：%s-ログを確認します�
 
 #: panellib/analyze.php:519
 msgid "Aborted clients/connects - Run 'SET GLOBAL log_warnings = 1;' or ' log_error_verbosity = 1;' (depends on your MySQL/MariaDB version) from the mysql CLI and set in server.cnf to silence."
-msgstr ""
+msgstr "中止されたクライアント/接続 - 'SET GLOBAL log_warnings = 1;' または ' log_error_verbosity = 1;' を実行します。(MySQL / MariaDBのバージョンによって異なります)mysql CLIから実行し、server.cnfで沈黙に設定します。"
 
 #: panellib/analyze.php:523
 #, fuzzy, php-format
@@ -1225,7 +1221,7 @@ msgstr "破損したテーブル：％s"
 
 #: panellib/analyze.php:527
 msgid "You should run check and repair table commands"
-msgstr ""
+msgstr "check コマンドと repair table コマンドを実行する必要があります"
 
 #: panellib/analyze.php:531
 #, fuzzy, php-format
@@ -1258,38 +1254,38 @@ msgstr "同じIPとポートを持つデバイス：％s"
 #: panellib/analyze.php:613
 #, php-format
 msgid "Not optimized Bulk Walk Size devices: %s"
-msgstr ""
+msgstr "最適化されていないバルクウォークサイズデバイス:%s"
 
 #: panellib/analyze.php:614 panellib/analyze.php:1431
 msgid "Please have a look to device parameter \"Bulk Walk Maximum Repetitions\". You can improve your poller performance"
-msgstr ""
+msgstr "デバイスパラメータ「Bulk Walk Maximum Repetitions」をご覧ください。ポーリング・プログラムのパフォーマンスを改善できます"
 
 #: panellib/analyze.php:620 panellib/analyze.php:1454
 msgid "Reindex last run"
-msgstr ""
+msgstr "最後の実行のインデックスを再作成"
 
 #: panellib/analyze.php:621 panellib/analyze.php:1455
 msgid "RRD Checker last run"
-msgstr ""
+msgstr "RRDチェッカーの最終実行"
 
 #: panellib/analyze.php:622 panellib/analyze.php:1456
 msgid "RRD Cleaner last run"
-msgstr ""
+msgstr "RRD クリーナーの最終実行"
 
 #: panellib/analyze.php:635 panellib/analyze.php:1473
-#, fuzzy, php-format
+#, php-format
 msgid "%s: %s"
-msgstr "UPS"
+msgstr "%s: %s"
 
 #: panellib/analyze.php:636 panellib/analyze.php:642 panellib/analyze.php:1474
 #: panellib/analyze.php:1480
 msgid "It is recommended to run this tool at least occasionally"
-msgstr ""
+msgstr "このツールは、少なくとも時々実行することをお勧めします"
 
 #: panellib/analyze.php:641 panellib/analyze.php:1479
 #, php-format
 msgid "%s: not run yet"
-msgstr ""
+msgstr "%s: まだ実行されていません"
 
 #: panellib/analyze.php:691
 #, fuzzy, php-format
@@ -1348,7 +1344,7 @@ msgstr "すべてOK"
 
 #: panellib/analyze.php:977
 msgid "DS stats: "
-msgstr ""
+msgstr "DSステータス:"
 
 #: panellib/analyze.php:1003 panellib/busiest.php:165 panellib/busiest.php:285
 #: panellib/busiest.php:396 panellib/busiest.php:616 panellib/busiest.php:751
@@ -1356,15 +1352,15 @@ msgstr ""
 #: panellib/busiest.php:1234 panellib/busiest.php:1448
 #: panellib/busiest.php:1590 panellib/busiest.php:1713
 msgid "Panel needs DS stats enabled."
-msgstr ""
+msgstr "パネルでは DS 統計を有効にする必要があります。"
 
 #: panellib/analyze.php:1015
 msgid "DS all records "
-msgstr ""
+msgstr "DS すべてのレコード"
 
 #: panellib/analyze.php:1031
 msgid "DS null records "
-msgstr ""
+msgstr "DS ヌル・レコード"
 
 #: panellib/analyze.php:1090
 #, fuzzy
@@ -1431,7 +1427,7 @@ msgstr "同じIPとポート％sを持つデバイス"
 #: panellib/analyze.php:1428
 #, php-format
 msgid "Not optimized Bulk Walk Size devices - %s"
-msgstr ""
+msgstr "最適化されていないバルクウォークサイズデバイス - %s"
 
 #: panellib/analyze.php:1484
 #, fuzzy
@@ -1485,15 +1481,15 @@ msgstr "プラグインモニター - 未監視ホスト％s"
 
 #: panellib/busiest.php:31
 msgid "The busiest"
-msgstr ""
+msgstr "最も忙しい"
 
 #: panellib/busiest.php:32
 msgid "Panels that finds the busiest hosts."
-msgstr ""
+msgstr "最もビジーなホストを検出するパネル。"
 
 #: panellib/busiest.php:37
 msgid "Busiest CPU"
-msgstr ""
+msgstr "最もビジーな CPU"
 
 #: panellib/busiest.php:38
 #, fuzzy
@@ -1502,7 +1498,7 @@ msgstr "同じIPとポートを持つデバイス：％s"
 
 #: panellib/busiest.php:53
 msgid "Busiest ucd/net - Load"
-msgstr ""
+msgstr "最もビジーな ucd/net - 負荷"
 
 #: panellib/busiest.php:54
 #, fuzzy
@@ -1511,15 +1507,15 @@ msgstr "同じ説明を持つデバイス：％s"
 
 #: panellib/busiest.php:69
 msgid "Busiest Hard Drive Space"
-msgstr ""
+msgstr "最もビジーなハードドライブスペース"
 
 #: panellib/busiest.php:70
 msgid "Devices with the highest Hard Drive Space used (Host MIB)"
-msgstr ""
+msgstr "ハード ドライブの使用量が最も多いデバイス(ホスト MIB)"
 
 #: panellib/busiest.php:85 panellib/busiest.php:1366
 msgid "Busiest uptime"
-msgstr ""
+msgstr "最も忙しい稼働時間"
 
 #: panellib/busiest.php:86
 #, fuzzy
@@ -1528,7 +1524,7 @@ msgstr "トップ5最悪のポーリング時間"
 
 #: panellib/busiest.php:101
 msgid "Busiest Interface in/out traffic"
-msgstr ""
+msgstr "最もビジーなインターフェイスの入出力トラフィック"
 
 #: panellib/busiest.php:102
 #, fuzzy
@@ -1537,19 +1533,19 @@ msgstr "トップ5最悪のポーリング時間"
 
 #: panellib/busiest.php:117
 msgid "Busiest Interface error"
-msgstr ""
+msgstr "最もビジーなインターフェイス エラー"
 
 #: panellib/busiest.php:118
 msgid "Devices with the highest errors/discards (Interface)"
-msgstr ""
+msgstr "エラー/破棄数が最も多いデバイス(インターフェイス)"
 
 #: panellib/busiest.php:133
 msgid "Busiest Interface utilization"
-msgstr ""
+msgstr "最もビジーなインターフェイス使用率"
 
 #: panellib/busiest.php:134
 msgid "Ports with the highest interface utilization"
-msgstr ""
+msgstr "インターフェイス使用率が最も高いポート"
 
 #: panellib/busiest.php:168 panellib/busiest.php:288 panellib/busiest.php:399
 #: panellib/busiest.php:619 panellib/busiest.php:754 panellib/busiest.php:874
@@ -1557,7 +1553,7 @@ msgstr ""
 #: panellib/busiest.php:1237 panellib/busiest.php:1451
 #: panellib/busiest.php:1593 panellib/busiest.php:1716
 msgid "Please enable and configure DS stats"
-msgstr ""
+msgstr "DS stats を有効にして設定してください"
 
 #: panellib/busiest.php:170 panellib/busiest.php:290 panellib/busiest.php:401
 #: panellib/busiest.php:621 panellib/busiest.php:756 panellib/busiest.php:876
@@ -1565,7 +1561,7 @@ msgstr ""
 #: panellib/busiest.php:1239 panellib/busiest.php:1453
 #: panellib/busiest.php:1595 panellib/busiest.php:1718
 msgid "Ask admin to enable DS stats"
-msgstr ""
+msgstr "管理者に DS 統計を有効にするよう依頼する"
 
 #: panellib/busiest.php:218 panellib/busiest.php:338 panellib/busiest.php:473
 #: panellib/busiest.php:689 panellib/busiest.php:811 panellib/busiest.php:1053
@@ -1580,14 +1576,14 @@ msgstr "平均"
 #: panellib/busiest.php:1170 panellib/busiest.php:1311
 #: panellib/busiest.php:1524 panellib/busiest.php:1650
 msgid "Peak"
-msgstr ""
+msgstr "ピーク"
 
 #: panellib/busiest.php:259 panellib/busiest.php:370 panellib/busiest.php:514
 #: panellib/busiest.php:725 panellib/busiest.php:843 panellib/busiest.php:1088
 #: panellib/busiest.php:1204 panellib/busiest.php:1345
 #: panellib/busiest.php:1562 panellib/busiest.php:1684
 msgid "Average of all allowed DS"
-msgstr ""
+msgstr "許可されるすべての DS の平均"
 
 #: panellib/busiest.php:263 panellib/busiest.php:374 panellib/busiest.php:518
 #: panellib/busiest.php:729 panellib/busiest.php:847 panellib/busiest.php:977
@@ -1595,7 +1591,7 @@ msgstr ""
 #: panellib/busiest.php:1350 panellib/busiest.php:1566
 #: panellib/busiest.php:1688 panellib/busiest.php:1816
 msgid "Waiting for data or you don't have permission for any device with this template."
-msgstr ""
+msgstr "データを待機しているか、このテンプレートを使用するデバイスに対するアクセス許可がありません。"
 
 #: panellib/busiest.php:267 panellib/busiest.php:378 panellib/busiest.php:522
 #: panellib/busiest.php:733 panellib/busiest.php:851 panellib/busiest.php:981
@@ -1608,11 +1604,11 @@ msgstr "許可がありません"
 
 #: panellib/busiest.php:570 panellib/busiest.php:1403
 msgid "Uptime"
-msgstr ""
+msgstr "あなたのアップタイムロボットAPIキー："
 
 #: panellib/busiest.php:588 panellib/busiest.php:1420
 msgid "Average of all allowed hosts"
-msgstr ""
+msgstr "許可されたすべてのホストの平均"
 
 #: panellib/busiest.php:592 panellib/busiest.php:1424
 #, fuzzy
@@ -1621,36 +1617,36 @@ msgstr "許可がありません"
 
 #: panellib/busiest.php:933 panellib/busiest.php:1773
 msgid "Direction"
-msgstr ""
+msgstr "方向"
 
 #: panellib/busiest.php:973 panellib/busiest.php:1812
 msgid "Time interval last 5 minutes"
-msgstr ""
+msgstr "過去 5 分間の時間間隔"
 
 #: panellib/busiest.php:993
 msgid "Busiest 30 Host MIB CPU utilization (last hour)"
-msgstr ""
+msgstr "最もビジーな 30 ホスト MIB の CPU 使用率 (過去 1 時間)"
 
 #: panellib/busiest.php:1090 panellib/busiest.php:1206
 #: panellib/busiest.php:1347
 msgid "Install TopX plugin for more DS statistics"
-msgstr ""
+msgstr "TopXプラグインをインストールして、より多くのDS統計を入手してください"
 
 #: panellib/busiest.php:1109
 msgid "Busiest 30 ucd/net Load (last hour)"
-msgstr ""
+msgstr "最もビジーな 30 ucd/net 負荷(過去 1 時間)"
 
 #: panellib/busiest.php:1226
 msgid "Busiest 30 Host MIB Hard Drive space (last hour)"
-msgstr ""
+msgstr "最もビジーな 30 ホスト MIB ハード ドライブ スペース (過去 1 時間)"
 
 #: panellib/busiest.php:1440 panellib/busiest.php:1582
 msgid "Busiest traffic (in+out)"
-msgstr ""
+msgstr "最も混雑したトラフィック (入力 + 送信)"
 
 #: panellib/busiest.php:1703
 msgid "Busiest interface utilization"
-msgstr ""
+msgstr "最もビジーなインターフェイス使用率"
 
 #: panellib/graphs.php:31
 #, fuzzy
@@ -1717,7 +1713,7 @@ msgstr "復元中"
 
 #: panellib/graphs.php:423
 msgid "Data Type"
-msgstr ""
+msgstr "データ型"
 
 #: panellib/graphs.php:441 panellib/graphs.php:650 panellib/top5.php:388
 #: panellib/top5.php:720
@@ -1748,7 +1744,7 @@ msgstr "上"
 
 #: panellib/graphs.php:635
 msgid "Template Name"
-msgstr ""
+msgstr "テンプレート名"
 
 #: panellib/graphs.php:636
 #, fuzzy
@@ -1978,17 +1974,17 @@ msgstr "NTPサーバが設定されていません"
 #: panellib/misc.php:173
 #, php-format
 msgid "DNS hostname (%s) resolving ok."
-msgstr ""
+msgstr "DNS ホスト名 (%s) の解決は OK です。"
 
 #: panellib/misc.php:174
 #, php-format
 msgid "DNS resolv time: %s ms"
-msgstr ""
+msgstr "DNS 解決時間: %s ミリ秒"
 
 #: panellib/misc.php:177
 #, php-format
 msgid "DNS hostname (%s) resolving failed."
-msgstr ""
+msgstr "DNS ホスト名 (%s) の解決に失敗しました。"
 
 #: panellib/misc.php:287
 #, fuzzy
@@ -2002,7 +1998,7 @@ msgstr "Plugin Tholdがインストールされていないか、起動されて
 
 #: panellib/misc.php:319
 msgid "Webseer plugin no longer supported, use plugin servcheck instead"
-msgstr ""
+msgstr "Webseer プラグインはサポートされなくなったため、代わりにプラグイン servcheck を使用してください"
 
 #: panellib/misc.php:320 panellib/misc.php:486
 #, fuzzy
@@ -2016,7 +2012,7 @@ msgstr "ホストダウン"
 
 #: panellib/misc.php:335
 msgid "Last log messages"
-msgstr ""
+msgstr "最後のログメッセージ"
 
 #: panellib/misc.php:337 panellib/misc.php:408
 msgid "URL"
@@ -2049,15 +2045,15 @@ msgstr "ホストダウン"
 
 #: panellib/misc.php:498
 msgid "Last log records"
-msgstr ""
+msgstr "最後のログ・レコード"
 
 #: panellib/misc.php:500 panellib/misc.php:572
 msgid "Test"
-msgstr ""
+msgstr "テスト"
 
 #: panellib/misc.php:501 panellib/misc.php:573
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 #: panellib/misc.php:555
 #, fuzzy
@@ -2148,9 +2144,8 @@ msgid "ID: "
 msgstr "ID:"
 
 #: panellib/poller.php:275
-#, fuzzy
 msgid "Seconds"
-msgstr "%s秒"
+msgstr "秒"
 
 #: panellib/poller.php:297
 #, fuzzy
@@ -2173,7 +2168,7 @@ msgstr "ポーラー出力項目％s："
 
 #: panellib/poller.php:447
 msgid "Items"
-msgstr ""
+msgstr "アイテム"
 
 #: panellib/syslog.php:31
 #, fuzzy
@@ -2201,11 +2196,11 @@ msgstr "受信"
 
 #: panellib/syslog.php:173
 msgid "Stored"
-msgstr ""
+msgstr "格納されています"
 
 #: panellib/syslog.php:175
 msgid "Messages"
-msgstr ""
+msgstr "メッセージ"
 
 #: panellib/syslog.php:197
 #, fuzzy
@@ -2283,11 +2278,11 @@ msgstr "この機能は、Windowsプラットフォームには実装されて�
 
 #: panellib/system.php:177
 msgid "Avg CPU"
-msgstr ""
+msgstr "平均CPU"
 
 #: panellib/system.php:178
 msgid "Max CPU"
-msgstr ""
+msgstr "最大CPU"
 
 #: panellib/system.php:208
 #, fuzzy
@@ -2300,9 +2295,8 @@ msgid "Poller Type:"
 msgstr "ポーラータイプ："
 
 #: panellib/system.php:219
-#, fuzzy
 msgid "Spine"
-msgstr "脊椎"
+msgstr "背骨"
 
 #: panellib/system.php:221
 #, fuzzy
@@ -2351,7 +2345,7 @@ msgstr "統計を向上させる"
 #: panellib/system.php:350
 #, php-format
 msgid "Processes/Frequency: %s / %s"
-msgstr ""
+msgstr "プロセス/周波数:%s/%s"
 
 #: panellib/system.php:352
 #, fuzzy, php-format
@@ -2497,7 +2491,6 @@ msgid "Threshold Details"
 msgstr "しきい値"
 
 #: panellib/thold.php:357
-#, fuzzy
 msgid "Thresholds"
 msgstr "しきい値"
 
@@ -2518,7 +2511,7 @@ msgstr "許可がありません"
 
 #: panellib/thold.php:484
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: panellib/top5.php:31
 #, fuzzy
@@ -2532,7 +2525,7 @@ msgstr "Cactiデータ収集に関する情報トレンド情報を提供する�
 
 #: panellib/top5.php:37
 msgid "Bottom Ping"
-msgstr ""
+msgstr "ボトムPing"
 
 #: panellib/top5.php:38
 #, fuzzy
@@ -2641,12 +2634,12 @@ msgstr "過去2時間のアクティブユーザー："
 
 #: setup.php:89
 msgid "Timespan Last 1 Day"
-msgstr ""
+msgstr "過去 1 日の期間"
 
 #: setup.php:95 setup.php:96 setup.php:97 setup.php:98
 #, fuzzy, php-format
 msgid "%d Seconds"
-msgstr "%s秒"
+msgstr "%d 秒"
 
 #: setup.php:109 setup.php:110 setup.php:111 setup.php:112
 #, fuzzy, php-format

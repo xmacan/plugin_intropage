@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2024-04-20 13:36-0400\n"
-"PO-Revision-Date: 2022-02-15 15:49-0500\n"
+"PO-Revision-Date: 2024-04-20 14:09-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: display.php:40
 #, fuzzy
@@ -25,7 +25,7 @@ msgstr "Intropage - отказано разрешение"
 
 #: display.php:123
 msgid "One or more panels was removed due to insufficient permissions. Contact administrator."
-msgstr ""
+msgstr "Един или повече панели са премахнати поради недостатъчни разрешения. Свържете се с администратора."
 
 #: display.php:179
 #, fuzzy
@@ -39,7 +39,7 @@ msgstr "По подразбиране"
 
 #: display.php:242 display.php:588
 msgid "Hide red/yellow/green square notifications"
-msgstr ""
+msgstr "Скриване на известията за червен/жълт/зелен квадрат"
 
 #: display.php:245
 #, fuzzy
@@ -99,23 +99,23 @@ msgstr "Всеки час"
 
 #: display.php:321 display.php:323
 msgid "Important period - disabled"
-msgstr ""
+msgstr "Важен период - инвалид"
 
 #: display.php:327 display.php:329
 msgid "Important period - 15 minutes"
-msgstr ""
+msgstr "Важен период - 15 минути"
 
 #: display.php:333 display.php:335
 msgid "Important period - 1 hour"
-msgstr ""
+msgstr "Важен период - 1 час"
 
 #: display.php:339 display.php:341
 msgid "Important period - 4 hours"
-msgstr ""
+msgstr "Важен период - 4 часа"
 
 #: display.php:345 display.php:347
 msgid "Important period - 1 day"
-msgstr ""
+msgstr "Важен период - 1 ден"
 
 #: display.php:363 display.php:366
 #, fuzzy
@@ -154,7 +154,7 @@ msgstr "Задайте intropage като страница по подразби
 
 #: display.php:396 display.php:399
 msgid "Less panels on a line"
-msgstr ""
+msgstr "По-малко панели на линия"
 
 #: display.php:397 display.php:400
 #, fuzzy
@@ -163,7 +163,7 @@ msgstr "Позволете панел Топ 5 Ping"
 
 #: display.php:413
 msgid "Cancel sharing"
-msgstr ""
+msgstr "Отмяна на споделянето"
 
 #: display.php:416
 #, fuzzy
@@ -172,7 +172,7 @@ msgstr "Добавяне към таблото за управление"
 
 #: display.php:418
 msgid "Share empty dashboard not allowed"
-msgstr ""
+msgstr "Споделянето на празно табло не е разрешено"
 
 #: display.php:437
 #, fuzzy
@@ -181,7 +181,7 @@ msgstr "Премахване от таблото за управление"
 
 #: display.php:439
 msgid "Cannot use shared dashboard - dashboard limit reached."
-msgstr ""
+msgstr "Не може да се използва споделено табло - достигнат е лимитът на таблото."
 
 #: display.php:443
 #, fuzzy
@@ -200,31 +200,31 @@ msgstr "Можете да добавите панели за управлени�
 
 #: display.php:466
 msgid "Select prepared panels from the \"Panels menu\". Panel can be grayed out. It is due to permissions, ask administrator"
-msgstr ""
+msgstr "Изберете подготвените панели от менюто \"Панели\". Панелът може да бъде сив. Това се дължи на разрешения, попитайте администратор"
 
 #: display.php:467
 msgid "Add any Cacti Graph, use icon"
-msgstr ""
+msgstr "Добавете Cacti Graph, използвайте икона"
 
 #: display.php:468
 msgid "You can create own panels. More info in file <cacti_install_dir>/plugins/intropage/panellib/README.md"
-msgstr ""
+msgstr "Можете да създавате собствени панели. Повече информация във файл <cacti_install_dir>/plugins/intropage/panellib/README.md"
 
 #: display.php:473
 msgid "You can share dashboards to other users:"
-msgstr ""
+msgstr "Можете да споделяте табла с други потребители:"
 
 #: display.php:475
 msgid "use \"Share this dashboard\" option in Actions menu - Every user can use it as template."
-msgstr ""
+msgstr "използвайте опцията \"Споделяне на това табло\" в менюто Действия - Всеки потребител може да го използва като шаблон."
 
 #: display.php:480
 msgid "You can use shared dashboard using the Actions menu:"
-msgstr ""
+msgstr "Можете да използвате споделено табло с помощта на менюто Действия:"
 
 #: display.php:482
 msgid "Use \"Use shared dashboard (user/dashboard name) -  It prepares the same dashboard like shared but with your permissions."
-msgstr ""
+msgstr "Използвайте \"Използване на споделено табло (име на потребител / табло) - То подготвя същото табло като споделено, но с вашите разрешения."
 
 #: display.php:487
 #, fuzzy
@@ -233,15 +233,15 @@ msgstr "Използване на процесора"
 
 #: display.php:489
 msgid "You can create up to 9 dashboards. Every dashboard can be named, use icon"
-msgstr ""
+msgstr "Можете да създадете до 9 табла. Всяко табло може да бъде наименуван, използвайте икона"
 
 #: display.php:490
 msgid "Intopage can be displayed in console or in separated tab. You can change it in Action menu"
-msgstr ""
+msgstr "Intopage може да се показва в конзола или в отделен раздел. Можете да го промените в менюто \"Действие\""
 
 #: display.php:491
 msgid "If you want to copy text from panel, you have to disable drag and drop function, use icon"
-msgstr ""
+msgstr "Ако искате да копирате текст от панела, трябва да деактивирате функцията за плъзгане и пускане, използвайте икона"
 
 #: display.php:585
 #, fuzzy
@@ -260,7 +260,7 @@ msgstr "Активиране на преместването на панела /
 
 #: display.php:589
 msgid "Show red/yellow/green square notifications"
-msgstr ""
+msgstr "Показване на известия за червен/жълт/зелен квадрат"
 
 #: display.php:591
 #, fuzzy
@@ -293,15 +293,15 @@ msgstr "Не може да се добави увеличена или перс�
 
 #: include/functions.php:419
 msgid "Intropage Panel Library Refreshed from Panel Library"
-msgstr ""
+msgstr "Библиотеката на панела за интространица е обновена от библиотеката с панели"
 
 #: include/functions.php:491
 msgid "Dashboard has been added, please wait few poller cycle for data"
-msgstr ""
+msgstr "Dashboard е добавен, моля, изчакайте няколко poller цикъл за данни"
 
 #: include/functions.php:502
 msgid "Error - trying share non-shared dashboard"
-msgstr ""
+msgstr "Грешка - опит за споделяне на несподелено табло"
 
 #: include/functions.php:617
 #, fuzzy
@@ -448,7 +448,7 @@ msgstr "Панели на потребителско ниво"
 
 #: include/functions.php:1645
 msgid "System Panel Update Frequencies (All Authorized Users)"
-msgstr ""
+msgstr "Честоти на обновяване на системния панел (всички оторизирани потребители)"
 
 #: include/functions.php:1694
 #, fuzzy
@@ -461,14 +461,13 @@ msgid "Intropage"
 msgstr "Интропажни панели"
 
 #: include/settings.php:37 setup.php:79
-#, fuzzy
 msgid "Normal User"
-msgstr "Нормален потребител"
+msgstr "Обикновен потребител"
 
 #: include/settings.php:146
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[редактиране: %s]"
 
 #: include/settings.php:155
 #, fuzzy
@@ -531,7 +530,7 @@ msgstr "Показване на грешки и предупреждения"
 
 #: include/variables.php:46
 msgid "For wide screen"
-msgstr ""
+msgstr "За широк екран"
 
 #: include/variables.php:51
 #, fuzzy
@@ -579,11 +578,11 @@ msgstr "Всеки час"
 
 #: include/variables.php:70
 msgid "Important period"
-msgstr ""
+msgstr "Важен период"
 
 #: include/variables.php:71
 msgid "From now to past. Affects row coloring, older events will not be highlighted, only displayed"
-msgstr ""
+msgstr "От сега в миналото. Засяга оцветяването на редовете, по-старите събития няма да бъдат осветени, а само показани"
 
 #: include/variables.php:74 panellib/graphs.php:355 panellib/graphs.php:533
 #: panellib/mactrack.php:111 panellib/poller.php:143 panellib/poller.php:348
@@ -598,18 +597,17 @@ msgid "15 minutes"
 msgstr "Всеки% d минути"
 
 #: include/variables.php:76
-#, fuzzy
 msgid "1 hour"
-msgstr "час"
+msgstr "1 час"
 
 #: include/variables.php:77
 #, fuzzy
 msgid "4 hours"
-msgstr "час"
+msgstr "4 часа"
 
 #: include/variables.php:78
 msgid "1 day"
-msgstr ""
+msgstr "1 ден"
 
 #: include/variables.php:83
 #, fuzzy
@@ -618,12 +616,12 @@ msgstr "Брой проверки:"
 
 #: include/variables.php:84
 msgid "How many lines in panel"
-msgstr ""
+msgstr "Колко линии в панела"
 
 #: include/variables.php:87 include/variables.php:88 include/variables.php:89
 #, php-format
 msgid "%d lines"
-msgstr ""
+msgstr "%d реда"
 
 #: include/variables.php:94
 #, fuzzy
@@ -632,7 +630,7 @@ msgstr "тенденции"
 
 #: include/variables.php:95
 msgid "For Trend charts, what should be the default timespan for those charts."
-msgstr ""
+msgstr "За диаграми на тенденции, какъв трябва да бъде времевият интервал по подразбиране за тези диаграми."
 
 #: include/variables.php:101
 #, fuzzy
@@ -746,7 +744,7 @@ msgstr "Колко често проверявайте NTP"
 
 #: include/variables.php:168
 msgid "DNS Check - Any DNS name"
-msgstr ""
+msgstr "DNS проверка - Всяко DNS име"
 
 #: include/variables.php:169
 #, fuzzy
@@ -770,11 +768,11 @@ msgstr "Ако не е празен, панелът ще се покаже от�
 
 #: include/variables.php:195
 msgid "Upcoming Maint Schedule warning days"
-msgstr ""
+msgstr "Предстоящи дни за предупреждение на Maint Schedule"
 
 #: include/variables.php:196
 msgid "How many days before a scheduled maintenance schedule should a warning be displayed?"
-msgstr ""
+msgstr "Колко дни преди планиран график за поддръжка трябва да се покаже предупреждение?"
 
 #: include/variables.php:199
 #, fuzzy
@@ -798,19 +796,19 @@ msgstr "% d дни преди"
 
 #: include/variables.php:208
 msgid "Network stats in"
-msgstr ""
+msgstr "Статистика на мрежата в"
 
 #: include/variables.php:209
 msgid "bytes or bits"
-msgstr ""
+msgstr "байтове или битове"
 
 #: include/variables.php:212
 msgid "Bytes"
-msgstr ""
+msgstr "Байта"
 
 #: include/variables.php:213
 msgid "Bits"
-msgstr ""
+msgstr "Бита"
 
 #: include/variables.php:218
 #, fuzzy
@@ -830,7 +828,7 @@ msgstr "Проверка на алармен DB прекъснати клиен�
 #: include/variables.php:293 include/variables.php:300
 #: include/variables.php:307
 msgid "If this event has occurred, trigger the selected Normal, Warning, or Alert status color."
-msgstr ""
+msgstr "Ако това събитие е настъпило, задействайте избрания цвят на състоянието \"Нормален\", \"Предупреждение\" или \"Предупреждение\"."
 
 #: include/variables.php:229
 #, fuzzy
@@ -859,7 +857,7 @@ msgstr "Аларма Thershold действие само при влизане"
 
 #: include/variables.php:264
 msgid "Alarm when device bulk_walk_size is not optimized"
-msgstr ""
+msgstr "Аларма, когато bulk_walk_size на устройството не е оптимизиран"
 
 #: include/variables.php:271
 #, fuzzy
@@ -898,11 +896,11 @@ msgstr "Позволете на панела Топ 5 най-лошото вре
 
 #: include/variables.php:314
 msgid "Polling times above these thresholds will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "Времето за гласуване над тези прагове ще задейства цвят на състоянието \"Предупреждение\" или \"Предупреждение\"."
 
 #: include/variables.php:318
 msgid "5s  / 10s Yellow / Red"
-msgstr ""
+msgstr "5s / 10s Жълто / Червено"
 
 #: include/variables.php:319
 #, fuzzy
@@ -921,7 +919,7 @@ msgstr "Алармата червено/жълто неуспешно/всичк
 
 #: include/variables.php:325
 msgid "The ratio of failed availability checks to successful checks to trigger as Warning or Alert status color."
-msgstr ""
+msgstr "Съотношението на неуспешните проверки за наличност към успешните проверки, които да се задействат като цвят на състоянието на предупреждение или предупреждение."
 
 #: include/variables.php:329
 #, fuzzy
@@ -930,11 +928,11 @@ msgstr "0,1/0,2 червено/жълто"
 
 #: include/variables.php:330
 msgid "0.2 / 0.4 Yellow / Red"
-msgstr ""
+msgstr "0.2 / 0.4 Жълт / Червен"
 
 #: include/variables.php:331
 msgid "0.5 / 0.5++ Yellow / Red"
-msgstr ""
+msgstr "0.5 / 0.5++ Жълто / Червено"
 
 #: include/variables.php:335
 #, fuzzy
@@ -943,15 +941,15 @@ msgstr "Червен/жълт пинг на алармата"
 
 #: include/variables.php:336
 msgid "Ping latency above these levels will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "Закъснението на пинг над тези нива ще задейства цвят на състоянието на предупреждение или предупреждение."
 
 #: include/variables.php:340
 msgid "10ms  / 20ms Yellow / Red"
-msgstr ""
+msgstr "10ms / 20ms Жълто / Червено"
 
 #: include/variables.php:341
 msgid "20ms  / 50ms Yellow / Red"
-msgstr ""
+msgstr "20ms / 50ms Жълт / Червен"
 
 #: include/variables.php:342
 #, fuzzy
@@ -965,12 +963,12 @@ msgstr "Топ 5 на най-лошата наличност"
 
 #: include/variables.php:347
 msgid "Availability below these levels will trigger either a Yellow or a Red status color."
-msgstr ""
+msgstr "Наличността под тези нива ще задейства или жълт, или червен цвят на състоянието."
 
 #: include/variables.php:351 include/variables.php:352
 #: include/variables.php:353
 msgid "Yellow / Red"
-msgstr ""
+msgstr "Жълто / Червено"
 
 #: panellib/alert.php:31 panellib/syslog.php:172
 msgid "Alerts"
@@ -978,7 +976,7 @@ msgstr "Известия"
 
 #: panellib/alert.php:32
 msgid "Panels that provide alerting."
-msgstr ""
+msgstr "Панели, които осигуряват предупреждение."
 
 #: panellib/alert.php:37 panellib/alert.php:205
 #, fuzzy
@@ -987,7 +985,7 @@ msgstr "Име на хост"
 
 #: panellib/alert.php:38
 msgid "Host alerts (up/down/recovering) in last 30 minutes"
-msgstr ""
+msgstr "Сигнали на хоста (нагоре/надолу/възстановяване) през последните 30 минути"
 
 #: panellib/alert.php:119 panellib/alert.php:264 panellib/analyze.php:154
 #: panellib/analyze.php:1270 panellib/misc.php:336 panellib/misc.php:407
@@ -1009,7 +1007,7 @@ msgstr "Област"
 
 #: panellib/alert.php:178 panellib/alert.php:319
 msgid "More records, use detail window"
-msgstr ""
+msgstr "Още записи, използвайте прозорец с подробни данни"
 
 #: panellib/alert.php:185 panellib/alert.php:326 panellib/analyze.php:1048
 #: panellib/graphs.php:371 panellib/poller.php:283 panellib/poller.php:452
@@ -1124,7 +1122,7 @@ msgstr "Неуспешно влизане"
 
 #: panellib/analyze.php:224
 msgid "None"
-msgstr ""
+msgstr "Няма"
 
 #: panellib/analyze.php:227
 #, fuzzy
@@ -1177,7 +1175,7 @@ msgstr "Последните 10 влизания"
 
 #: panellib/analyze.php:423
 msgid "Skipping DB tables checks. Database too large"
-msgstr ""
+msgstr "Пропускане на проверки на DB таблици. Базата данни е твърде голяма"
 
 #: panellib/analyze.php:437
 #, fuzzy, php-format
@@ -1191,16 +1189,16 @@ msgstr "DB проблем"
 
 #: panellib/analyze.php:453
 msgid "DB: OK"
-msgstr ""
+msgstr "ДБ: ОК"
 
 #: panellib/analyze.php:477
 #, php-format
 msgid "Max connection reached: %s / %s"
-msgstr ""
+msgstr "Достигната максимална връзка: %s / %s"
 
 #: panellib/analyze.php:478
 msgid "You can increase Max connection via command line tools or permanently in config file"
-msgstr ""
+msgstr "Можете да увеличите Max връзката чрез инструменти от командния ред или постоянно в конфигурационния файл"
 
 #: panellib/analyze.php:499
 #, fuzzy, php-format
@@ -1214,7 +1212,7 @@ msgstr "Прекъснати клиенти/свързване: %s - прове�
 
 #: panellib/analyze.php:519
 msgid "Aborted clients/connects - Run 'SET GLOBAL log_warnings = 1;' or ' log_error_verbosity = 1;' (depends on your MySQL/MariaDB version) from the mysql CLI and set in server.cnf to silence."
-msgstr ""
+msgstr "Прекратени клиенти/свързвания - Изпълнение на 'SET GLOBAL log_warnings = 1;' или ' log_error_verbosity = 1;' (зависи от вашата MySQL / MariaDB версия) от mysql CLI и задайте в server.cnf да замълчи."
 
 #: panellib/analyze.php:523
 #, fuzzy, php-format
@@ -1228,7 +1226,7 @@ msgstr "Повредени таблици: %s"
 
 #: panellib/analyze.php:527
 msgid "You should run check and repair table commands"
-msgstr ""
+msgstr "Трябва да изпълните командите за проверка и поправка на таблицата"
 
 #: panellib/analyze.php:531
 #, fuzzy, php-format
@@ -1261,38 +1259,38 @@ msgstr "Устройства със същия IP адрес и порт: %s"
 #: panellib/analyze.php:613
 #, php-format
 msgid "Not optimized Bulk Walk Size devices: %s"
-msgstr ""
+msgstr "Не е оптимизиран Bulk Walk Размер устройства: %s"
 
 #: panellib/analyze.php:614 panellib/analyze.php:1431
 msgid "Please have a look to device parameter \"Bulk Walk Maximum Repetitions\". You can improve your poller performance"
-msgstr ""
+msgstr "Моля, погледнете параметъра на устройството \"Bulk Walk Maximum Repetitions\". Можете да подобрите ефективността на вашия poller"
 
 #: panellib/analyze.php:620 panellib/analyze.php:1454
 msgid "Reindex last run"
-msgstr ""
+msgstr "Повторно индексиране на последното изпълнение"
 
 #: panellib/analyze.php:621 panellib/analyze.php:1455
 msgid "RRD Checker last run"
-msgstr ""
+msgstr "RRD Checker последно изпълнение"
 
 #: panellib/analyze.php:622 panellib/analyze.php:1456
 msgid "RRD Cleaner last run"
-msgstr ""
+msgstr "RRD Cleaner последно изпълнение"
 
 #: panellib/analyze.php:635 panellib/analyze.php:1473
-#, fuzzy, php-format
+#, php-format
 msgid "%s: %s"
-msgstr "UPS"
+msgstr "%s: %s"
 
 #: panellib/analyze.php:636 panellib/analyze.php:642 panellib/analyze.php:1474
 #: panellib/analyze.php:1480
 msgid "It is recommended to run this tool at least occasionally"
-msgstr ""
+msgstr "Препоръчва се този инструмент да се изпълнява поне от време на време"
 
 #: panellib/analyze.php:641 panellib/analyze.php:1479
 #, php-format
 msgid "%s: not run yet"
-msgstr ""
+msgstr "%s: все още не се изпълнява"
 
 #: panellib/analyze.php:691
 #, fuzzy, php-format
@@ -1351,7 +1349,7 @@ msgstr "Всичко е наред"
 
 #: panellib/analyze.php:977
 msgid "DS stats: "
-msgstr ""
+msgstr "Статистика на DS: "
 
 #: panellib/analyze.php:1003 panellib/busiest.php:165 panellib/busiest.php:285
 #: panellib/busiest.php:396 panellib/busiest.php:616 panellib/busiest.php:751
@@ -1359,15 +1357,15 @@ msgstr ""
 #: panellib/busiest.php:1234 panellib/busiest.php:1448
 #: panellib/busiest.php:1590 panellib/busiest.php:1713
 msgid "Panel needs DS stats enabled."
-msgstr ""
+msgstr "Панелът се нуждае от активирани DS статистики."
 
 #: panellib/analyze.php:1015
 msgid "DS all records "
-msgstr ""
+msgstr "DS всички записи "
 
 #: panellib/analyze.php:1031
 msgid "DS null records "
-msgstr ""
+msgstr "DS нулеви записи "
 
 #: panellib/analyze.php:1090
 #, fuzzy
@@ -1434,7 +1432,7 @@ msgstr "Устройства със същия IP адрес и порт %s"
 #: panellib/analyze.php:1428
 #, php-format
 msgid "Not optimized Bulk Walk Size devices - %s"
-msgstr ""
+msgstr "Не са оптимизирани устройства с размер на насипно ходене - %s"
 
 #: panellib/analyze.php:1484
 #, fuzzy
@@ -1488,15 +1486,15 @@ msgstr "Монитор на Plugin - Хоствания без наблюден�
 
 #: panellib/busiest.php:31
 msgid "The busiest"
-msgstr ""
+msgstr "Най-натовареният"
 
 #: panellib/busiest.php:32
 msgid "Panels that finds the busiest hosts."
-msgstr ""
+msgstr "Панели, които намират най-натоварените домакини."
 
 #: panellib/busiest.php:37
 msgid "Busiest CPU"
-msgstr ""
+msgstr "Най-натовареният процесор"
 
 #: panellib/busiest.php:38
 #, fuzzy
@@ -1505,7 +1503,7 @@ msgstr "Устройства със същия IP адрес и порт: %s"
 
 #: panellib/busiest.php:53
 msgid "Busiest ucd/net - Load"
-msgstr ""
+msgstr "Най-натовареният ucd/net - Зареждане"
 
 #: panellib/busiest.php:54
 #, fuzzy
@@ -1514,15 +1512,15 @@ msgstr "Устройства със същото описание: %s"
 
 #: panellib/busiest.php:69
 msgid "Busiest Hard Drive Space"
-msgstr ""
+msgstr "Най-натовареното пространство на твърдия диск"
 
 #: panellib/busiest.php:70
 msgid "Devices with the highest Hard Drive Space used (Host MIB)"
-msgstr ""
+msgstr "Устройства с най-високо използвано пространство на твърдия диск (Host MIB)"
 
 #: panellib/busiest.php:85 panellib/busiest.php:1366
 msgid "Busiest uptime"
-msgstr ""
+msgstr "Най-натовареното време за работа"
 
 #: panellib/busiest.php:86
 #, fuzzy
@@ -1531,7 +1529,7 @@ msgstr "Най-лошото време за анкетиране"
 
 #: panellib/busiest.php:101
 msgid "Busiest Interface in/out traffic"
-msgstr ""
+msgstr "Най-натовареният интерфейс в / извън трафика"
 
 #: panellib/busiest.php:102
 #, fuzzy
@@ -1540,19 +1538,19 @@ msgstr "Най-лошото време за анкетиране"
 
 #: panellib/busiest.php:117
 msgid "Busiest Interface error"
-msgstr ""
+msgstr "Най-натоварена грешка в интерфейса"
 
 #: panellib/busiest.php:118
 msgid "Devices with the highest errors/discards (Interface)"
-msgstr ""
+msgstr "Устройства с най-големи грешки/изхвърляния (Интерфейс)"
 
 #: panellib/busiest.php:133
 msgid "Busiest Interface utilization"
-msgstr ""
+msgstr "Най-натоварено използване на интерфейса"
 
 #: panellib/busiest.php:134
 msgid "Ports with the highest interface utilization"
-msgstr ""
+msgstr "Портове с най-високо използване на интерфейса"
 
 #: panellib/busiest.php:168 panellib/busiest.php:288 panellib/busiest.php:399
 #: panellib/busiest.php:619 panellib/busiest.php:754 panellib/busiest.php:874
@@ -1560,7 +1558,7 @@ msgstr ""
 #: panellib/busiest.php:1237 panellib/busiest.php:1451
 #: panellib/busiest.php:1593 panellib/busiest.php:1716
 msgid "Please enable and configure DS stats"
-msgstr ""
+msgstr "Моля, активирайте и конфигурирайте DS статистиките"
 
 #: panellib/busiest.php:170 panellib/busiest.php:290 panellib/busiest.php:401
 #: panellib/busiest.php:621 panellib/busiest.php:756 panellib/busiest.php:876
@@ -1568,7 +1566,7 @@ msgstr ""
 #: panellib/busiest.php:1239 panellib/busiest.php:1453
 #: panellib/busiest.php:1595 panellib/busiest.php:1718
 msgid "Ask admin to enable DS stats"
-msgstr ""
+msgstr "Помолете администратора да разреши статистиката на DS"
 
 #: panellib/busiest.php:218 panellib/busiest.php:338 panellib/busiest.php:473
 #: panellib/busiest.php:689 panellib/busiest.php:811 panellib/busiest.php:1053
@@ -1583,14 +1581,14 @@ msgstr "Средно"
 #: panellib/busiest.php:1170 panellib/busiest.php:1311
 #: panellib/busiest.php:1524 panellib/busiest.php:1650
 msgid "Peak"
-msgstr ""
+msgstr "Връх"
 
 #: panellib/busiest.php:259 panellib/busiest.php:370 panellib/busiest.php:514
 #: panellib/busiest.php:725 panellib/busiest.php:843 panellib/busiest.php:1088
 #: panellib/busiest.php:1204 panellib/busiest.php:1345
 #: panellib/busiest.php:1562 panellib/busiest.php:1684
 msgid "Average of all allowed DS"
-msgstr ""
+msgstr "Средна стойност на всички разрешени DS"
 
 #: panellib/busiest.php:263 panellib/busiest.php:374 panellib/busiest.php:518
 #: panellib/busiest.php:729 panellib/busiest.php:847 panellib/busiest.php:977
@@ -1598,7 +1596,7 @@ msgstr ""
 #: panellib/busiest.php:1350 panellib/busiest.php:1566
 #: panellib/busiest.php:1688 panellib/busiest.php:1816
 msgid "Waiting for data or you don't have permission for any device with this template."
-msgstr ""
+msgstr "Чакате данни или нямате разрешение за никое устройство с този шаблон."
 
 #: panellib/busiest.php:267 panellib/busiest.php:378 panellib/busiest.php:522
 #: panellib/busiest.php:733 panellib/busiest.php:851 panellib/busiest.php:981
@@ -1611,11 +1609,11 @@ msgstr "Нямате разрешение"
 
 #: panellib/busiest.php:570 panellib/busiest.php:1403
 msgid "Uptime"
-msgstr ""
+msgstr "Време на работа"
 
 #: panellib/busiest.php:588 panellib/busiest.php:1420
 msgid "Average of all allowed hosts"
-msgstr ""
+msgstr "Средна стойност на всички разрешени хостове"
 
 #: panellib/busiest.php:592 panellib/busiest.php:1424
 #, fuzzy
@@ -1624,36 +1622,36 @@ msgstr "Нямате разрешение"
 
 #: panellib/busiest.php:933 panellib/busiest.php:1773
 msgid "Direction"
-msgstr ""
+msgstr "Посока"
 
 #: panellib/busiest.php:973 panellib/busiest.php:1812
 msgid "Time interval last 5 minutes"
-msgstr ""
+msgstr "Времеви интервал последните 5 минути"
 
 #: panellib/busiest.php:993
 msgid "Busiest 30 Host MIB CPU utilization (last hour)"
-msgstr ""
+msgstr "Най-натовареното използване на MIB процесора 30 Host MIB (последния час)"
 
 #: panellib/busiest.php:1090 panellib/busiest.php:1206
 #: panellib/busiest.php:1347
 msgid "Install TopX plugin for more DS statistics"
-msgstr ""
+msgstr "Инсталиране на TopX плъгин за повече DS статистика"
 
 #: panellib/busiest.php:1109
 msgid "Busiest 30 ucd/net Load (last hour)"
-msgstr ""
+msgstr "Най-натоварен 30 ucd/нето товар (последния час)"
 
 #: panellib/busiest.php:1226
 msgid "Busiest 30 Host MIB Hard Drive space (last hour)"
-msgstr ""
+msgstr "Най-натовареният 30 хост MIB твърд диск пространство (последния час)"
 
 #: panellib/busiest.php:1440 panellib/busiest.php:1582
 msgid "Busiest traffic (in+out)"
-msgstr ""
+msgstr "Най-натоварен трафик (вход + изход)"
 
 #: panellib/busiest.php:1703
 msgid "Busiest interface utilization"
-msgstr ""
+msgstr "Най-натоварено използване на интерфейса"
 
 #: panellib/graphs.php:31
 #, fuzzy
@@ -1721,7 +1719,7 @@ msgstr "Възстановяване"
 
 #: panellib/graphs.php:423
 msgid "Data Type"
-msgstr ""
+msgstr "Тип данни"
 
 #: panellib/graphs.php:441 panellib/graphs.php:650 panellib/top5.php:388
 #: panellib/top5.php:720
@@ -1752,7 +1750,7 @@ msgstr "Нагоре"
 
 #: panellib/graphs.php:635
 msgid "Template Name"
-msgstr ""
+msgstr "Име на шаблона"
 
 #: panellib/graphs.php:636
 #, fuzzy
@@ -1982,17 +1980,17 @@ msgstr "Не е конфигуриран NTP сървър"
 #: panellib/misc.php:173
 #, php-format
 msgid "DNS hostname (%s) resolving ok."
-msgstr ""
+msgstr "DNS име на хост (%s) решаване ОК."
 
 #: panellib/misc.php:174
 #, php-format
 msgid "DNS resolv time: %s ms"
-msgstr ""
+msgstr "Време за разрешаване на DNS: %s ms"
 
 #: panellib/misc.php:177
 #, php-format
 msgid "DNS hostname (%s) resolving failed."
-msgstr ""
+msgstr "Неуспешно разрешаване на DNS име на хост (%s)."
 
 #: panellib/misc.php:287
 #, fuzzy
@@ -2006,7 +2004,7 @@ msgstr "Добавката не е инсталирана или стартир�
 
 #: panellib/misc.php:319
 msgid "Webseer plugin no longer supported, use plugin servcheck instead"
-msgstr ""
+msgstr "Webseer плъгин вече не се поддържа, използвайте плъгин servcheck вместо"
 
 #: panellib/misc.php:320 panellib/misc.php:486
 #, fuzzy
@@ -2020,7 +2018,7 @@ msgstr "Хостове надолу"
 
 #: panellib/misc.php:335
 msgid "Last log messages"
-msgstr ""
+msgstr "Последни регистрационни съобщения"
 
 #: panellib/misc.php:337 panellib/misc.php:408
 msgid "URL"
@@ -2053,15 +2051,15 @@ msgstr "Хостове надолу"
 
 #: panellib/misc.php:498
 msgid "Last log records"
-msgstr ""
+msgstr "Последни регистрационни записи"
 
 #: panellib/misc.php:500 panellib/misc.php:572
 msgid "Test"
-msgstr ""
+msgstr "Тест"
 
 #: panellib/misc.php:501 panellib/misc.php:573
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: panellib/misc.php:555
 #, fuzzy
@@ -2152,9 +2150,8 @@ msgid "ID: "
 msgstr "ID: "
 
 #: panellib/poller.php:275
-#, fuzzy
 msgid "Seconds"
-msgstr "%s секунди"
+msgstr "Секунди"
 
 #: panellib/poller.php:297
 #, fuzzy
@@ -2178,7 +2175,7 @@ msgstr "Изходните елементи на полето %s:"
 
 #: panellib/poller.php:447
 msgid "Items"
-msgstr ""
+msgstr "Елементи"
 
 #: panellib/syslog.php:31
 #, fuzzy
@@ -2206,11 +2203,11 @@ msgstr "Входящ"
 
 #: panellib/syslog.php:173
 msgid "Stored"
-msgstr ""
+msgstr "Запазено"
 
 #: panellib/syslog.php:175
 msgid "Messages"
-msgstr ""
+msgstr "Съобщения"
 
 #: panellib/syslog.php:197
 #, fuzzy
@@ -2288,11 +2285,11 @@ msgstr "Тази функция не се изпълнява на Windows пла
 
 #: panellib/system.php:177
 msgid "Avg CPU"
-msgstr ""
+msgstr "Среден процесор"
 
 #: panellib/system.php:178
 msgid "Max CPU"
-msgstr ""
+msgstr "Максимален процесор"
 
 #: panellib/system.php:208
 #, fuzzy
@@ -2355,7 +2352,7 @@ msgstr "Статистика за повишаване"
 #: panellib/system.php:350
 #, php-format
 msgid "Processes/Frequency: %s / %s"
-msgstr ""
+msgstr "Процеси / Честота: %s / %s"
 
 #: panellib/system.php:352
 #, fuzzy, php-format
@@ -2479,7 +2476,7 @@ msgstr "Без събития"
 #: panellib/thold.php:196
 #, fuzzy
 msgid "Thresholds: "
-msgstr "Предел"
+msgstr "Прагове"
 
 #: panellib/thold.php:208 panellib/thold.php:332
 #, fuzzy
@@ -2502,9 +2499,8 @@ msgid "Threshold Details"
 msgstr "Прагове"
 
 #: panellib/thold.php:357
-#, fuzzy
 msgid "Thresholds"
-msgstr "Предел"
+msgstr "Прагове"
 
 #: panellib/thold.php:402
 #, fuzzy
@@ -2523,7 +2519,7 @@ msgstr "Нямате разрешение"
 
 #: panellib/thold.php:484
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: panellib/top5.php:31
 #, fuzzy
@@ -2537,7 +2533,7 @@ msgstr "Панели, които предоставят актуална инф�
 
 #: panellib/top5.php:37
 msgid "Bottom Ping"
-msgstr ""
+msgstr "Долен пинг"
 
 #: panellib/top5.php:38
 #, fuzzy
@@ -2646,7 +2642,7 @@ msgstr "Активни потребители през последните 2 ч
 
 #: setup.php:89
 msgid "Timespan Last 1 Day"
-msgstr ""
+msgstr "Период от време Последният 1 ден"
 
 #: setup.php:95 setup.php:96 setup.php:97 setup.php:98
 #, fuzzy, php-format

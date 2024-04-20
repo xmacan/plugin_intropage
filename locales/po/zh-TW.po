@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2024-04-20 13:36-0400\n"
-"PO-Revision-Date: 2022-02-15 16:01-0500\n"
+"PO-Revision-Date: 2024-04-20 14:30-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: display.php:40
 #, fuzzy
@@ -25,7 +25,7 @@ msgstr "Intropage  - 許可被拒絕"
 
 #: display.php:123
 msgid "One or more panels was removed due to insufficient permissions. Contact administrator."
-msgstr ""
+msgstr "由於許可權不足，一個或多個面板被移除。請與管理員聯繫。"
 
 #: display.php:179
 #, fuzzy
@@ -39,7 +39,7 @@ msgstr "預設"
 
 #: display.php:242 display.php:588
 msgid "Hide red/yellow/green square notifications"
-msgstr ""
+msgstr "隱藏紅色/黃色/綠色方塊通知"
 
 #: display.php:245
 #, fuzzy
@@ -98,23 +98,23 @@ msgstr "每隔一小時"
 
 #: display.php:321 display.php:323
 msgid "Important period - disabled"
-msgstr ""
+msgstr "重要時期 - 禁用"
 
 #: display.php:327 display.php:329
 msgid "Important period - 15 minutes"
-msgstr ""
+msgstr "重要時段 - 15 分鐘"
 
 #: display.php:333 display.php:335
 msgid "Important period - 1 hour"
-msgstr ""
+msgstr "重要時期 - 1 小時"
 
 #: display.php:339 display.php:341
 msgid "Important period - 4 hours"
-msgstr ""
+msgstr "重要時期 - 4 小時"
 
 #: display.php:345 display.php:347
 msgid "Important period - 1 day"
-msgstr ""
+msgstr "重要時期 - 1 天"
 
 #: display.php:363 display.php:366
 #, fuzzy
@@ -153,7 +153,7 @@ msgstr "將intropage設置為默認頁面"
 
 #: display.php:396 display.php:399
 msgid "Less panels on a line"
-msgstr ""
+msgstr "一條生產線上的面板更少"
 
 #: display.php:397 display.php:400
 #, fuzzy
@@ -162,7 +162,7 @@ msgstr "允許面板前5個Ping"
 
 #: display.php:413
 msgid "Cancel sharing"
-msgstr ""
+msgstr "取消共用"
 
 #: display.php:416
 #, fuzzy
@@ -171,7 +171,7 @@ msgstr "添加到儀表板"
 
 #: display.php:418
 msgid "Share empty dashboard not allowed"
-msgstr ""
+msgstr "不允許共用空儀錶板"
 
 #: display.php:437
 #, fuzzy
@@ -180,7 +180,7 @@ msgstr "從儀表板中刪除"
 
 #: display.php:439
 msgid "Cannot use shared dashboard - dashboard limit reached."
-msgstr ""
+msgstr "無法使用共享儀錶板 - 已達到儀錶板限制。"
 
 #: display.php:443
 #, fuzzy
@@ -199,31 +199,31 @@ msgstr "您可以通過兩種方式添加儀表板面板："
 
 #: display.php:466
 msgid "Select prepared panels from the \"Panels menu\". Panel can be grayed out. It is due to permissions, ask administrator"
-msgstr ""
+msgstr "從「面板功能表」中選擇準備好的面板。面板可以灰顯。這是由於許可權，請詢問管理員"
 
 #: display.php:467
 msgid "Add any Cacti Graph, use icon"
-msgstr ""
+msgstr "添加任何仙人掌圖，使用圖示"
 
 #: display.php:468
 msgid "You can create own panels. More info in file <cacti_install_dir>/plugins/intropage/panellib/README.md"
-msgstr ""
+msgstr "您可以建立自己的面板。更多資訊請參見檔 <cacti_install_dir>/plugins/intropage/panellib/README.md"
 
 #: display.php:473
 msgid "You can share dashboards to other users:"
-msgstr ""
+msgstr "您可以將儀表板共用給其他使用者："
 
 #: display.php:475
 msgid "use \"Share this dashboard\" option in Actions menu - Every user can use it as template."
-msgstr ""
+msgstr "使用「操作」功能表中的「共用此儀錶板」選項 - 每個使用者都可以將其用作範本。"
 
 #: display.php:480
 msgid "You can use shared dashboard using the Actions menu:"
-msgstr ""
+msgstr "您可以使用「操作」功能表使用共享儀錶板："
 
 #: display.php:482
 msgid "Use \"Use shared dashboard (user/dashboard name) -  It prepares the same dashboard like shared but with your permissions."
-msgstr ""
+msgstr "使用“使用共用儀錶板（使用者/儀錶板名稱）”- 它準備與共用儀錶板相同的儀錶板，但具有您的許可權。"
 
 #: display.php:487
 #, fuzzy
@@ -232,15 +232,15 @@ msgstr "CPU利用率"
 
 #: display.php:489
 msgid "You can create up to 9 dashboards. Every dashboard can be named, use icon"
-msgstr ""
+msgstr "您最多可以建立 9 個儀錶板。每個儀錶板都可以命名，使用圖示"
 
 #: display.php:490
 msgid "Intopage can be displayed in console or in separated tab. You can change it in Action menu"
-msgstr ""
+msgstr "Intopage 可以顯示在控制台中或單獨的選項卡中。您可以在操作選單中更改它"
 
 #: display.php:491
 msgid "If you want to copy text from panel, you have to disable drag and drop function, use icon"
-msgstr ""
+msgstr "如果要從面板複製文本，則必須禁用拖放功能，使用圖示"
 
 #: display.php:585
 #, fuzzy
@@ -259,7 +259,7 @@ msgstr "啟用面板移動/禁用面板中的複製文本"
 
 #: display.php:589
 msgid "Show red/yellow/green square notifications"
-msgstr ""
+msgstr "顯示紅色/黃色/綠色方塊通知"
 
 #: display.php:591
 #, fuzzy
@@ -291,15 +291,15 @@ msgstr "無法添加縮放或自定義時間跨度圖，將時間跨度更改為
 
 #: include/functions.php:419
 msgid "Intropage Panel Library Refreshed from Panel Library"
-msgstr ""
+msgstr "從面板庫刷新的 Intropage 面板庫"
 
 #: include/functions.php:491
 msgid "Dashboard has been added, please wait few poller cycle for data"
-msgstr ""
+msgstr "已添加儀錶板，請等待幾個輪詢週期以獲取數據"
 
 #: include/functions.php:502
 msgid "Error - trying share non-shared dashboard"
-msgstr ""
+msgstr "錯誤 - 嘗試共用非共享儀錶板"
 
 #: include/functions.php:617
 #, fuzzy
@@ -358,7 +358,7 @@ msgstr "%s Minutes"
 #: include/functions.php:833
 #, php-format
 msgid "%s Hours"
-msgstr "％s小時"
+msgstr "％s  小時"
 
 #: include/functions.php:833
 #, php-format
@@ -420,14 +420,12 @@ msgid "Cannot add to Dashboard. Custom timespan."
 msgstr "無法添加到儀表板。自定義時間跨度。"
 
 #: include/functions.php:1505
-#, fuzzy
 msgid "Remove from Dashboard"
 msgstr "從儀表板中刪除"
 
 #: include/functions.php:1507
-#, fuzzy
 msgid "Add to Dashboard"
-msgstr "添加到儀表板"
+msgstr "新增到儀表板"
 
 #: include/functions.php:1563
 #, fuzzy
@@ -446,7 +444,7 @@ msgstr "用戶級面板"
 
 #: include/functions.php:1645
 msgid "System Panel Update Frequencies (All Authorized Users)"
-msgstr ""
+msgstr "系統面板更新頻率（所有授權使用者）"
 
 #: include/functions.php:1694
 #, fuzzy
@@ -465,7 +463,7 @@ msgstr "普通用戶"
 #: include/settings.php:146
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[編輯: ％s]"
 
 #: include/settings.php:155
 #, fuzzy
@@ -528,7 +526,7 @@ msgstr "顯示錯誤和警告"
 
 #: include/variables.php:46
 msgid "For wide screen"
-msgstr ""
+msgstr "適用於寬屏"
 
 #: include/variables.php:51
 #, fuzzy
@@ -541,9 +539,8 @@ msgid "If a Panel is installed and required plugin is removed, automatically uni
 msgstr "如果安裝了面板並刪除了所需的插件，也會自動卸載面板"
 
 #: include/variables.php:57
-#, fuzzy
 msgid "Automatic Page Refresh"
-msgstr "自動刷新頁面"
+msgstr "自動頁面刷新"
 
 #: include/variables.php:58
 #, fuzzy
@@ -575,11 +572,11 @@ msgstr "每隔一小時"
 
 #: include/variables.php:70
 msgid "Important period"
-msgstr ""
+msgstr "重要時期"
 
 #: include/variables.php:71
 msgid "From now to past. Affects row coloring, older events will not be highlighted, only displayed"
-msgstr ""
+msgstr "從現在到過去。影響行著色，較舊的事件不會突出顯示，只會顯示"
 
 #: include/variables.php:74 panellib/graphs.php:355 panellib/graphs.php:533
 #: panellib/mactrack.php:111 panellib/poller.php:143 panellib/poller.php:348
@@ -589,23 +586,20 @@ msgid "Disabled"
 msgstr "停用"
 
 #: include/variables.php:75
-#, fuzzy
 msgid "15 minutes"
-msgstr "%s Minutes"
+msgstr "15分鐘"
 
 #: include/variables.php:76
-#, fuzzy
 msgid "1 hour"
-msgstr "小時"
+msgstr "1 小時"
 
 #: include/variables.php:77
-#, fuzzy
 msgid "4 hours"
-msgstr "小時"
+msgstr "4小時"
 
 #: include/variables.php:78
 msgid "1 day"
-msgstr ""
+msgstr "1 天"
 
 #: include/variables.php:83
 #, fuzzy
@@ -614,12 +608,12 @@ msgstr "檢查次數："
 
 #: include/variables.php:84
 msgid "How many lines in panel"
-msgstr ""
+msgstr "面板中有多少行"
 
 #: include/variables.php:87 include/variables.php:88 include/variables.php:89
-#, php-format
+#, fuzzy, php-format
 msgid "%d lines"
-msgstr ""
+msgstr "％d行"
 
 #: include/variables.php:94
 #, fuzzy
@@ -628,7 +622,7 @@ msgstr "趨勢"
 
 #: include/variables.php:95
 msgid "For Trend charts, what should be the default timespan for those charts."
-msgstr ""
+msgstr "對於趨勢圖，這些圖表的默認時間跨度應是多少。"
 
 #: include/variables.php:101
 #, fuzzy
@@ -741,7 +735,7 @@ msgstr "經常檢查NTP"
 
 #: include/variables.php:168
 msgid "DNS Check - Any DNS name"
-msgstr ""
+msgstr "DNS 檢查 - 任何 DNS 名稱"
 
 #: include/variables.php:169
 #, fuzzy
@@ -765,11 +759,11 @@ msgstr "如果不為空，則面板將顯示在頂部。您可以使用html標�
 
 #: include/variables.php:195
 msgid "Upcoming Maint Schedule warning days"
-msgstr ""
+msgstr "即將到來的維護計劃警告日"
 
 #: include/variables.php:196
 msgid "How many days before a scheduled maintenance schedule should a warning be displayed?"
-msgstr ""
+msgstr "在計劃維護計劃前多少天應顯示警告？"
 
 #: include/variables.php:199
 #, fuzzy
@@ -793,19 +787,19 @@ msgstr "％d天前"
 
 #: include/variables.php:208
 msgid "Network stats in"
-msgstr ""
+msgstr "網路統計資訊"
 
 #: include/variables.php:209
 msgid "bytes or bits"
-msgstr ""
+msgstr "位元組或位"
 
 #: include/variables.php:212
 msgid "Bytes"
-msgstr ""
+msgstr "位元組"
 
 #: include/variables.php:213
 msgid "Bits"
-msgstr ""
+msgstr "位"
 
 #: include/variables.php:218
 #, fuzzy
@@ -825,7 +819,7 @@ msgstr "警報 DB 檢查中止的客戶端"
 #: include/variables.php:293 include/variables.php:300
 #: include/variables.php:307
 msgid "If this event has occurred, trigger the selected Normal, Warning, or Alert status color."
-msgstr ""
+msgstr "如果發生此事件，請觸發選定的「正常」、「警告」或「警報」狀態顏色。"
 
 #: include/variables.php:229
 #, fuzzy
@@ -854,7 +848,7 @@ msgstr "警報閾值 logonly 操作"
 
 #: include/variables.php:264
 msgid "Alarm when device bulk_walk_size is not optimized"
-msgstr ""
+msgstr "設備bulk_walk_size未優化時發出警報"
 
 #: include/variables.php:271
 #, fuzzy
@@ -893,11 +887,11 @@ msgstr "允許面板排名前五的最差輪詢時間"
 
 #: include/variables.php:314
 msgid "Polling times above these thresholds will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "超過這些閾值的輪詢次數將觸發「警告」或「警報」狀態顏色。"
 
 #: include/variables.php:318
 msgid "5s  / 10s Yellow / Red"
-msgstr ""
+msgstr "5s / 10s 黃色 / 紅色"
 
 #: include/variables.php:319
 #, fuzzy
@@ -916,7 +910,7 @@ msgstr "報警紅/黃故障/全比"
 
 #: include/variables.php:325
 msgid "The ratio of failed availability checks to successful checks to trigger as Warning or Alert status color."
-msgstr ""
+msgstr "要觸發的可用性檢查失敗與成功檢查的比率，為“警告”或“警報”狀態顏色。"
 
 #: include/variables.php:329
 #, fuzzy
@@ -925,11 +919,11 @@ msgstr "0.1/0.2 紅/黃"
 
 #: include/variables.php:330
 msgid "0.2 / 0.4 Yellow / Red"
-msgstr ""
+msgstr "0.2 / 0.4 黃色 / 紅色"
 
 #: include/variables.php:331
 msgid "0.5 / 0.5++ Yellow / Red"
-msgstr ""
+msgstr "0.5 / 0.5++ 黃色 / 紅色"
 
 #: include/variables.php:335
 #, fuzzy
@@ -938,15 +932,15 @@ msgstr "報警紅/黃ping"
 
 #: include/variables.php:336
 msgid "Ping latency above these levels will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "高於這些級別的 Ping 延遲將觸發「警告」或「警報」狀態顏色。"
 
 #: include/variables.php:340
 msgid "10ms  / 20ms Yellow / Red"
-msgstr ""
+msgstr "10ms / 20ms 黃色 / 紅色"
 
 #: include/variables.php:341
 msgid "20ms  / 50ms Yellow / Red"
-msgstr ""
+msgstr "20ms / 50ms 黃色 / 紅色"
 
 #: include/variables.php:342
 #, fuzzy
@@ -960,12 +954,12 @@ msgstr "Top5最差的可用性"
 
 #: include/variables.php:347
 msgid "Availability below these levels will trigger either a Yellow or a Red status color."
-msgstr ""
+msgstr "低於這些級別的可用性將觸發黃色或紅色狀態顏色。"
 
 #: include/variables.php:351 include/variables.php:352
 #: include/variables.php:353
 msgid "Yellow / Red"
-msgstr ""
+msgstr "黃色/紅色"
 
 #: panellib/alert.php:31 panellib/syslog.php:172
 msgid "Alerts"
@@ -973,7 +967,7 @@ msgstr "通知"
 
 #: panellib/alert.php:32
 msgid "Panels that provide alerting."
-msgstr ""
+msgstr "提供警報的面板。"
 
 #: panellib/alert.php:37 panellib/alert.php:205
 #, fuzzy
@@ -982,7 +976,7 @@ msgstr "主機名稱"
 
 #: panellib/alert.php:38
 msgid "Host alerts (up/down/recovering) in last 30 minutes"
-msgstr ""
+msgstr "過去 30 分鐘內的主機警報（已啟動/已關閉/正在恢復）"
 
 #: panellib/alert.php:119 panellib/alert.php:264 panellib/analyze.php:154
 #: panellib/analyze.php:1270 panellib/misc.php:336 panellib/misc.php:407
@@ -1004,7 +998,7 @@ msgstr "州"
 
 #: panellib/alert.php:178 panellib/alert.php:319
 msgid "More records, use detail window"
-msgstr ""
+msgstr "更多記錄，使用詳細信息視窗"
 
 #: panellib/alert.php:185 panellib/alert.php:326 panellib/analyze.php:1048
 #: panellib/graphs.php:371 panellib/poller.php:283 panellib/poller.php:452
@@ -1118,7 +1112,7 @@ msgstr "登錄失敗"
 
 #: panellib/analyze.php:224
 msgid "None"
-msgstr ""
+msgstr "無"
 
 #: panellib/analyze.php:227
 #, fuzzy
@@ -1172,7 +1166,7 @@ msgstr "最後10次登錄"
 
 #: panellib/analyze.php:423
 msgid "Skipping DB tables checks. Database too large"
-msgstr ""
+msgstr "跳過資料庫表檢查。資料庫太大"
 
 #: panellib/analyze.php:437
 #, fuzzy, php-format
@@ -1186,16 +1180,16 @@ msgstr "DB問題"
 
 #: panellib/analyze.php:453
 msgid "DB: OK"
-msgstr ""
+msgstr "DB：好的"
 
 #: panellib/analyze.php:477
 #, php-format
 msgid "Max connection reached: %s / %s"
-msgstr ""
+msgstr "最大連接數：%s / %s"
 
 #: panellib/analyze.php:478
 msgid "You can increase Max connection via command line tools or permanently in config file"
-msgstr ""
+msgstr "您可以通過命令列工具或在設定檔中永久增加最大連接數"
 
 #: panellib/analyze.php:499
 #, fuzzy, php-format
@@ -1209,7 +1203,7 @@ msgstr "中止的客戶端/連接：%s - 檢查日誌。"
 
 #: panellib/analyze.php:519
 msgid "Aborted clients/connects - Run 'SET GLOBAL log_warnings = 1;' or ' log_error_verbosity = 1;' (depends on your MySQL/MariaDB version) from the mysql CLI and set in server.cnf to silence."
-msgstr ""
+msgstr "中止的用戶端/連接 - 運行“SET GLOBAL log_warnings = 1;”或“log_error_verbosity = 1;”（取決於您的 MySQL/MariaDB 版本）從 mysql CLI 並在 server.cnf 中設置為靜音。"
 
 #: panellib/analyze.php:523
 #, fuzzy, php-format
@@ -1223,7 +1217,7 @@ msgstr "損壞的表：％s"
 
 #: panellib/analyze.php:527
 msgid "You should run check and repair table commands"
-msgstr ""
+msgstr "您應該運行 check 和 repair table 命令"
 
 #: panellib/analyze.php:531
 #, fuzzy, php-format
@@ -1256,38 +1250,38 @@ msgstr "具有相同IP和端口的設備：％s"
 #: panellib/analyze.php:613
 #, php-format
 msgid "Not optimized Bulk Walk Size devices: %s"
-msgstr ""
+msgstr "未優化的批量步行大小設備：%s"
 
 #: panellib/analyze.php:614 panellib/analyze.php:1431
 msgid "Please have a look to device parameter \"Bulk Walk Maximum Repetitions\". You can improve your poller performance"
-msgstr ""
+msgstr "請查看設備參數“Bulk Walk Maximum Rerepeats”。您可以提高輪詢器性能"
 
 #: panellib/analyze.php:620 panellib/analyze.php:1454
 msgid "Reindex last run"
-msgstr ""
+msgstr "重新索引上次運行"
 
 #: panellib/analyze.php:621 panellib/analyze.php:1455
 msgid "RRD Checker last run"
-msgstr ""
+msgstr "RRD 檢查器上次運行"
 
 #: panellib/analyze.php:622 panellib/analyze.php:1456
 msgid "RRD Cleaner last run"
-msgstr ""
+msgstr "RRD Cleaner 上次運行"
 
 #: panellib/analyze.php:635 panellib/analyze.php:1473
-#, fuzzy, php-format
+#, php-format
 msgid "%s: %s"
-msgstr "UPS"
+msgstr "%s: %s"
 
 #: panellib/analyze.php:636 panellib/analyze.php:642 panellib/analyze.php:1474
 #: panellib/analyze.php:1480
 msgid "It is recommended to run this tool at least occasionally"
-msgstr ""
+msgstr "建議至少偶爾運行此工具"
 
 #: panellib/analyze.php:641 panellib/analyze.php:1479
 #, php-format
 msgid "%s: not run yet"
-msgstr ""
+msgstr "%s：尚未運行"
 
 #: panellib/analyze.php:691
 #, fuzzy, php-format
@@ -1346,7 +1340,7 @@ msgstr "一切還好"
 
 #: panellib/analyze.php:977
 msgid "DS stats: "
-msgstr ""
+msgstr "DS統計數據："
 
 #: panellib/analyze.php:1003 panellib/busiest.php:165 panellib/busiest.php:285
 #: panellib/busiest.php:396 panellib/busiest.php:616 panellib/busiest.php:751
@@ -1354,15 +1348,15 @@ msgstr ""
 #: panellib/busiest.php:1234 panellib/busiest.php:1448
 #: panellib/busiest.php:1590 panellib/busiest.php:1713
 msgid "Panel needs DS stats enabled."
-msgstr ""
+msgstr "面板需要啟用 DS 統計資訊。"
 
 #: panellib/analyze.php:1015
 msgid "DS all records "
-msgstr ""
+msgstr "DS 所有記錄"
 
 #: panellib/analyze.php:1031
 msgid "DS null records "
-msgstr ""
+msgstr "DS 空記錄"
 
 #: panellib/analyze.php:1090
 #, fuzzy
@@ -1429,7 +1423,7 @@ msgstr "具有相同IP和端口％s的設備"
 #: panellib/analyze.php:1428
 #, php-format
 msgid "Not optimized Bulk Walk Size devices - %s"
-msgstr ""
+msgstr "未優化的 Bulk Walk Size 裝置 - %s"
 
 #: panellib/analyze.php:1484
 #, fuzzy
@@ -1483,15 +1477,15 @@ msgstr "插件監視器 - 未監視的主機％s"
 
 #: panellib/busiest.php:31
 msgid "The busiest"
-msgstr ""
+msgstr "最繁忙的"
 
 #: panellib/busiest.php:32
 msgid "Panels that finds the busiest hosts."
-msgstr ""
+msgstr "查找最繁忙的主機的面板。"
 
 #: panellib/busiest.php:37
 msgid "Busiest CPU"
-msgstr ""
+msgstr "最繁忙的 CPU"
 
 #: panellib/busiest.php:38
 #, fuzzy
@@ -1500,7 +1494,7 @@ msgstr "具有相同IP和端口的設備：％s"
 
 #: panellib/busiest.php:53
 msgid "Busiest ucd/net - Load"
-msgstr ""
+msgstr "最繁忙的ucd/net - 負載"
 
 #: panellib/busiest.php:54
 #, fuzzy
@@ -1509,15 +1503,15 @@ msgstr "具有相同描述的設備：％s"
 
 #: panellib/busiest.php:69
 msgid "Busiest Hard Drive Space"
-msgstr ""
+msgstr "最繁忙的硬碟空間"
 
 #: panellib/busiest.php:70
 msgid "Devices with the highest Hard Drive Space used (Host MIB)"
-msgstr ""
+msgstr "使用的最高硬碟空間的裝置（主機 MIB）"
 
 #: panellib/busiest.php:85 panellib/busiest.php:1366
 msgid "Busiest uptime"
-msgstr ""
+msgstr "最繁忙的正常運行時間"
 
 #: panellib/busiest.php:86
 #, fuzzy
@@ -1526,7 +1520,7 @@ msgstr "Top5最糟糕的投票時間"
 
 #: panellib/busiest.php:101
 msgid "Busiest Interface in/out traffic"
-msgstr ""
+msgstr "最繁忙的介面輸入/輸出流量"
 
 #: panellib/busiest.php:102
 #, fuzzy
@@ -1535,19 +1529,19 @@ msgstr "Top5最糟糕的投票時間"
 
 #: panellib/busiest.php:117
 msgid "Busiest Interface error"
-msgstr ""
+msgstr "最繁忙的介面錯誤"
 
 #: panellib/busiest.php:118
 msgid "Devices with the highest errors/discards (Interface)"
-msgstr ""
+msgstr "錯誤/丟棄次數最多的設備（介面）"
 
 #: panellib/busiest.php:133
 msgid "Busiest Interface utilization"
-msgstr ""
+msgstr "最繁忙的介面利用率"
 
 #: panellib/busiest.php:134
 msgid "Ports with the highest interface utilization"
-msgstr ""
+msgstr "介面利用率最高的埠"
 
 #: panellib/busiest.php:168 panellib/busiest.php:288 panellib/busiest.php:399
 #: panellib/busiest.php:619 panellib/busiest.php:754 panellib/busiest.php:874
@@ -1555,7 +1549,7 @@ msgstr ""
 #: panellib/busiest.php:1237 panellib/busiest.php:1451
 #: panellib/busiest.php:1593 panellib/busiest.php:1716
 msgid "Please enable and configure DS stats"
-msgstr ""
+msgstr "請啟用和配置 DS 統計資訊"
 
 #: panellib/busiest.php:170 panellib/busiest.php:290 panellib/busiest.php:401
 #: panellib/busiest.php:621 panellib/busiest.php:756 panellib/busiest.php:876
@@ -1563,7 +1557,7 @@ msgstr ""
 #: panellib/busiest.php:1239 panellib/busiest.php:1453
 #: panellib/busiest.php:1595 panellib/busiest.php:1718
 msgid "Ask admin to enable DS stats"
-msgstr ""
+msgstr "要求管理員啟用 DS 統計資訊"
 
 #: panellib/busiest.php:218 panellib/busiest.php:338 panellib/busiest.php:473
 #: panellib/busiest.php:689 panellib/busiest.php:811 panellib/busiest.php:1053
@@ -1578,14 +1572,14 @@ msgstr "平均"
 #: panellib/busiest.php:1170 panellib/busiest.php:1311
 #: panellib/busiest.php:1524 panellib/busiest.php:1650
 msgid "Peak"
-msgstr ""
+msgstr "峰"
 
 #: panellib/busiest.php:259 panellib/busiest.php:370 panellib/busiest.php:514
 #: panellib/busiest.php:725 panellib/busiest.php:843 panellib/busiest.php:1088
 #: panellib/busiest.php:1204 panellib/busiest.php:1345
 #: panellib/busiest.php:1562 panellib/busiest.php:1684
 msgid "Average of all allowed DS"
-msgstr ""
+msgstr "所有允許的 DS 的平均值"
 
 #: panellib/busiest.php:263 panellib/busiest.php:374 panellib/busiest.php:518
 #: panellib/busiest.php:729 panellib/busiest.php:847 panellib/busiest.php:977
@@ -1593,7 +1587,7 @@ msgstr ""
 #: panellib/busiest.php:1350 panellib/busiest.php:1566
 #: panellib/busiest.php:1688 panellib/busiest.php:1816
 msgid "Waiting for data or you don't have permission for any device with this template."
-msgstr ""
+msgstr "正在等待數據，或者您沒有使用此範本的任何設備的許可權。"
 
 #: panellib/busiest.php:267 panellib/busiest.php:378 panellib/busiest.php:522
 #: panellib/busiest.php:733 panellib/busiest.php:851 panellib/busiest.php:981
@@ -1606,11 +1600,11 @@ msgstr "你沒有權限"
 
 #: panellib/busiest.php:570 panellib/busiest.php:1403
 msgid "Uptime"
-msgstr ""
+msgstr "運行時間"
 
 #: panellib/busiest.php:588 panellib/busiest.php:1420
 msgid "Average of all allowed hosts"
-msgstr ""
+msgstr "所有允許的主機的平均值"
 
 #: panellib/busiest.php:592 panellib/busiest.php:1424
 #, fuzzy
@@ -1619,36 +1613,36 @@ msgstr "你沒有權限"
 
 #: panellib/busiest.php:933 panellib/busiest.php:1773
 msgid "Direction"
-msgstr ""
+msgstr "方向"
 
 #: panellib/busiest.php:973 panellib/busiest.php:1812
 msgid "Time interval last 5 minutes"
-msgstr ""
+msgstr "時間間隔持續 5 分鐘"
 
 #: panellib/busiest.php:993
 msgid "Busiest 30 Host MIB CPU utilization (last hour)"
-msgstr ""
+msgstr "最繁忙的 30 台主機 MIB CPU 利用率（過去一小時）"
 
 #: panellib/busiest.php:1090 panellib/busiest.php:1206
 #: panellib/busiest.php:1347
 msgid "Install TopX plugin for more DS statistics"
-msgstr ""
+msgstr "安裝 TopX 外掛程式以獲取更多 DS 統計數據"
 
 #: panellib/busiest.php:1109
 msgid "Busiest 30 ucd/net Load (last hour)"
-msgstr ""
+msgstr "最繁忙的 30 ucd/net 負載（最後一小時）"
 
 #: panellib/busiest.php:1226
 msgid "Busiest 30 Host MIB Hard Drive space (last hour)"
-msgstr ""
+msgstr "最繁忙的 30 主機 MIB 硬碟空間（最後一小時）"
 
 #: panellib/busiest.php:1440 panellib/busiest.php:1582
 msgid "Busiest traffic (in+out)"
-msgstr ""
+msgstr "最繁忙的交通（進+出）"
 
 #: panellib/busiest.php:1703
 msgid "Busiest interface utilization"
-msgstr ""
+msgstr "最繁忙的介面利用率"
 
 #: panellib/graphs.php:31
 #, fuzzy
@@ -1701,7 +1695,7 @@ msgstr "設備模板"
 #: panellib/graphs.php:262
 #, fuzzy
 msgid "Devices: "
-msgstr "設備"
+msgstr "沒有裝置"
 
 #: panellib/graphs.php:299 panellib/graphs.php:521 panellib/mactrack.php:108
 msgid "Down"
@@ -1714,7 +1708,7 @@ msgstr "正在復原"
 
 #: panellib/graphs.php:423
 msgid "Data Type"
-msgstr ""
+msgstr "數據類型"
 
 #: panellib/graphs.php:441 panellib/graphs.php:650 panellib/top5.php:388
 #: panellib/top5.php:720
@@ -1731,9 +1725,8 @@ msgid "Devices"
 msgstr "設備"
 
 #: panellib/graphs.php:503
-#, fuzzy
 msgid "Device Count"
-msgstr "最大設備停機"
+msgstr "設備數量"
 
 #: panellib/graphs.php:509 panellib/thold.php:365 panellib/thold.php:381
 msgid "All"
@@ -1745,12 +1738,11 @@ msgstr "向上"
 
 #: panellib/graphs.php:635
 msgid "Template Name"
-msgstr ""
+msgstr "模板名稱"
 
 #: panellib/graphs.php:636
-#, fuzzy
 msgid "Total Devices"
-msgstr "設備"
+msgstr "設備總數"
 
 #: panellib/graphs.php:656
 #, fuzzy
@@ -1975,17 +1967,17 @@ msgstr "沒有配置NTP服務器"
 #: panellib/misc.php:173
 #, php-format
 msgid "DNS hostname (%s) resolving ok."
-msgstr ""
+msgstr "DNS 主機名 （%s） 解析正常。"
 
 #: panellib/misc.php:174
 #, php-format
 msgid "DNS resolv time: %s ms"
-msgstr ""
+msgstr "DNS 解析時間：%s ms"
 
 #: panellib/misc.php:177
 #, php-format
 msgid "DNS hostname (%s) resolving failed."
-msgstr ""
+msgstr "DNS 主機名 （%s） 解析失敗。"
 
 #: panellib/misc.php:287
 #, fuzzy
@@ -1999,7 +1991,7 @@ msgstr "插件Thold未安裝或啟動"
 
 #: panellib/misc.php:319
 msgid "Webseer plugin no longer supported, use plugin servcheck instead"
-msgstr ""
+msgstr "不再支援 Webseer 外掛程式，請改用外掛程式 servcheck"
 
 #: panellib/misc.php:320 panellib/misc.php:486
 #, fuzzy
@@ -2013,7 +2005,7 @@ msgstr "主持人"
 
 #: panellib/misc.php:335
 msgid "Last log messages"
-msgstr ""
+msgstr "最後的日誌消息"
 
 #: panellib/misc.php:337 panellib/misc.php:408
 msgid "URL"
@@ -2045,15 +2037,15 @@ msgstr "主持人"
 
 #: panellib/misc.php:498
 msgid "Last log records"
-msgstr ""
+msgstr "上次記錄"
 
 #: panellib/misc.php:500 panellib/misc.php:572
 msgid "Test"
-msgstr ""
+msgstr "測試"
 
 #: panellib/misc.php:501 panellib/misc.php:573
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: panellib/misc.php:555
 #, fuzzy
@@ -2143,9 +2135,8 @@ msgid "ID: "
 msgstr "代碼:"
 
 #: panellib/poller.php:275
-#, fuzzy
 msgid "Seconds"
-msgstr "%s 秒"
+msgstr "秒"
 
 #: panellib/poller.php:297
 #, fuzzy
@@ -2168,7 +2159,7 @@ msgstr "輪詢輸出項％s："
 
 #: panellib/poller.php:447
 msgid "Items"
-msgstr ""
+msgstr "項目"
 
 #: panellib/syslog.php:31
 #, fuzzy
@@ -2196,11 +2187,11 @@ msgstr "進入"
 
 #: panellib/syslog.php:173
 msgid "Stored"
-msgstr ""
+msgstr "存儲"
 
 #: panellib/syslog.php:175
 msgid "Messages"
-msgstr ""
+msgstr "訊息"
 
 #: panellib/syslog.php:197
 #, fuzzy
@@ -2267,7 +2258,6 @@ msgid "CPU utilization Graph (only Linux)."
 msgstr "CPU利用率"
 
 #: panellib/system.php:141
-#, fuzzy
 msgid "CPU Load: "
 msgstr "CPU負載："
 
@@ -2278,11 +2268,11 @@ msgstr "Windows平台上未實現此功能"
 
 #: panellib/system.php:177
 msgid "Avg CPU"
-msgstr ""
+msgstr "平均 CPU"
 
 #: panellib/system.php:178
 msgid "Max CPU"
-msgstr ""
+msgstr "最大 CPU"
 
 #: panellib/system.php:208
 #, fuzzy
@@ -2342,7 +2332,7 @@ msgstr "提升統計數據"
 #: panellib/system.php:350
 #, php-format
 msgid "Processes/Frequency: %s / %s"
-msgstr ""
+msgstr "行程/頻率：%s / %s"
 
 #: panellib/system.php:352
 #, fuzzy, php-format
@@ -2510,7 +2500,7 @@ msgstr "你沒有權限"
 
 #: panellib/thold.php:484
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: panellib/top5.php:31
 #, fuzzy
@@ -2524,7 +2514,7 @@ msgstr "提供有關 Cacti 數據收集的信息趨勢信息的面板。"
 
 #: panellib/top5.php:37
 msgid "Bottom Ping"
-msgstr ""
+msgstr "底部 Ping"
 
 #: panellib/top5.php:38
 #, fuzzy
@@ -2631,12 +2621,12 @@ msgstr "最近 2 小時內的活躍用戶："
 
 #: setup.php:89
 msgid "Timespan Last 1 Day"
-msgstr ""
+msgstr "時間跨度：過去 1 天"
 
 #: setup.php:95 setup.php:96 setup.php:97 setup.php:98
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
-msgstr "%s 秒"
+msgstr "%d 秒"
 
 #: setup.php:109 setup.php:110 setup.php:111 setup.php:112
 #, php-format

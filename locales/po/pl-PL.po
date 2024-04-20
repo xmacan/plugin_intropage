@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2024-04-20 13:36-0400\n"
-"PO-Revision-Date: 2022-02-15 15:56-0500\n"
+"PO-Revision-Date: 2024-04-20 14:19-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: display.php:40
 #, fuzzy
@@ -25,7 +25,7 @@ msgstr "Intropage - odmowa udzielenia zezwolenia"
 
 #: display.php:123
 msgid "One or more panels was removed due to insufficient permissions. Contact administrator."
-msgstr ""
+msgstr "Co najmniej jeden panel został usunięty z powodu niewystarczających uprawnień. Skontaktuj się z administratorem."
 
 #: display.php:179
 #, fuzzy
@@ -39,7 +39,7 @@ msgstr "Domyślny"
 
 #: display.php:242 display.php:588
 msgid "Hide red/yellow/green square notifications"
-msgstr ""
+msgstr "Ukryj powiadomienia o czerwonym/żółtym/zielonym kwadracie"
 
 #: display.php:245
 #, fuzzy
@@ -98,23 +98,23 @@ msgstr "Co godzine"
 
 #: display.php:321 display.php:323
 msgid "Important period - disabled"
-msgstr ""
+msgstr "Ważny okres - wyłączony"
 
 #: display.php:327 display.php:329
 msgid "Important period - 15 minutes"
-msgstr ""
+msgstr "Ważna kropka - 15 minut"
 
 #: display.php:333 display.php:335
 msgid "Important period - 1 hour"
-msgstr ""
+msgstr "Ważny okres - 1 godzina"
 
 #: display.php:339 display.php:341
 msgid "Important period - 4 hours"
-msgstr ""
+msgstr "Ważny okres - 4 godziny"
 
 #: display.php:345 display.php:347
 msgid "Important period - 1 day"
-msgstr ""
+msgstr "Ważny okres - 1 dzień"
 
 #: display.php:363 display.php:366
 #, fuzzy
@@ -153,7 +153,7 @@ msgstr "Ustawienie strony wstępnej jako strony domyślnej"
 
 #: display.php:396 display.php:399
 msgid "Less panels on a line"
-msgstr ""
+msgstr "Mniej paneli na linii"
 
 #: display.php:397 display.php:400
 #, fuzzy
@@ -162,7 +162,7 @@ msgstr "Pozwól na panel Top 5 Ping"
 
 #: display.php:413
 msgid "Cancel sharing"
-msgstr ""
+msgstr "Anuluj udostępnianie"
 
 #: display.php:416
 #, fuzzy
@@ -171,7 +171,7 @@ msgstr "Dodaj do Tablicy rozdzielczej"
 
 #: display.php:418
 msgid "Share empty dashboard not allowed"
-msgstr ""
+msgstr "Udostępnianie pustego pulpitu nawigacyjnego jest niedozwolone"
 
 #: display.php:437
 #, fuzzy
@@ -180,7 +180,7 @@ msgstr "Zdejmij z deski rozdzielczej"
 
 #: display.php:439
 msgid "Cannot use shared dashboard - dashboard limit reached."
-msgstr ""
+msgstr "Nie można użyć udostępnionego pulpitu nawigacyjnego — osiągnięto limit pulpitu nawigacyjnego."
 
 #: display.php:443
 #, fuzzy
@@ -199,31 +199,31 @@ msgstr "Możesz dodać panele Dashboard na dwa sposoby:"
 
 #: display.php:466
 msgid "Select prepared panels from the \"Panels menu\". Panel can be grayed out. It is due to permissions, ask administrator"
-msgstr ""
+msgstr "Wybierz przygotowane panele z menu \"Panele\". Panel może być wyszarzony. Jest to spowodowane uprawnieniami, zapytaj administratora"
 
 #: display.php:467
 msgid "Add any Cacti Graph, use icon"
-msgstr ""
+msgstr "Dodaj dowolny wykres kaktusów, użyj ikony"
 
 #: display.php:468
 msgid "You can create own panels. More info in file <cacti_install_dir>/plugins/intropage/panellib/README.md"
-msgstr ""
+msgstr "Możesz tworzyć własne panele. Więcej informacji w pliku <cacti_install_dir>/plugins/intropage/panellib/README.md"
 
 #: display.php:473
 msgid "You can share dashboards to other users:"
-msgstr ""
+msgstr "Pulpity nawigacyjne można udostępniać innym użytkownikom:"
 
 #: display.php:475
 msgid "use \"Share this dashboard\" option in Actions menu - Every user can use it as template."
-msgstr ""
+msgstr "użyj opcji \"Udostępnij ten pulpit nawigacyjny\" w menu Akcje - każdy użytkownik może użyć go jako szablonu."
 
 #: display.php:480
 msgid "You can use shared dashboard using the Actions menu:"
-msgstr ""
+msgstr "Z udostępnionego pulpitu nawigacyjnego można korzystać za pomocą menu Akcje:"
 
 #: display.php:482
 msgid "Use \"Use shared dashboard (user/dashboard name) -  It prepares the same dashboard like shared but with your permissions."
-msgstr ""
+msgstr "Użyj opcji \"Użyj udostępnionego pulpitu nawigacyjnego (nazwa użytkownika/pulpitu nawigacyjnego) — przygotowuje ten sam pulpit nawigacyjny, co udostępniony, ale z Twoimi uprawnieniami."
 
 #: display.php:487
 #, fuzzy
@@ -232,15 +232,15 @@ msgstr "Wykorzystanie procesora"
 
 #: display.php:489
 msgid "You can create up to 9 dashboards. Every dashboard can be named, use icon"
-msgstr ""
+msgstr "Możesz utworzyć maksymalnie 9 pulpitów nawigacyjnych. Każdy pulpit nawigacyjny może mieć nazwę, użyj ikony"
 
 #: display.php:490
 msgid "Intopage can be displayed in console or in separated tab. You can change it in Action menu"
-msgstr ""
+msgstr "Strona może być wyświetlana w konsoli lub w osobnej zakładce. Możesz to zmienić w menu Akcja"
 
 #: display.php:491
 msgid "If you want to copy text from panel, you have to disable drag and drop function, use icon"
-msgstr ""
+msgstr "Jeśli chcesz skopiować tekst z panelu, musisz wyłączyć funkcję przeciągnij i upuść, użyj ikony"
 
 #: display.php:585
 #, fuzzy
@@ -259,7 +259,7 @@ msgstr "Włączanie przesuwania/wyłączanie kopiowania tekstu z panelu"
 
 #: display.php:589
 msgid "Show red/yellow/green square notifications"
-msgstr ""
+msgstr "Pokaż powiadomienia o czerwonym/żółtym/zielonym kwadracie"
 
 #: display.php:591
 #, fuzzy
@@ -292,15 +292,15 @@ msgstr "Nie można dodać powiększonego lub niestandardowego wykresu przedział
 
 #: include/functions.php:419
 msgid "Intropage Panel Library Refreshed from Panel Library"
-msgstr ""
+msgstr "Biblioteka paneli wprowadzających odświeżona z biblioteki paneli"
 
 #: include/functions.php:491
 msgid "Dashboard has been added, please wait few poller cycle for data"
-msgstr ""
+msgstr "Pulpit nawigacyjny został dodany, poczekaj kilka cykli pollera na dane"
 
 #: include/functions.php:502
 msgid "Error - trying share non-shared dashboard"
-msgstr ""
+msgstr "Błąd — próba udostępnienia nieudostępnionego pulpitu nawigacyjnego"
 
 #: include/functions.php:617
 #, fuzzy
@@ -357,9 +357,9 @@ msgid "%s Minutes"
 msgstr "Co %d minutę/minut"
 
 #: include/functions.php:833
-#, fuzzy, php-format
+#, php-format
 msgid "%s Hours"
-msgstr "%s godzin"
+msgstr "%s godziny"
 
 #: include/functions.php:833
 #, fuzzy, php-format
@@ -447,7 +447,7 @@ msgstr "Panele poziomu użytkownika"
 
 #: include/functions.php:1645
 msgid "System Panel Update Frequencies (All Authorized Users)"
-msgstr ""
+msgstr "Częstotliwość aktualizacji panelu systemowego (wszyscy autoryzowani użytkownicy)"
 
 #: include/functions.php:1694
 #, fuzzy
@@ -466,7 +466,7 @@ msgstr "Zwykły użytkownik"
 #: include/settings.php:146
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[edytuj | %s]"
 
 #: include/settings.php:155
 #, fuzzy
@@ -529,7 +529,7 @@ msgstr "Wyświetlanie błędów i ostrzeżeń"
 
 #: include/variables.php:46
 msgid "For wide screen"
-msgstr ""
+msgstr "Do szerokiego ekranu"
 
 #: include/variables.php:51
 #, fuzzy
@@ -576,11 +576,11 @@ msgstr "Co godzine"
 
 #: include/variables.php:70
 msgid "Important period"
-msgstr ""
+msgstr "Ważny okres"
 
 #: include/variables.php:71
 msgid "From now to past. Affects row coloring, older events will not be highlighted, only displayed"
-msgstr ""
+msgstr "Od teraz do przeszłości. Wpływa na kolorowanie wierszy, starsze zdarzenia nie będą podświetlane, tylko wyświetlane"
 
 #: include/variables.php:74 panellib/graphs.php:355 panellib/graphs.php:533
 #: panellib/mactrack.php:111 panellib/poller.php:143 panellib/poller.php:348
@@ -590,23 +590,20 @@ msgid "Disabled"
 msgstr "Wyłączone"
 
 #: include/variables.php:75
-#, fuzzy
 msgid "15 minutes"
-msgstr "Co %d minutę/minut"
+msgstr "15 minut"
 
 #: include/variables.php:76
-#, fuzzy
 msgid "1 hour"
-msgstr "godzina"
+msgstr "1 godzina"
 
 #: include/variables.php:77
-#, fuzzy
 msgid "4 hours"
-msgstr "godzina"
+msgstr "4 godziny"
 
 #: include/variables.php:78
 msgid "1 day"
-msgstr ""
+msgstr "1 dzień"
 
 #: include/variables.php:83
 #, fuzzy
@@ -615,12 +612,12 @@ msgstr "Liczba kontroli:"
 
 #: include/variables.php:84
 msgid "How many lines in panel"
-msgstr ""
+msgstr "Ile linii w panelu"
 
 #: include/variables.php:87 include/variables.php:88 include/variables.php:89
 #, php-format
 msgid "%d lines"
-msgstr ""
+msgstr "%d linii"
 
 #: include/variables.php:94
 #, fuzzy
@@ -629,7 +626,7 @@ msgstr "Trendy"
 
 #: include/variables.php:95
 msgid "For Trend charts, what should be the default timespan for those charts."
-msgstr ""
+msgstr "W przypadku wykresów trendu jaki powinien być domyślny przedział czasu dla tych wykresów."
 
 #: include/variables.php:101
 #, fuzzy
@@ -651,9 +648,9 @@ msgstr "%d minuta"
 #: include/variables.php:111 include/variables.php:112 setup.php:100
 #: setup.php:101 setup.php:102 setup.php:103 setup.php:104 setup.php:105
 #: setup.php:106 setup.php:107
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
-msgstr "%d minut"
+msgstr "%d Minuty"
 
 #: include/variables.php:113 setup.php:108
 #, php-format
@@ -741,7 +738,7 @@ msgstr "Jak często sprawdza się NTP"
 
 #: include/variables.php:168
 msgid "DNS Check - Any DNS name"
-msgstr ""
+msgstr "Sprawdzanie DNS — dowolna nazwa DNS"
 
 #: include/variables.php:169
 #, fuzzy
@@ -765,11 +762,11 @@ msgstr "Jeśli nie jest pusty, panel zostanie wyświetlony na górze. Możesz u�
 
 #: include/variables.php:195
 msgid "Upcoming Maint Schedule warning days"
-msgstr ""
+msgstr "Nadchodzące dni ostrzeżeń Maint Schedule"
 
 #: include/variables.php:196
 msgid "How many days before a scheduled maintenance schedule should a warning be displayed?"
-msgstr ""
+msgstr "Na ile dni przed planowanym harmonogramem konserwacji powinno być wyświetlane ostrzeżenie?"
 
 #: include/variables.php:199
 #, fuzzy
@@ -793,19 +790,19 @@ msgstr "%d Dni przed"
 
 #: include/variables.php:208
 msgid "Network stats in"
-msgstr ""
+msgstr "Statystyki sieciowe w"
 
 #: include/variables.php:209
 msgid "bytes or bits"
-msgstr ""
+msgstr "bajty lub bity"
 
 #: include/variables.php:212
 msgid "Bytes"
-msgstr ""
+msgstr "Bajtów"
 
 #: include/variables.php:213
 msgid "Bits"
-msgstr ""
+msgstr "Bity"
 
 #: include/variables.php:218
 msgid "Alarm Settings"
@@ -824,7 +821,7 @@ msgstr "Sprawdzenie przerwanych klientów Alarm DB"
 #: include/variables.php:293 include/variables.php:300
 #: include/variables.php:307
 msgid "If this event has occurred, trigger the selected Normal, Warning, or Alert status color."
-msgstr ""
+msgstr "Jeśli wystąpiło to zdarzenie, wyzwól wybrany kolor stanu Normalny, Ostrzeżenie lub Alert."
 
 #: include/variables.php:229
 #, fuzzy
@@ -853,7 +850,7 @@ msgstr "Działanie tylko przy logowaniu progu alarmu"
 
 #: include/variables.php:264
 msgid "Alarm when device bulk_walk_size is not optimized"
-msgstr ""
+msgstr "Alarm, gdy bulk_walk_size urządzenia nie jest zoptymalizowany"
 
 #: include/variables.php:271
 #, fuzzy
@@ -892,11 +889,11 @@ msgstr "Pozwól, aby panel Top 5 najgorszego czasu głosowania"
 
 #: include/variables.php:314
 msgid "Polling times above these thresholds will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "Czasy odpytywania powyżej tych progów spowodują wyzwolenie koloru Ostrzeżenie lub Stan alertu."
 
 #: include/variables.php:318
 msgid "5s  / 10s Yellow / Red"
-msgstr ""
+msgstr "5s / 10s Żółty / Czerwony"
 
 #: include/variables.php:319
 #, fuzzy
@@ -915,7 +912,7 @@ msgstr "Wskaźnik czerwony/żółty nie powiodło się/wszystkie"
 
 #: include/variables.php:325
 msgid "The ratio of failed availability checks to successful checks to trigger as Warning or Alert status color."
-msgstr ""
+msgstr "Stosunek nieudanych kontroli dostępności do pomyślnych kontroli wyzwolonych jako kolor Ostrzeżenie lub Stan alertu."
 
 #: include/variables.php:329
 #, fuzzy
@@ -924,11 +921,11 @@ msgstr "0,1/0,2 czerwony/żółty"
 
 #: include/variables.php:330
 msgid "0.2 / 0.4 Yellow / Red"
-msgstr ""
+msgstr "0.2 / 0.4 Żółty / Czerwony"
 
 #: include/variables.php:331
 msgid "0.5 / 0.5++ Yellow / Red"
-msgstr ""
+msgstr "0.5 / 0.5++ Żółty / Czerwony"
 
 #: include/variables.php:335
 #, fuzzy
@@ -937,15 +934,15 @@ msgstr "Alarm czerwony/żółty ping"
 
 #: include/variables.php:336
 msgid "Ping latency above these levels will trigger a Warning or Alert status color."
-msgstr ""
+msgstr "Opóźnienie pingu powyżej tych poziomów spowoduje wyzwolenie koloru ostrzeżenia lub stanu alertu."
 
 #: include/variables.php:340
 msgid "10ms  / 20ms Yellow / Red"
-msgstr ""
+msgstr "10ms / 20ms Żółty / Czerwony"
 
 #: include/variables.php:341
 msgid "20ms  / 50ms Yellow / Red"
-msgstr ""
+msgstr "20ms / 50ms Żółty / Czerwony"
 
 #: include/variables.php:342
 #, fuzzy
@@ -959,12 +956,12 @@ msgstr "Top5 najgorsza dostępność"
 
 #: include/variables.php:347
 msgid "Availability below these levels will trigger either a Yellow or a Red status color."
-msgstr ""
+msgstr "Dostępność poniżej tych poziomów spowoduje wyświetlenie koloru stanu Żółty lub Czerwony."
 
 #: include/variables.php:351 include/variables.php:352
 #: include/variables.php:353
 msgid "Yellow / Red"
-msgstr ""
+msgstr "Żółty / Czerwony"
 
 #: panellib/alert.php:31 panellib/syslog.php:172
 msgid "Alerts"
@@ -972,7 +969,7 @@ msgstr "Powiadomienia"
 
 #: panellib/alert.php:32
 msgid "Panels that provide alerting."
-msgstr ""
+msgstr "Panele, które zapewniają alerty."
 
 #: panellib/alert.php:37 panellib/alert.php:205
 #, fuzzy
@@ -981,7 +978,7 @@ msgstr "Nazwa hosta"
 
 #: panellib/alert.php:38
 msgid "Host alerts (up/down/recovering) in last 30 minutes"
-msgstr ""
+msgstr "Alerty hosta (w górę/w dół/odzyskiwanie) w ciągu ostatnich 30 minut"
 
 #: panellib/alert.php:119 panellib/alert.php:264 panellib/analyze.php:154
 #: panellib/analyze.php:1270 panellib/misc.php:336 panellib/misc.php:407
@@ -1003,7 +1000,7 @@ msgstr "Województwo"
 
 #: panellib/alert.php:178 panellib/alert.php:319
 msgid "More records, use detail window"
-msgstr ""
+msgstr "Więcej rekordów, użyj okna szczegółów"
 
 #: panellib/alert.php:185 panellib/alert.php:326 panellib/analyze.php:1048
 #: panellib/graphs.php:371 panellib/poller.php:283 panellib/poller.php:452
@@ -1118,7 +1115,7 @@ msgstr "Nieudane logowanie"
 
 #: panellib/analyze.php:224
 msgid "None"
-msgstr ""
+msgstr "Brak"
 
 #: panellib/analyze.php:227
 #, fuzzy
@@ -1172,7 +1169,7 @@ msgstr "Ostatnie 10 logowań"
 
 #: panellib/analyze.php:423
 msgid "Skipping DB tables checks. Database too large"
-msgstr ""
+msgstr "Pomijanie sprawdzania tabel bazy danych. Zbyt duża baza danych"
 
 #: panellib/analyze.php:437
 #, fuzzy, php-format
@@ -1186,16 +1183,16 @@ msgstr "Problem DB"
 
 #: panellib/analyze.php:453
 msgid "DB: OK"
-msgstr ""
+msgstr "DB: Dobrze"
 
 #: panellib/analyze.php:477
 #, php-format
 msgid "Max connection reached: %s / %s"
-msgstr ""
+msgstr "Maksymalne osiągnięte połączenie: %s / %s"
 
 #: panellib/analyze.php:478
 msgid "You can increase Max connection via command line tools or permanently in config file"
-msgstr ""
+msgstr "Możesz zwiększyć maksymalne połączenie za pomocą narzędzi wiersza poleceń lub na stałe w pliku konfiguracyjnym"
 
 #: panellib/analyze.php:499
 #, fuzzy, php-format
@@ -1209,7 +1206,7 @@ msgstr "Przerwane klienty/połączenia: %s - sprawdź logi."
 
 #: panellib/analyze.php:519
 msgid "Aborted clients/connects - Run 'SET GLOBAL log_warnings = 1;' or ' log_error_verbosity = 1;' (depends on your MySQL/MariaDB version) from the mysql CLI and set in server.cnf to silence."
-msgstr ""
+msgstr "Przerwani klienci/połączenia — uruchom polecenie \"SET GLOBAL log_warnings = 1;\" lub \"log_error_verbosity = 1;\" (w zależności od wersji MySQL/MariaDB) z interfejsu wiersza polecenia mysql i ustaw w server.cnf na silence."
 
 #: panellib/analyze.php:523
 #, fuzzy, php-format
@@ -1223,7 +1220,7 @@ msgstr "Uszkodzone tabele: %s"
 
 #: panellib/analyze.php:527
 msgid "You should run check and repair table commands"
-msgstr ""
+msgstr "Należy uruchomić polecenia check i repair table"
 
 #: panellib/analyze.php:531
 #, fuzzy, php-format
@@ -1256,38 +1253,38 @@ msgstr "Urządzenia o tym samym IP i porcie: %s"
 #: panellib/analyze.php:613
 #, php-format
 msgid "Not optimized Bulk Walk Size devices: %s"
-msgstr ""
+msgstr "Niezoptymalizowane urządzenia Bulk Walk Size: %s"
 
 #: panellib/analyze.php:614 panellib/analyze.php:1431
 msgid "Please have a look to device parameter \"Bulk Walk Maximum Repetitions\". You can improve your poller performance"
-msgstr ""
+msgstr "Proszę spojrzeć na parametr urządzenia \"Bulk Walk Maximum Repetitions\". Możesz poprawić wydajność swojego pollera"
 
 #: panellib/analyze.php:620 panellib/analyze.php:1454
 msgid "Reindex last run"
-msgstr ""
+msgstr "Ponowne indeksowanie ostatniego uruchomienia"
 
 #: panellib/analyze.php:621 panellib/analyze.php:1455
 msgid "RRD Checker last run"
-msgstr ""
+msgstr "Ostatnie uruchomienie RRD Checker"
 
 #: panellib/analyze.php:622 panellib/analyze.php:1456
 msgid "RRD Cleaner last run"
-msgstr ""
+msgstr "RRD Cleaner ostatni bieg"
 
 #: panellib/analyze.php:635 panellib/analyze.php:1473
-#, fuzzy, php-format
+#, php-format
 msgid "%s: %s"
-msgstr "W górę: %s"
+msgstr "%s: %s"
 
 #: panellib/analyze.php:636 panellib/analyze.php:642 panellib/analyze.php:1474
 #: panellib/analyze.php:1480
 msgid "It is recommended to run this tool at least occasionally"
-msgstr ""
+msgstr "Zaleca się uruchamianie tego narzędzia przynajmniej od czasu do czasu"
 
 #: panellib/analyze.php:641 panellib/analyze.php:1479
 #, php-format
 msgid "%s: not run yet"
-msgstr ""
+msgstr "%s: jeszcze nie uruchomiony"
 
 #: panellib/analyze.php:691
 #, fuzzy, php-format
@@ -1345,7 +1342,7 @@ msgstr "Wszystko OK"
 
 #: panellib/analyze.php:977
 msgid "DS stats: "
-msgstr ""
+msgstr "Statystyki DS: "
 
 #: panellib/analyze.php:1003 panellib/busiest.php:165 panellib/busiest.php:285
 #: panellib/busiest.php:396 panellib/busiest.php:616 panellib/busiest.php:751
@@ -1353,15 +1350,15 @@ msgstr ""
 #: panellib/busiest.php:1234 panellib/busiest.php:1448
 #: panellib/busiest.php:1590 panellib/busiest.php:1713
 msgid "Panel needs DS stats enabled."
-msgstr ""
+msgstr "Panel wymaga włączonych statystyk DS."
 
 #: panellib/analyze.php:1015
 msgid "DS all records "
-msgstr ""
+msgstr "DS wszystkie rekordy "
 
 #: panellib/analyze.php:1031
 msgid "DS null records "
-msgstr ""
+msgstr "Rekordy puste DS "
 
 #: panellib/analyze.php:1090
 #, fuzzy
@@ -1428,7 +1425,7 @@ msgstr "Urządzenia o tym samym IP i porcie %s"
 #: panellib/analyze.php:1428
 #, php-format
 msgid "Not optimized Bulk Walk Size devices - %s"
-msgstr ""
+msgstr "Niezoptymalizowane urządzenia Bulk Walk Size — %s"
 
 #: panellib/analyze.php:1484
 #, fuzzy
@@ -1482,15 +1479,15 @@ msgstr "Monitor wtyczek - Niekontrolowane hosty %s"
 
 #: panellib/busiest.php:31
 msgid "The busiest"
-msgstr ""
+msgstr "Najbardziej ruchliwy"
 
 #: panellib/busiest.php:32
 msgid "Panels that finds the busiest hosts."
-msgstr ""
+msgstr "Panele, które znajdują najbardziej zajęte hosty."
 
 #: panellib/busiest.php:37
 msgid "Busiest CPU"
-msgstr ""
+msgstr "Najbardziej obciążony procesor"
 
 #: panellib/busiest.php:38
 #, fuzzy
@@ -1499,7 +1496,7 @@ msgstr "Urządzenia o tym samym IP i porcie: %s"
 
 #: panellib/busiest.php:53
 msgid "Busiest ucd/net - Load"
-msgstr ""
+msgstr "Najbardziej zajęty ucd/netto - Obciążenie"
 
 #: panellib/busiest.php:54
 #, fuzzy
@@ -1508,15 +1505,15 @@ msgstr "Urządzenia o takim samym opisie: %s"
 
 #: panellib/busiest.php:69
 msgid "Busiest Hard Drive Space"
-msgstr ""
+msgstr "Najbardziej zajęte miejsce na dysku twardym"
 
 #: panellib/busiest.php:70
 msgid "Devices with the highest Hard Drive Space used (Host MIB)"
-msgstr ""
+msgstr "Urządzenia z największą ilością zajętego miejsca na dysku twardym (baza MIB hosta)"
 
 #: panellib/busiest.php:85 panellib/busiest.php:1366
 msgid "Busiest uptime"
-msgstr ""
+msgstr "Najdłuższy czas pracy bez przestojów"
 
 #: panellib/busiest.php:86
 #, fuzzy
@@ -1525,7 +1522,7 @@ msgstr "Top5 najgorszy czas trwania głosowania"
 
 #: panellib/busiest.php:101
 msgid "Busiest Interface in/out traffic"
-msgstr ""
+msgstr "Najbardziej ruchliwy ruch przychodzący/wychodzący interfejsu"
 
 #: panellib/busiest.php:102
 #, fuzzy
@@ -1534,19 +1531,19 @@ msgstr "Top5 najgorszy czas trwania głosowania"
 
 #: panellib/busiest.php:117
 msgid "Busiest Interface error"
-msgstr ""
+msgstr "Błąd najbardziej zajętego interfejsu"
 
 #: panellib/busiest.php:118
 msgid "Devices with the highest errors/discards (Interface)"
-msgstr ""
+msgstr "Urządzenia z najwyższymi błędami/odrzutami (Interfejs)"
 
 #: panellib/busiest.php:133
 msgid "Busiest Interface utilization"
-msgstr ""
+msgstr "Wykorzystanie najbardziej obciążonego interfejsu"
 
 #: panellib/busiest.php:134
 msgid "Ports with the highest interface utilization"
-msgstr ""
+msgstr "Porty o najwyższym wykorzystaniu interfejsu"
 
 #: panellib/busiest.php:168 panellib/busiest.php:288 panellib/busiest.php:399
 #: panellib/busiest.php:619 panellib/busiest.php:754 panellib/busiest.php:874
@@ -1554,7 +1551,7 @@ msgstr ""
 #: panellib/busiest.php:1237 panellib/busiest.php:1451
 #: panellib/busiest.php:1593 panellib/busiest.php:1716
 msgid "Please enable and configure DS stats"
-msgstr ""
+msgstr "Włącz i skonfiguruj statystyki DS"
 
 #: panellib/busiest.php:170 panellib/busiest.php:290 panellib/busiest.php:401
 #: panellib/busiest.php:621 panellib/busiest.php:756 panellib/busiest.php:876
@@ -1562,7 +1559,7 @@ msgstr ""
 #: panellib/busiest.php:1239 panellib/busiest.php:1453
 #: panellib/busiest.php:1595 panellib/busiest.php:1718
 msgid "Ask admin to enable DS stats"
-msgstr ""
+msgstr "Poproś administratora o włączenie statystyk DS"
 
 #: panellib/busiest.php:218 panellib/busiest.php:338 panellib/busiest.php:473
 #: panellib/busiest.php:689 panellib/busiest.php:811 panellib/busiest.php:1053
@@ -1577,14 +1574,14 @@ msgstr "Średni"
 #: panellib/busiest.php:1170 panellib/busiest.php:1311
 #: panellib/busiest.php:1524 panellib/busiest.php:1650
 msgid "Peak"
-msgstr ""
+msgstr "Szczyt"
 
 #: panellib/busiest.php:259 panellib/busiest.php:370 panellib/busiest.php:514
 #: panellib/busiest.php:725 panellib/busiest.php:843 panellib/busiest.php:1088
 #: panellib/busiest.php:1204 panellib/busiest.php:1345
 #: panellib/busiest.php:1562 panellib/busiest.php:1684
 msgid "Average of all allowed DS"
-msgstr ""
+msgstr "Średnia ze wszystkich dozwolonych DS"
 
 #: panellib/busiest.php:263 panellib/busiest.php:374 panellib/busiest.php:518
 #: panellib/busiest.php:729 panellib/busiest.php:847 panellib/busiest.php:977
@@ -1592,7 +1589,7 @@ msgstr ""
 #: panellib/busiest.php:1350 panellib/busiest.php:1566
 #: panellib/busiest.php:1688 panellib/busiest.php:1816
 msgid "Waiting for data or you don't have permission for any device with this template."
-msgstr ""
+msgstr "Czekam na dane lub nie masz uprawnień do żadnego urządzenia z tym szablonem."
 
 #: panellib/busiest.php:267 panellib/busiest.php:378 panellib/busiest.php:522
 #: panellib/busiest.php:733 panellib/busiest.php:851 panellib/busiest.php:981
@@ -1605,11 +1602,11 @@ msgstr "Nie masz pozwolenia"
 
 #: panellib/busiest.php:570 panellib/busiest.php:1403
 msgid "Uptime"
-msgstr ""
+msgstr "Czas działania"
 
 #: panellib/busiest.php:588 panellib/busiest.php:1420
 msgid "Average of all allowed hosts"
-msgstr ""
+msgstr "Średnia ze wszystkich dozwolonych hostów"
 
 #: panellib/busiest.php:592 panellib/busiest.php:1424
 #, fuzzy
@@ -1618,36 +1615,36 @@ msgstr "Nie masz pozwolenia"
 
 #: panellib/busiest.php:933 panellib/busiest.php:1773
 msgid "Direction"
-msgstr ""
+msgstr "Kierunek"
 
 #: panellib/busiest.php:973 panellib/busiest.php:1812
 msgid "Time interval last 5 minutes"
-msgstr ""
+msgstr "Przedział czasowy ostatnich 5 minut"
 
 #: panellib/busiest.php:993
 msgid "Busiest 30 Host MIB CPU utilization (last hour)"
-msgstr ""
+msgstr "Najbardziej obciążone wykorzystanie procesora MIB hosta 30 (ostatnia godzina)"
 
 #: panellib/busiest.php:1090 panellib/busiest.php:1206
 #: panellib/busiest.php:1347
 msgid "Install TopX plugin for more DS statistics"
-msgstr ""
+msgstr "Zainstaluj wtyczkę TopX, aby uzyskać więcej statystyk DS"
 
 #: panellib/busiest.php:1109
 msgid "Busiest 30 ucd/net Load (last hour)"
-msgstr ""
+msgstr "Najbardziej zajęty 30 ucd/net Obciążenie (ostatnia godzina)"
 
 #: panellib/busiest.php:1226
 msgid "Busiest 30 Host MIB Hard Drive space (last hour)"
-msgstr ""
+msgstr "Najbardziej zajęte miejsce na dysku twardym 30 baz MIB hosta (ostatnia godzina)"
 
 #: panellib/busiest.php:1440 panellib/busiest.php:1582
 msgid "Busiest traffic (in+out)"
-msgstr ""
+msgstr "Największy ruch (wjazd + wyjście)"
 
 #: panellib/busiest.php:1703
 msgid "Busiest interface utilization"
-msgstr ""
+msgstr "Najbardziej obciążone wykorzystanie interfejsu"
 
 #: panellib/graphs.php:31
 #, fuzzy
@@ -1715,7 +1712,7 @@ msgstr "Odzyskiwanie"
 
 #: panellib/graphs.php:423
 msgid "Data Type"
-msgstr ""
+msgstr "Typ danych"
 
 #: panellib/graphs.php:441 panellib/graphs.php:650 panellib/top5.php:388
 #: panellib/top5.php:720
@@ -1746,7 +1743,7 @@ msgstr "Do góry"
 
 #: panellib/graphs.php:635
 msgid "Template Name"
-msgstr ""
+msgstr "Nazwa Szablonu"
 
 #: panellib/graphs.php:636
 #, fuzzy
@@ -1975,17 +1972,17 @@ msgstr "Brak skonfigurowanego serwera NTP"
 #: panellib/misc.php:173
 #, php-format
 msgid "DNS hostname (%s) resolving ok."
-msgstr ""
+msgstr "Nazwa hosta DNS (%s) jest rozpoznawana poprawnie."
 
 #: panellib/misc.php:174
 #, php-format
 msgid "DNS resolv time: %s ms"
-msgstr ""
+msgstr "Czas rozpoznawania DNS: %s ms"
 
 #: panellib/misc.php:177
 #, php-format
 msgid "DNS hostname (%s) resolving failed."
-msgstr ""
+msgstr "Rozpoznawanie nazwy hosta DNS (%s) nie powiodło się."
 
 #: panellib/misc.php:287
 #, fuzzy
@@ -1999,7 +1996,7 @@ msgstr "Plugin Thold nie jest zainstalowany ani uruchomiony"
 
 #: panellib/misc.php:319
 msgid "Webseer plugin no longer supported, use plugin servcheck instead"
-msgstr ""
+msgstr "Wtyczka Webseer nie jest już obsługiwana, zamiast tego użyj wtyczki servcheck"
 
 #: panellib/misc.php:320 panellib/misc.php:486
 #, fuzzy
@@ -2013,7 +2010,7 @@ msgstr "Gospodarze na dole"
 
 #: panellib/misc.php:335
 msgid "Last log messages"
-msgstr ""
+msgstr "Ostatnie komunikaty dziennika"
 
 #: panellib/misc.php:337 panellib/misc.php:408
 msgid "URL"
@@ -2046,15 +2043,15 @@ msgstr "Gospodarze na dole"
 
 #: panellib/misc.php:498
 msgid "Last log records"
-msgstr ""
+msgstr "Ostatnie rekordy dziennika"
 
 #: panellib/misc.php:500 panellib/misc.php:572
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: panellib/misc.php:501 panellib/misc.php:573
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: panellib/misc.php:555
 #, fuzzy
@@ -2134,7 +2131,7 @@ msgstr "%s Sek."
 #: panellib/poller.php:171 panellib/poller.php:367
 #, fuzzy
 msgid "(ok)"
-msgstr "(ok)"
+msgstr "OK"
 
 #: panellib/poller.php:172 panellib/poller.php:367
 #, fuzzy
@@ -2146,9 +2143,8 @@ msgid "ID: "
 msgstr "ID: "
 
 #: panellib/poller.php:275
-#, fuzzy
 msgid "Seconds"
-msgstr "%s Sekundy"
+msgstr "Sekundy"
 
 #: panellib/poller.php:297
 #, fuzzy
@@ -2172,7 +2168,7 @@ msgstr "Pozycje wyjściowe pyłku %s:"
 
 #: panellib/poller.php:447
 msgid "Items"
-msgstr ""
+msgstr "Produkty"
 
 #: panellib/syslog.php:31
 #, fuzzy
@@ -2200,11 +2196,11 @@ msgstr "Przychodzące"
 
 #: panellib/syslog.php:173
 msgid "Stored"
-msgstr ""
+msgstr "Przechowywane"
 
 #: panellib/syslog.php:175
 msgid "Messages"
-msgstr ""
+msgstr "Wiadomości"
 
 #: panellib/syslog.php:197
 #, fuzzy
@@ -2282,11 +2278,11 @@ msgstr "Ta funkcja nie jest zaimplementowana na platformach Windows"
 
 #: panellib/system.php:177
 msgid "Avg CPU"
-msgstr ""
+msgstr "Średnia wartość procesora"
 
 #: panellib/system.php:178
 msgid "Max CPU"
-msgstr ""
+msgstr "Maksymalna moc procesora"
 
 #: panellib/system.php:208
 #, fuzzy
@@ -2299,7 +2295,6 @@ msgid "Poller Type:"
 msgstr "Poller typu:"
 
 #: panellib/system.php:219
-#, fuzzy
 msgid "Spine"
 msgstr "Kręgosłup"
 
@@ -2350,7 +2345,7 @@ msgstr "Wzmocnienie statystyk"
 #: panellib/system.php:350
 #, php-format
 msgid "Processes/Frequency: %s / %s"
-msgstr ""
+msgstr "Procesy/częstotliwość: %s / %s"
 
 #: panellib/system.php:352
 #, fuzzy, php-format
@@ -2473,7 +2468,7 @@ msgstr "Bez zdarzeń jeszcze"
 #: panellib/thold.php:196
 #, fuzzy
 msgid "Thresholds: "
-msgstr "Próg"
+msgstr "Progi"
 
 #: panellib/thold.php:208 panellib/thold.php:332
 #, fuzzy
@@ -2496,9 +2491,8 @@ msgid "Threshold Details"
 msgstr "Progi"
 
 #: panellib/thold.php:357
-#, fuzzy
 msgid "Thresholds"
-msgstr "Próg"
+msgstr "Progi"
 
 #: panellib/thold.php:402
 #, fuzzy
@@ -2517,7 +2511,7 @@ msgstr "Nie masz pozwolenia"
 
 #: panellib/thold.php:484
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: panellib/top5.php:31
 #, fuzzy
@@ -2531,7 +2525,7 @@ msgstr "Panele, które dostarczają informacji o trendach w zbieraniu danych o k
 
 #: panellib/top5.php:37
 msgid "Bottom Ping"
-msgstr ""
+msgstr "Dolny ping"
 
 #: panellib/top5.php:38
 #, fuzzy
@@ -2640,12 +2634,12 @@ msgstr "Aktywni użytkownicy w ciągu ostatnich 2 godzin:"
 
 #: setup.php:89
 msgid "Timespan Last 1 Day"
-msgstr ""
+msgstr "Przedział czasowy Ostatni 1 dzień"
 
 #: setup.php:95 setup.php:96 setup.php:97 setup.php:98
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
-msgstr "%s Sekundy"
+msgstr "%d Sekund"
 
 #: setup.php:109 setup.php:110 setup.php:111 setup.php:112
 #, php-format
