@@ -108,7 +108,7 @@ $stats = intropage_gather_stats();
 
 $poller_end = microtime(true);
 
-$pstats = 'Time:' . round($poller_end-$poller_start, 2) . ', Checks:' . $stats['checks'] . ', Details:' . $stats['details'] . ', Trends:' . $stats['trends'];
+$pstats = 'Time:' . round($poller_end-$poller_start, 2) . ', Checks:' . $stats['checks'] . ', Panels:' . $stats['panels'] . ', Trends:' . $stats['trends'];
 
 cacti_log('INTROPAGE STATS: ' . $pstats, false, 'SYSTEM');
 set_config_option('stats_intropage', $pstats);
@@ -136,7 +136,7 @@ function intropage_gather_stats() {
 
 	$logging = read_config_option('log_verbosity', true);
 	$trends  = 0;
-	$details = 0;
+	$pdata = 0;
 	$checks  = 0;
 
 	$panels = initialize_panel_library();
@@ -159,10 +159,13 @@ function intropage_gather_stats() {
 		OR (last_update IS NULL AND level = 0)');
 
 	if (cacti_sizeof($tpanels)) {
-		foreach($tpanels as $panel) {
-   	    	$start = microtime(true);
 
-			// Get trends next
+		$done_trends = array();
+
+		foreach($tpanels as $panel) {
+		$start = microtime(true);
+
+			/* Get trends next */
 			if (isset($panel['trends_func']) && $panel['trends_func'] != '' && is_panel_enabled($panel['panel_id'])) {
 				$function = $panel['trends_func'];
 
@@ -172,7 +175,15 @@ function intropage_gather_stats() {
 						WHERE id = ?',
 						array($panel['id']));
 
-					$function();
+					/* we need run it only once. Example - graph host panel gathers data for all users */
+					if (!array_key_exists($panel['panel_id'], $done_trends)) {
+						$function();
+						$trends++;
+					} else {
+						cacti_log('skipping ' . $panel['panel_id']);
+					}
+
+					$done_trends[$panel['panel_id']] = 1;
 
 					if ($logging >= 5) {
 						cacti_log(sprintf('DEBUG: gathering trend function:%s, duration:%4.3f', $function,  microtime(true) - $start), false, 'INTROPAGE');
@@ -180,7 +191,6 @@ function intropage_gather_stats() {
 
 					intropage_debug(sprintf('gathering trend function:%s, duration:%4.3f', $function, microtime(true) - $start));
 
-					$trends++;
 				} else {
 					cacti_log('WARNING: Unable to find update function ' . $function . ' for panel ' . $panel['name'], false, 'INTROPAGE');
 				}
@@ -189,7 +199,7 @@ function intropage_gather_stats() {
 	}
 
 	foreach ($upanels as $upanel) {
-   	    $start = microtime(true);
+		$start = microtime(true);
 
 		// Fake a session variable
 		if ($upanel['user_id'] > 0) {
@@ -212,9 +222,9 @@ function intropage_gather_stats() {
 			$upanel['refresh_interval'] = $panel['refresh'];
 		}
 
-		// Get details first
+		// process normal panels
 		if (isset($panel['update_func']) && $panel['update_func'] != '' && is_panel_enabled($upanel['panel_id'])) {
-			$qpanel = get_panel_details($upanel['panel_id'], $upanel['user_id']);
+			$qpanel = get_panel($upanel['panel_id'], $upanel['user_id']);
 
 			$function = $panel['update_func'];
 
@@ -236,10 +246,10 @@ function intropage_gather_stats() {
 				cacti_log('WARNING: Unable to find update function ' . $function . ' for panel ' . $panel['name'], false, 'INTROPAGE');
 			}
 
-			$details++;
+			$pdata++;
 		}
 
-  	    $checks++;
+		$checks++;
 	}
 
 	// end of gathering data
@@ -258,7 +268,7 @@ function intropage_gather_stats() {
 		SET cur_timestamp = now()
 		WHERE name = 'ar_poller_finish'");
 
-	return array('checks' => $checks, 'details' => $details, 'trends' => $trends);
+	return array('checks' => $checks, 'panels' => $pdata, 'trends' => $trends);
 }
 
 function intropage_debug($message) {

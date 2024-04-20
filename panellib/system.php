@@ -420,7 +420,7 @@ function extrem_trend() {
 					FROM host
 					$q_host_cond");
 
-				db_execute_prepared('REPLACE INTO plugin_intropage_trends
+				db_execute_prepared('INSERT INTO plugin_intropage_trends
 					(name, value, user_id)
 					VALUES (?, ?, ?)',
 					array('failed_polls', $count, $user['id']));

@@ -203,8 +203,7 @@ function intropage_actions() {
 
 	switch ($action) {
 	case 'addpanelselect':
-		intropage_addpanel_select(get_filter_request_var('panel_id'), get_filter_request_var('dashboard_id'));
-
+		intropage_addpanel_select(get_filter_request_var('dashboard_id'));
 		exit;
 
 		break;
@@ -380,7 +379,7 @@ function intropage_actions() {
 			array($_SESSION['sess_user_id']));
 
 		foreach($panels as $panel) {
-			$qpanel = get_panel_details($panel['panel_id'], $_SESSION['sess_user_id']);
+			$qpanel = get_panel($panel['panel_id'], $_SESSION['sess_user_id']);
 
 			if (isset($qpanel['definition']['trends_func']) && $qpanel['definition']['trends_func'] != '') {
 				if (function_exists($qpanel['definition']['update_func'])) {
@@ -604,7 +603,7 @@ function intropage_reload_panel() {
 			$function = $spanel['update_func'];
 			$user_id  = ($spanel['level'] == PANEL_SYSTEM ? 0 : $_SESSION['sess_user_id']);
 
-			$qpanel = get_panel_details($panel['panel_id'], $user_id);
+			$qpanel = get_panel($panel['panel_id'], $user_id);
 
 			if (function_exists($function)) {
 				if ($forced_update || time() > ($qpanel['last'] + $qpanel['refresh'])) {
@@ -668,7 +667,7 @@ function intropage_detail_panel() {
 		$forced_update = false;
 	}
 
-	$panel = get_panel_details($panel_id, $_SESSION['sess_user_id']);
+	$panel = get_panel($panel_id, $_SESSION['sess_user_id']);
 
 	// Close the session to allow other tabs to operate
 	session_write_close();
@@ -729,7 +728,7 @@ function intropage_autoreload() {
 	exit;
 }
 
-function get_panel_details($panel_id, $user_id = 0) {
+function get_panel($panel_id, $user_id = 0) {
 	// Either fetch by row id or panel_id
 	if (is_numeric($panel_id)) {
 		$panel = db_fetch_row_prepared('SELECT *, UNIX_TIMESTAMP(last_update) AS ts
@@ -868,7 +867,7 @@ function save_panel_result($panel, $user_id = 0) {
 }
 
 function display_panel_results($panel_id, $user_id = 0) {
-	$panel = get_panel_details($panel_id, $user_id);
+	$panel = get_panel($panel_id, $user_id);
 
 	$data = db_fetch_row_prepared("SELECT id, data, alarm, last_update,
 		concat(floor(TIME_FORMAT(SEC_TO_TIME(refresh_interval), '%H') / 24), 'd ',
@@ -1072,15 +1071,15 @@ function intropage_favourite_graph($fav_graph_id, $fav_graph_timespan) {
 function intropage_prepare_graph($dispdata, $user_id) {
 	global $config;
 
-        $lines = read_user_setting('intropage_number_of_lines', read_config_option('intropage_number_of_lines'), false, $user_id);
+	$lines = read_user_setting('intropage_number_of_lines', read_config_option('intropage_number_of_lines'), false, $user_id);
 
-        if ($lines == 5) {
-                $graph_height = 150;
-        } elseif ($lines == 10) {
-                $graph_height = 200;
-        } else {
-                $graph_height = 270;
-        }
+	if ($lines == 5) {
+		$graph_height = 150;
+	} elseif ($lines == 10) {
+		$graph_height = 200;
+	} else {
+		$graph_height = 270;
+	}
 
 	$content = '';
 
@@ -1390,8 +1389,6 @@ function intropage_display_data($panel_id, $data) {
 }
 
 function intropage_addpanel_select($dashboard_id) {
-	print "<select id='intropage_addpanel'>";
-	print '<option value="0">' . __('Panels ...', 'intropage') . '</option>';
 
 	$add_panels = db_fetch_assoc_prepared('SELECT DISTINCT pd.panel_id, pd.name
 		FROM plugin_intropage_panel_definition AS pd
@@ -1408,7 +1405,13 @@ function intropage_addpanel_select($dashboard_id) {
 		ORDER BY pd.name',
 		array($_SESSION['sess_user_id'], $dashboard_id));
 
+	// display always, even if it is empty
+	print "<select id='intropage_addpanel'>";
+	print '<option value="0">' . __('Panels ...', 'intropage') . '</option>';
+
 	if (cacti_sizeof($add_panels)) {
+
+
 		foreach ($add_panels as $panel) {
 			$uniqid = db_fetch_cell_prepared('SELECT id
 				FROM plugin_intropage_panel_data
@@ -1441,7 +1444,6 @@ function intropage_addpanel_select($dashboard_id) {
 			}
 		}
 	}
-
 	print '</select>';
 	print '&nbsp; &nbsp;';
 }

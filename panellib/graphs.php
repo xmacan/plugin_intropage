@@ -364,13 +364,12 @@ function graph_host($panel, $user_id, $timespan = 0) {
 			unset($graph['line']['data3']);
 		}
 
-
-                if (isset($graph['line']['data1']) || isset($graph['line']['data2']) || isset($graph['line']['data3'])) {
-                        $panel['data'] = intropage_prepare_graph($graph, $user_id);
-                } else {
-                        unset($graph);
-                        $panel['data'] = __('Waiting for data', 'intropage');
-                }
+		if (isset($graph['line']['data1']) || isset($graph['line']['data2']) || isset($graph['line']['data3'])) {
+			$panel['data'] = intropage_prepare_graph($graph, $user_id);
+		} else {
+			unset($graph);
+			$panel['data'] = __('Waiting for data', 'intropage');
+		}
 	} else {
 		$panel['data'] = __('You don\'t have permissions to any hosts', 'intropage');
 	}
@@ -684,10 +683,9 @@ function host_collect() {
 			$q_host_cond = 'AND id ' . $host_cond;
 		}
 
-
 		if ($allowed_devices !== false || $simple_perms) {
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				SELECT 'host_down', COUNT(*),?
 				FROM host
@@ -696,7 +694,7 @@ function host_collect() {
 				AND disabled=''",
 				array($user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				SELECT 'host_reco', COUNT(*),?
 				FROM host
@@ -705,7 +703,7 @@ function host_collect() {
 				AND disabled=''",
 				array($user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				SELECT 'host_disa', COUNT(*),?
 				FROM host
@@ -713,17 +711,17 @@ function host_collect() {
 				$q_host_cond",
 				array($user['id']));
 		} else {
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('host_down', 0, ?)",
 				array($user['id']));
 
-                       db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('host_reco', 0, ?)",
 				array($user['id']));
 
-                       db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('host_disa', 0, ?)",
 				array($user['id']));

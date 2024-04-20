@@ -553,33 +553,32 @@ function thold_collect() {
 
 			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_trig, $user['id']);
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_brea', ?, ?)",
 				array($t_brea, $user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_disa', ?, ?)",
 				array($t_disa, $user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_trig', ?, ?)",
 				array($t_trig, $user['id']));
-
 		} else {
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_brea', 0, ?)",
 				array($user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_disa', 0, ?)",
 				array($user['id']));
 
-			db_execute_prepared("REPLACE INTO plugin_intropage_trends
+			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
 				VALUES ('thold_trig', 0, ?)",
 				array($user['id']));
