@@ -310,6 +310,11 @@ function intropage_upgrade_database() {
 			$data['primary']   = 'user_group_id';
 			$data['comment']   = 'authorization';
 			api_plugin_db_table_create('intropage', 'plugin_intropage_user_group_auth', $data);
+
+			api_plugin_register_hook('intropage', 'user_group_admin_tab', 'intropage_user_group_admin_tab', 'include/settings.php', '1');
+			api_plugin_register_hook('intropage', 'user_group_admin_run_action', 'intropage_user_group_admin_run_action', 'includes/settings.php', '1');
+			api_plugin_register_hook('intropage', 'user_group_admin_save', 'intropage_user_group_admin_save', 'include/settings.php', '1');
+			api_plugin_register_hook('intropage', 'user_group_remove', 'intropage_user_group_remove', 'setup.php', '1');
 		}
 
 		// Set the new version
