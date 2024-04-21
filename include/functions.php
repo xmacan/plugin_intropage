@@ -542,15 +542,48 @@ function is_panel_allowed($panel_id, $user_id = 0) {
 	}
 
 	if (!isset($permissions[$user_id])) {
-		$perms = json_decode(
-			db_fetch_cell_prepared('SELECT permissions
-				FROM plugin_intropage_user_auth
-				WHERE user_id = ?',
-				array($user_id)),
-			true
-		);
 
-		$permissions[$user_id] = $perms;
+		/* group permission */
+
+		// See if they have access to any group realms
+		$user_groups = db_fetch_assoc_prepared('SELECT *
+			FROM user_auth_group_members
+			WHERE user_id = ?',
+			array($user_id));
+
+		if (cacti_sizeof($user_groups)) {
+			foreach($user_groups as $g) {
+				$g_perm = db_fetch_cell_prepared('SELECT permissions
+				FROM plugin_intropage_user_group_auth
+				WHERE user_group_id = ?',
+				array($g['group_id']));
+
+				if ($g_perm) {
+					$g_perm = json_decode($g_perm, true);
+
+					foreach($g_perm as $pid => $data) {
+						if ($data == 'on') {
+							$permissions[$user_id][$pid] = 'on';
+						}
+					}
+				}
+			}
+		}
+
+		$u_perm = db_fetch_cell_prepared('SELECT permissions
+			FROM plugin_intropage_user_auth
+			WHERE user_id = ?',
+			array($user_id));
+
+		if ($u_perm) {
+			$u_perm = json_decode($u_perm, true);
+
+			foreach($u_perm as $pid => $data) {
+				if ($data == 'on') {
+					$permissions[$user_id][$pid] = 'on';
+				}
+			}
+		}
 	}
 
 	if (isset($permissions[$user_id][$panel_id])) {
@@ -567,12 +600,51 @@ function get_allowed_panels($user_id = 0) {
 		$user_id = $_SESSION['sess_user_id'];
 	}
 
-	$permissions =	db_fetch_cell_prepared('SELECT permissions
+	$permissions = array();
+
+	/* group permission */
+
+	// See if they have access to any group realms
+	$user_groups = db_fetch_assoc_prepared('SELECT *
+		FROM user_auth_group_members
+		WHERE user_id = ?',
+		array($user_id));
+
+	if (cacti_sizeof($user_groups)) {
+		foreach($user_groups as $g) {
+			$g_perm = db_fetch_cell_prepared('SELECT permissions
+			FROM plugin_intropage_user_group_auth
+			WHERE user_group_id = ?',
+			array($g['group_id']));
+
+			if ($g_perm) {
+				$g_perm = json_decode($g_perm, true);
+
+				foreach($g_perm as $panel_id => $data) {
+					if ($data == 'on') {
+						$permissions[$panel_id] = 'on';
+					}
+				}
+			}
+		}
+	}
+
+	$u_perm = db_fetch_cell_prepared('SELECT permissions
 			FROM plugin_intropage_user_auth
 			WHERE user_id = ?',
 			array($user_id));
 
-	return ($permissions === false) ? false : json_decode($permissions,true);
+	if ($u_perm) {
+		$u_perm = json_decode($u_perm, true);
+
+		foreach($u_perm as $panel_id => $data) {
+			if ($data == 'on') {
+				$permissions[$panel_id] = 'on';
+			}
+		}
+	}
+
+	return (cacti_sizeof($permissions) ? $permissions: false);
 }
 
 function intropage_reload_panel() {
@@ -1766,3 +1838,4 @@ function human_readable ($bytes, $decimal = true, $precision = 2) {
 
 	return round(empty($d)?0:($bytes / pow($factor, $i)), $precision).' '.$size;
 }
+
