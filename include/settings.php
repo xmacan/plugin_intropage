@@ -472,69 +472,18 @@ function intropage_user_group_admin_save($save){
 
 		$permissions = array();
 
-		if (db_column_exists('plugin_intropage_user_group_auth', 'permissions')) {
-			$permmode = true;
-		} else {
-			$permmode = false;
-		}
-
 		foreach ($panels as $panel) {
-			if (!$permmode) {
-				if ($panel['panel_id'] != 'admin_alert' && $panel['panel_id'] != 'maint') {
-					db_execute_prepared('UPDATE plugin_intropage_user_group_auth
-						SET `' . $panel['panel_id'] . '` = ?
-						WHERE id = ?',
-						array(get_nfilter_request_var($panel['panel_id']), $group_id));
-				}
-			} else {
-				$permissions[$panel['panel_id']] = (isset_request_var($panel['panel_id']) ? 'on':'');
-			}
+			$permissions[$panel['panel_id']] = (isset_request_var($panel['panel_id']) ? 'on':'');
 		}
 
 		if (isset_request_var('favourite_graph')) {
 			$permissions['favourite_graph'] = 'on';
 		}
 
-		if ($permmode) {
-/*
-			foreach($permissions as $panel_id => $data) {
-				$exists = db_fetch_cell_prepared('SELECT id FROM plugin_intropage_panel_data
-					WHERE panel_id = ?
-					AND user_id in (0, ?)',
-					array($panel_id, $user_id));
-
-				if (!$exists) {
-					$panel = db_fetch_row_prepared('SELECT *
-						FROM plugin_intropage_panel_definition
-						WHERE panel_id = ?',
-						array($panel_id));
-
-					$save = array();
-
-					$save['id']               = 0;
-					$save['panel_id']         = $panel_id;
-
-					if (isset($panel['level']) && $panel['level'] == 0) {
-						$save['user_id'] = 0;
-					} else {
-						$save['user_id'] = $user_id;
-					}
-
-					$save['last_update']      = '0000-00-00';
-					$save['data']             = '';
-					$save['priority']         = (isset($panel['priority']) ? $panel['priority']:99);
-					$save['alarm']            = (isset($panel['alarm']) ? $panel['alarm']:'green');
-					$save['refresh_interval'] = (isset($panel['refresh']) ? $panel['refresh']:300);
-
-					$id = sql_save($save, 'plugin_intropage_panel_data');
-				}
-			}
-*/
-			db_execute_prepared('UPDATE plugin_intropage_user_group_auth
-				SET permissions = ?
-				WHERE id = ?',
-				array(json_encode($permissions), $group_id));
-		}
+		db_execute_prepared('UPDATE plugin_intropage_user_group_auth
+			SET permissions = ?
+			WHERE user_group_id = ?',
+			array(json_encode($permissions), $group_id));
 
 		raise_message(1);
 

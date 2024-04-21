@@ -48,7 +48,7 @@ function plugin_intropage_install() {
 	api_plugin_register_hook('intropage', 'user_admin_user_save', 'intropage_user_admin_user_save', 'includes/settings.php');
 	api_plugin_register_hook('intropage', 'user_remove', 'intropage_user_remove', 'setup.php');
 	api_plugin_register_hook('intropage', 'user_group_admin_tab', 'intropage_user_group_admin_tab', 'include/settings.php');
-	api_plugin_register_hook('intropage', 'user_group_admin_run_action', 'intropage_user_admin_run_action', 'includes/settings.php');
+	api_plugin_register_hook('intropage', 'user_group_admin_run_action', 'intropage_user_group_admin_run_action', 'includes/settings.php');
 	api_plugin_register_hook('intropage', 'user_group_admin_save', 'intropage_user_group_admin_save', 'include/settings.php');
 	api_plugin_register_hook('intropage', 'user_group_remove', 'intropage_user_group_remove', 'setup.php');
 
