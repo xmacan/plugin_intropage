@@ -39,11 +39,13 @@
 
 * feature: Add plugin servcheck panel
 
-* issue295: Incorrect count of tholds and bulk walk size devices
+* issue#295: Incorrect count of tholds and bulk walk size devices
 
-* issue304: Fix incorrect panel color 
+* issue#304: Fix incorrect panel color 
 
+* feature#31: Add group permission
 
+* fix#306: Duplicity in trends, gathering data are triggered more times
 
 --- 4.0.3 ---
 
