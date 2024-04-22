@@ -265,6 +265,55 @@ function initPage() {
 		});
 	});
 
+	// detail to the new window
+	$('.maxim').click(function(event) {
+		event.preventDefault();
+		var panel_id = $(this).attr('detail-panel');
+		var url = urlPath+'plugins/intropage/intropage.php?action=details&panel_id='+panel_id;
+
+		$.get(url)
+		.done(function(data) {
+			checkForRedirects(data, url);
+
+			$('#overlay_detail').html(data);
+
+			var width = $('#overlay_detail').textWidth() + 150;
+			var windowWidth = $(window).width();
+
+			if (width > 1200) {
+				width = 1200;
+			}
+
+			if (width > windowWidth) {
+				width = windowWidth - 50;
+			}
+
+			$('#overlay').dialog({
+				modal: true,
+				autoOpen: true,
+				buttons: [{
+					text: intropage_text_close,
+					click: function() {
+						$(this).dialog('destroy');
+						$('#overlay_detail').empty();
+					},
+					icon: 'ui-icon-heart'
+				}],
+				width: width,
+				maxHeight: 650,
+				resizable: true,
+				title: intropage_text_panel_details,
+			});
+
+			$('#block').click(function() {
+				$('#overlay').dialog('close');
+			});
+		})
+		.fail(function(data) {
+			getPresentHTTPErrorOrRedirect(data, href);
+		});
+	});
+
 	// enable/disable move panel/copy text
 	$('#switch_copytext').off('click').on('click', function() {
 		if (!intropage_drag) {
@@ -282,7 +331,6 @@ function initPage() {
 
 	// display/hide red/yellow/green square notifications
 	$('#switch_square').off('click').on('click', function() {
-
 		if (intropage_square) {
 			intropage_square = false;
 			$('.inpa_sq').css('display','none');
@@ -294,6 +342,8 @@ function initPage() {
 		}
 	});
 
+	// Get the dropdowns the correct height
+	$('#intropage_addpanel-menu, #intropage_action-menu').css('max-height', '250px');
 
 	// reload single panel function
 	$('.reload_panel_now').off('click').on('click', function(event) {
@@ -310,16 +360,42 @@ function initPage() {
 		Pace.stop();
 	});
 
+	$('body').on('click','.bus_graph', function() {
+		event.preventDefault();
+
+		var id = $(this).attr('bus_id');
+
+		data = '<img src="' + urlPath + 'graph_image.php?disable_cache=true&graph_width=450&local_graph_id=' + id + '" />';
+
+		$('#overlay').dialog({
+			modal: true,
+			autoOpen: true,
+			buttons: [{
+				text: intropage_text_close,
+				click: function() {
+					$(this).dialog('destroy');
+					$('#overlay_detail').empty();
+				},
+				icon: 'ui-icon-heart'
+			}],
+			width: 750,
+			height: 550,
+			maxHeight: 850,
+			resizable: true,
+			title: 'Bussiest graph',
+		});
+
+		$('#overlay_detail').html(data);
+	});
+
 	reload_all();
 	setupHidden();
 	resizeGraphsPanel();
 	resizeCharts();
+	applySkin();
 
 	$(window).trigger('resize');
 }
-
-
-
 
 function testPoller() {
 	var url = urlPath+'plugins/intropage/intropage.php?&action=autoreload';
@@ -393,93 +469,3 @@ function reload_all() {
 	Pace.stop();
 	setPageRefresh();
 }
-
-
-// detail to the new window
-$('.maxim').click(function(event) {
-	event.preventDefault();
-	var panel_id = $(this).attr('detail-panel');
-
-	var url = urlPath+'plugins/intropage/intropage.php?action=details&panel_id='+panel_id;
-
-	$.get(url)
-	.done(function(data) {
-		checkForRedirects(data, url);
-
-		$('#overlay_detail').html(data);
-
-		var width = $('#overlay_detail').textWidth() + 150;
-		var windowWidth = $(window).width();
-
-		if (width > 1200) {
-			width = 1200;
-		}
-
-		if (width > windowWidth) {
-			width = windowWidth - 50;
-		}
-
-		$('#overlay').dialog({
-			modal: true,
-			autoOpen: true,
-			buttons: [
-				{
-					text: intropage_text_close,
-					click: function() {
-						$(this).dialog('destroy');
-						$('#overlay_detail').empty();
-					},
-					icon: 'ui-icon-heart'
-				}
-			],
-			width: width,
-			maxHeight: 650,
-			resizable: true,
-			title: intropage_text_panel_details,
-		});
-
-		$('#block').click(function() {
-			$('#overlay').dialog('close');
-		});
-	})
-	.fail(function(data) {
-		getPresentHTTPErrorOrRedirect(data, href);
-	});
-});
-
-
-
-
-$('body').on('click','.bus_graph', function() {
-
-	event.preventDefault();
-
-	var id = $(this).attr('bus_id');
-
-	data = '<img src="' + urlPath + 'graph_image.php?disable_cache=true&graph_width=450&local_graph_id=' + id + '" />';
-
-	$('#overlay').dialog({
-		modal: true,
-		autoOpen: true,
-		buttons: [
-			{
-				text: intropage_text_close,
-				click: function() {
-					$(this).dialog('destroy');
-					$('#overlay_detail').empty();
-				},
-				icon: 'ui-icon-heart'
-			}
-		],
-		width: 750,
-		height: 550,
-		maxHeight: 850,
-		resizable: true,
-		title: 'Bussiest graph',
-	});
-
-	$('#overlay_detail').html(data);
-
-});
-
-
