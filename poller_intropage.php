@@ -179,8 +179,6 @@ function intropage_gather_stats() {
 					if (!array_key_exists($panel['panel_id'], $done_trends)) {
 						$function();
 						$trends++;
-					} else {
-						cacti_log('skipping ' . $panel['panel_id']);
 					}
 
 					$done_trends[$panel['panel_id']] = 1;
