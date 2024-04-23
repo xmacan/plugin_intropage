@@ -351,8 +351,7 @@ function graph_thold_detail() {
 		$sql_where = "( h.status = 3 AND ( " . $cond_ena  . " AND (td.thold_alert != 0 OR td.bl_alert > 0)))";
 		$t_brea_result = get_allowed_thresholds($sql_where, 'null', '', $t_brea, $_SESSION['sess_user_id']);
 
-		$sql_where = " h.status = 3 AND $cond_ena 
-			AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
+		$sql_where = " h.status = 3 AND " . $cond_ena . " AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
 			OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger))";
 		$t_trig_result = get_allowed_thresholds($sql_where, 'null', '', $t_trig, $_SESSION['sess_user_id']);
 
@@ -549,17 +548,24 @@ function thold_collect() {
 
 			$x = '';
 			$sql_where = '';
-			$sql_where = "( h.status = 3 AND ((td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') AND (td.thold_alert != 0 OR td.bl_alert > 0)))";
-			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_brea, $user['id']);
 
-			$sql_where = " h.status = 3 AND (td.thold_per_enabled = '' OR td.thold_enabled = 'off')";
-			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_disa, $user['id']);
+			if (db_column_exists('thold_data', 'thold_per_enabled')) {
+				$cond_ena = "(td.thold_enabled = 'on' AND td.thold_per_enabled = 'on')";
+				$cond_disa = "(td.thold_per_enabled = '' OR td.thold_enabled = '')";
+			} else {
+				$cond_ena = "td.thold_enabled = 'on'";
+				$cond_disa = "td.thold_enabled = ''";
+			}
 
-			$sql_where = " h.status = 3 AND (td.thold_enabled = 'on' AND td.thold_per_enabled = 'on') 
-				AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
+			$sql_where = "( h.status = 3 AND ( " . $cond_ena  . " AND (td.thold_alert != 0 OR td.bl_alert > 0)))";
+			$t_brea_result = get_allowed_thresholds($sql_where, 'null', 1, $t_brea, $user['id']);
+
+			$sql_where = " h.status = 3 AND " . $cond_ena . " AND ((td.thold_alert != 0 AND td.thold_fail_count >= td.thold_fail_trigger) 
 				OR (td.bl_alert > 0 AND td.bl_fail_count >= td.bl_fail_trigger))";
+			$t_trig_result = get_allowed_thresholds($sql_where, 'null', 1, $t_trig, $user['id']);
 
-			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_trig, $user['id']);
+			$sql_where = " h.status = 3 AND " . $cond_disa;
+			$x = get_allowed_thresholds($sql_where, 'null', 1, $t_disa, $user['id']);
 
 			db_execute_prepared("INSERT INTO plugin_intropage_trends
 				(name,value,user_id)
