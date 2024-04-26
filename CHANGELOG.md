@@ -1,7 +1,7 @@
 # Changelog
 
 
---- develop ---
+--- 4.0.4 ---
 
 * feature#259: improve all panels
 
