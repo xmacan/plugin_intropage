@@ -418,14 +418,14 @@ function analyse_db($panel, $user_id) {
 		FROM information_schema.TABLES WHERE TABLE_SCHEMA=?',
 		array($database_default));
 
+	$tables = db_fetch_assoc('SHOW TABLES');
+
 	if ($size > 1073741824) {
 		$panel['alarm'] = 'grey';
 		$panel['data']  = '<tr><td>' . __('Skipping DB tables checks. Database too large') . '</td></tr>';
 	} else {
 
 		$db_check_level = read_config_option('intropage_analyse_db_level');
-
-		$tables = db_fetch_assoc('SHOW TABLES');
 
 		foreach ($tables as $key => $val) {
 			$row = db_fetch_row('check table ' . current($val) . ' ' . $db_check_level);
