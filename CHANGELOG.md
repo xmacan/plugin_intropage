@@ -1,5 +1,6 @@
 # Changelog
 
+*issue316: Fix php error when db check skip huge db
 
 --- 4.0.4 ---
 
